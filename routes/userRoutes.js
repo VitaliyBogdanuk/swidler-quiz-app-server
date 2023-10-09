@@ -31,8 +31,10 @@ const { User } = require('../models');
  *         description: Server error
  */
 router.post('/', async (req, res) => {
+    console.log(req.body);
     try {
         const user = await User.create(req.body);
+        console.log(user);
         res.json(user);
     } catch (err) {
         res.status(500).json({ message: err.message });
