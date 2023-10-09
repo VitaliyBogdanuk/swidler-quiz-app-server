@@ -9,10 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      text: {
+      question: {
         type: Sequelize.STRING
       },
-      correctAnswerId: {
+      answerId: {
+        type: Sequelize.INTEGER
+      },
+      topicId: {
         type: Sequelize.INTEGER
       },
       wrongAnswerDescription: {
@@ -20,11 +23,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
       }
     });
   },

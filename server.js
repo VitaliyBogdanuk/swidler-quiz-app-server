@@ -12,6 +12,10 @@ const userRoutes = require('./routes/userRoutes');
 const situationRoutes = require('./routes/situationRoutes');
 const answerRoutes = require('./routes/answerRoutes');
 const achievementRoutes = require('./routes/achievementRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const topicRoutes = require('./routes/topicRoutes');
+const YAML = require('yamljs');
+
 
 const app = express();
 
@@ -24,6 +28,8 @@ app.use('/users', userRoutes);
 app.use('/situations', situationRoutes);
 app.use('/answers', answerRoutes);
 app.use('/achievements', achievementRoutes);
+app.use('/categories', categoryRoutes);
+app.use('/topics', topicRoutes);
 
 app.use(session({
     secret: process.env.SESSION_SECRET || 'your_secret_string',
@@ -46,8 +52,13 @@ const options = {
     apis: ['./routes/*.js'], // Path to your route files
 };
 
-const specs = swaggerJsdoc(options);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+// const specs = swaggerJsdoc(options);
+// Load YAML swagger file
+const swaggerDocument = YAML.load('./swagger.yaml');
+
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
