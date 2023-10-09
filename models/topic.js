@@ -9,9 +9,13 @@ module.exports = (sequelize, DataTypes) => {
                 key: 'id'
             }
         }
+    }, {
+        defaultScope: {
+            attributes: { exclude: ['createdAt', 'updatedAt'] },
+        }
     });
 
-    Topic.associate = function(models) {
+    Topic.associate = function (models) {
         // associations can be defined here
         Topic.belongsTo(models.Category, {
             foreignKey: 'categoryId',

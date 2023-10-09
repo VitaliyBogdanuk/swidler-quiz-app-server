@@ -1,0 +1,760 @@
+swagger: "2.0"
+info:
+  title: Swidler API's documentation
+  version: 1.0.0
+tags:
+  - name: Achievements
+    description: Operations related to Achievements
+  - name: Users
+    description: Operations related to Users
+  - name: Answers
+    description: Operations related to Answers
+  - name: Categories
+    description: Operations related to Categories
+  - name: Situations
+    description: Operations related to Situations
+  - name: Topics
+    description: Operations related to Topics
+  - name: Auth
+    description: Operations related to authentication
+  - name: Quiz
+    description: Operations related to quiz
+paths:
+  /achievements:
+    post:
+      tags:
+        - Achievements
+      summary: Create a new achievement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                scoreRequired:
+                  type: integer
+      responses:
+        '200':
+          description: Achievement created successfully
+        '500':
+          description: Server error
+
+    get:
+      tags:
+        - Achievements
+      summary: Get all achievements
+      responses:
+        '200':
+          description: A list of achievements
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    scoreRequired:
+                      type: integer
+        '500':
+          description: Server error
+
+  /achievements/{id}:
+    get:
+      tags:
+        - Achievements
+      summary: Get a single achievement by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A single achievement
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  scoreRequired:
+                    type: integer
+        '404':
+          description: Achievement not found
+        '500':
+          description: Server error
+
+    put:
+      tags:
+        - Achievements
+      summary: Update an achievement by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                scoreRequired:
+                  type: integer
+      responses:
+        '200':
+          description: Achievement updated successfully
+        '404':
+          description: Achievement not found
+        '500':
+          description: Server error
+
+    delete:
+      tags:
+        - Achievements
+      summary: Delete an achievement by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Achievement deleted successfully
+        '404':
+          description: Achievement not found
+        '500':
+          description: Server error
+  /answers:
+    post:
+      tags:
+        - Answers
+      summary: Create a new answer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+      responses:
+        200:
+          description: Returns the created answer
+        500:
+          description: Server error
+
+    get:
+      tags:
+        - Answers
+      summary: Retrieve all answers
+      responses:
+        200:
+          description: List of all answers
+        500:
+          description: Server error
+
+  /answers/{id}:
+    get:
+      tags:
+        - Answers
+      summary: Retrieve a single answer by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the answer to retrieve
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Returns the answer with the specified ID
+        404:
+          description: Answer not found
+        500:
+          description: Server error
+
+    put:
+      tags:
+        - Answers
+      summary: Update an answer by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the answer to update
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+      responses:
+        200:
+          description: Returns the updated answer
+        404:
+          description: Answer not found
+        500:
+          description: Server error
+
+    delete:
+      tags:
+        - Answers
+      summary: Delete an answer by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the answer to delete
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Answer deleted successfully
+        404:
+          description: Answer not found
+        500:
+          description: Server error
+
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Authenticate a user
+      description: Authenticate a user based on their authentication provider and ID.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - authProvider
+                - authId
+              properties:
+                authProvider:
+                  type: string
+                  description: The authentication provider (e.g., "google" or "facebook").
+                authId:
+                  type: string
+                  description: The unique ID associated with the user for the given authentication provider.
+      responses:
+        200:
+          description: Returns the authenticated user's data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  authProvider:
+                    type: string
+                  authId:
+                    type: string
+                  score:
+                    type: integer
+        404:
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /categories:
+    post:
+      tags:
+        - Categories
+      summary: Create a new category
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+      responses:
+        200:
+          description: Returns the created category
+        500:
+          description: Server error
+
+    get:
+      tags:
+        - Categories
+      summary: Retrieve all categories
+      responses:
+        200:
+          description: List of all categories include array of Topics for each Category
+        500:
+          description: Server error
+
+  /categories/{id}:
+    get:
+      tags:
+        - Categories
+      summary: Retrieve a single category by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the category to retrieve
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Returns the category with the specified ID include array of Topics
+        404:
+          description: Category not found
+        500:
+          description: Server error
+
+    put:
+      tags:
+        - Categories
+      summary: Update a category by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the category to update
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+      responses:
+        200:
+          description: Returns the updated category
+        404:
+          description: Category not found
+        500:
+          description: Server error
+
+    delete:
+      tags:
+        - Categories
+      summary: Delete a category by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the category to delete
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Category deleted successfully
+        404:
+          description: Category not found
+        500:
+          description: Server error
+
+  /quiz/situations:
+    get:
+      tags:
+        - Quiz
+      summary: Retrieve all situations
+      responses:
+        200:
+          description: List of all situations
+
+  /quiz/situations/{id}/answers:
+    get:
+      tags:
+        - Quiz
+      summary: Retrieve answers for a specific situation by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the situation to retrieve answers for
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Returns the answers for the specified situation
+        404:
+          description: Answers not found for this situation
+
+  /quiz/achievements/{userId}:
+    get:
+      tags:
+        - Quiz
+      summary: Retrieve achievements for a specific user by ID
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          description: ID of the user to retrieve achievements for
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Returns the achievements for the specified user
+        404:
+          description: User not found
+
+  /topics:
+    post:
+      tags:
+        - Topics
+      summary: Create a new topic
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                categoryId:
+                  type: integer
+      responses:
+        200:
+          description: Returns the created topic
+        500:
+          description: Server error
+
+    get:
+      tags:
+        - Topics
+      summary: Retrieve all topics
+      responses:
+        200:
+          description: List of all topics include array of Situations for each Topic
+        500:
+          description: Server error
+
+  /topics/{id}:
+    get:
+      tags:
+        - Topics
+      summary: Retrieve a single topic by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the topic to retrieve
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Returns the topic with the specified ID include array of Situations
+        404:
+          description: Topic not found
+        500:
+          description: Server error
+
+    put:
+      tags:
+        - Topics
+      summary: Update a topic by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the topic to update
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+      responses:
+        200:
+          description: Returns the updated topic
+        404:
+          description: Topic not found
+        500:
+          description: Server error
+
+    delete:
+      tags:
+        - Topics
+      summary: Delete a topic by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the topic to delete
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Topic deleted successfully
+        404:
+          description: Topic not found
+        500:
+          description: Server error
+
+  /users:
+    post:
+      tags:
+        - Users
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                authProvider:
+                  type: string
+                authId:
+                  type: string
+                score:
+                  type: integer
+      responses:
+        200:
+          description: Returns the created user
+        500:
+          description: Server error
+
+    get:
+      tags:
+        - Users
+      summary: Retrieve all users
+      responses:
+        200:
+          description: List of all users
+        500:
+          description: Server error
+
+  /users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Retrieve a single user by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the user to retrieve
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Returns the user with the specified ID
+        404:
+          description: User not found
+        500:
+          description: Server error
+
+    put:
+      tags:
+        - Users
+      summary: Update a user by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the user to update
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                authProvider:
+                  type: string
+                authId:
+                  type: string
+                score:
+                  type: integer
+      responses:
+        200:
+          description: Returns the updated user
+        404:
+          description: User not found
+        500:
+          description: Server error
+
+    delete:
+      tags:
+        - Users
+      summary: Delete a user by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the user to delete
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User deleted successfully
+        404:
+          description: User not found
+        500:
+          description: Server error
+
+  /situations:
+    post:
+      tags:
+        - Situations
+      summary: Create a new situation
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: situation
+          description: The situation to create
+          schema:
+            type: object
+            required:
+              - question
+            properties:
+              question:
+                type: string
+              answerId:
+                type: integer
+              topicId:
+                type: integer
+              wrongAnswerDescription:
+                type: string
+      responses:
+        200:
+          description: Returns the created situation
+        500:
+          description: Server error
+
+    get:
+      tags:
+        - Situations
+      summary: Retrieve all situations
+      produces:
+        - application/json
+      responses:
+        200:
+          description: List of all situations
+        500:
+          description: Server error
+
+  /situations/{id}:
+    get:
+      tags:
+        - Situations
+      summary: Retrieve a single situation by ID
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          description: ID of the situation to retrieve
+      responses:
+        200:
+          description: Returns the situation with the specified ID
+        404:
+          description: Situation not found
+        500:
+          description: Server error
+
+    put:
+      tags:
+        - Situations
+      summary: Update a situation by ID
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          description: ID of the situation to update
+        - in: body
+          name: situation
+          description: The situation details to update
+          schema:
+            type: object
+            properties:
+              question:
+                type: string
+              answerId:
+                type: integer
+              topicId:
+                type: integer
+              wrongAnswerDescription:
+                type: string
+      responses:
+        200:
+          description: Returns the updated situation
+        404:
+          description: Situation not found
+        500:
+          description: Server error
+
+    delete:
+      tags:
+        - Situations
+      summary: Delete a situation by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          description: ID of the situation to delete
+      responses:
+        200:
+          description: Situation deleted successfully
+        404:
+          description: Situation not found
+        500:
+          description: Server error

@@ -10,9 +10,13 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         wrongAnswerDescription: DataTypes.STRING
+    }, {
+        defaultScope: {
+            attributes: { exclude: ['createdAt', 'updatedAt'] },
+        }
     });
 
-    Situation.associate = function(models) {
+    Situation.associate = function (models) {
         // associations can be defined here
         Situation.belongsTo(models.Topic, {
             foreignKey: 'topicId',

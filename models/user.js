@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
         authProvider: DataTypes.STRING,
         authId: DataTypes.STRING,
         score: DataTypes.INTEGER
+    }, {
+        defaultScope: {
+            attributes: { exclude: ['createdAt', 'updatedAt'] },
+        }
     });
 
     return User;
