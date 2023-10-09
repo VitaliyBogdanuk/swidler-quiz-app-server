@@ -2,16 +2,22 @@
     {
         "id": "1",
         "name": "Beginner",
-        "scoreRequired": 50
+        "scoreRequired": 50,
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "2",
         "name": "Intermediate",
-        "scoreRequired": 100
+        "scoreRequired": 100,
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "3",
         "name": "Expert",
-        "scoreRequired": 200
+        "scoreRequired": 200,
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     }
 ]

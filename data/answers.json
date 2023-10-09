@@ -1,18 +1,26 @@
 [
     {
         "id": "1",
-        "text": "Paris"
+        "text": "Paris",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "2",
-        "text": "London"
+        "text": "London",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "3",
-        "text": "Venus"
+        "text": "Venus",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "4",
-        "text": "Mars"
+        "text": "Mars",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     }
 ]

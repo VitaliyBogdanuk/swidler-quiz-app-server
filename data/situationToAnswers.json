@@ -1,16 +1,26 @@
 [
     {
         "situationId": "1",
-        "answerIds": [
-            "1",
-            "2"
-        ]
+        "answerId": "1",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "1",
+        "answerId": "2",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "situationId": "2",
-        "answerIds": [
-            "3",
-            "4"
-        ]
+        "answerId": "3",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "2",
+        "answerId": "4",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     }
 ]

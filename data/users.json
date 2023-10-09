@@ -4,13 +4,17 @@
         "name": "John Doe",
         "authProvider": "google",
         "authId": "google_unique_id_123",
-        "score": 100
+        "score": 100,
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "2",
         "name": "Jane Smith",
         "authProvider": "facebook",
         "authId": "facebook_unique_id_456",
-        "score": 50
+        "score": 50,
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     }
 ]
