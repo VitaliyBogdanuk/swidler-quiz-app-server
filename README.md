@@ -48,6 +48,17 @@ Swidler Quiz App is a Node.js application that provides a backend API for quiz f
 
 6. Open browser and find Swagger API Documentation by URL: `http://localhost:[your-port]/api-docs`
 
+## Adding new Migrations
+1. Use this command for generating new migration
+   ```bash
+   npx sequelize-cli migration:generate --name create-[table-name]
+   ```
+
+2. Use this command for generating new seed for table
+   ```bash
+   npx sequelize-cli seed:generate --name seed-[table-name]
+   ```
+
 ## API Documentation (Swagger)
 
 To generate and view the Swagger documentation for the API:
