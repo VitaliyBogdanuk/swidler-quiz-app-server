@@ -52,33 +52,7 @@ Swidler Quiz App is a Node.js application that provides a backend API for quiz f
 
 To generate and view the Swagger documentation for the API:
 
-1. Install `swagger-ui-express` and `swagger-jsdoc`:
-   ```bash
-   npm install swagger-ui-express swagger-jsdoc
-   ```
-
-2. In your main server file (e.g., `server.js`), set up Swagger:
-
-   ```javascript
-   const swaggerUi = require('swagger-ui-express');
-   const swaggerJsdoc = require('swagger-jsdoc');
-
-   const options = {
-     definition: {
-       openapi: '3.0.0',
-       info: {
-         title: 'Swidler Quiz App API',
-         version: '1.0.0',
-       },
-     },
-     apis: ['./routes/*.js'], // Path to your route files
-   };
-
-   const specs = swaggerJsdoc(options);
-   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
-   ```
-
-3. In your route files, add JSDoc comments to document your API endpoints. For example:
+1. In your route files, add JSDoc comments to document your API endpoints. For example:
 
    ```javascript
    /**
@@ -93,4 +67,4 @@ To generate and view the Swagger documentation for the API:
    router.get('/situations', ...);
    ```
 
-4. Start your app and navigate to `http://localhost:[your-port]/api-docs` to view the Swagger documentation.
+2. Start your app and navigate to `http://localhost:[your-port]/api-docs` to view the Swagger documentation.
