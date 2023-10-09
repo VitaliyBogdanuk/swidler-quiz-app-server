@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "name": "Beginner",
+        "scoreRequired": 50
+    },
+    {
+        "id": "2",
+        "name": "Intermediate",
+        "scoreRequired": 100
+    },
+    {
+        "id": "3",
+        "name": "Expert",
+        "scoreRequired": 200
+    }
+]

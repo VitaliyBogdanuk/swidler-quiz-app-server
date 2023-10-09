@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "John Doe",
+        "authProvider": "google",
+        "authId": "google_unique_id_123",
+        "score": 100
+    },
+    {
+        "id": "2",
+        "name": "Jane Smith",
+        "authProvider": "facebook",
+        "authId": "facebook_unique_id_456",
+        "score": 50
+    }
+]

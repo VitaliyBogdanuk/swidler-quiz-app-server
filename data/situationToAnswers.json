@@ -1,0 +1,16 @@
+[
+    {
+        "situationId": "1",
+        "answerIds": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "situationId": "2",
+        "answerIds": [
+            "3",
+            "4"
+        ]
+    }
+]

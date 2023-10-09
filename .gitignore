@@ -1,0 +1,32 @@
+# Node.js related
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+
+# Editor folders and files
+.vscode/
+*.swp
+*.swo
+*.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+logs/
+*.log
+
+# Other
+*.pid
+*.seed
+*.pid.lock
+
+config.json
