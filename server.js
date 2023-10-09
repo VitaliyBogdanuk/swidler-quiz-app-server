@@ -1,7 +1,9 @@
 require('dotenv').config();
 
 const express = require('express');
+const session = require('express-session');
 const cors = require('cors');
+const passport = require('passport');
 const authRoutes = require('./routes/authRoutes');
 const quizRoutes = require('./routes/quizRoutes');
 const userRoutes = require('./routes/userRoutes');
@@ -22,9 +24,10 @@ app.use('/answers', answerRoutes);
 app.use('/achievements', achievementRoutes);
 
 app.use(session({
-    secret: 'your_secret_key',
+    secret: process.env.SESSION_SECRET || 'your_secret_string',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true,
+    cookie: { secure: false }  // Set to true if using HTTPS
 }));
 
 app.use(passport.initialize());
