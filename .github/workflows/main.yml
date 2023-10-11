@@ -19,8 +19,8 @@ jobs:
     - name: connect and pull
       run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /usr/share/nginx/${{ secrets.REPO_NAME }}/ && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
     - name: stop docker
-      run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker-compose down && exit"
+      run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /usr/share/nginx/${{ secrets.REPO_NAME }}/ && docker-compose down && exit"
     - name: build and start docker
-      run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker-compose up --build && exit"
+      run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /usr/share/nginx/${{ secrets.REPO_NAME }}/ && docker-compose up --build && exit"
     - name: cleanup
       run: rm -rf ~/.ssh
