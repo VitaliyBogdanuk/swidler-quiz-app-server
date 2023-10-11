@@ -1,10 +1,11 @@
 name: Deploy to Server
+
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-  
+
 jobs:
   run_pull:
     name: run pull
@@ -16,11 +17,18 @@ jobs:
         install -m 600 -D /dev/null ~/.ssh/id_rsa
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
-    - name: connect and pull
-      run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /usr/share/nginx/${{ secrets.REPO_NAME }}/ && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
-    - name: stop docker
-      run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /usr/share/nginx/${{ secrets.REPO_NAME }}/ && docker-compose down && exit"
-    - name: build and start docker
-      run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /usr/share/nginx/${{ secrets.REPO_NAME }}/ && docker-compose up --build && exit"
+
+    - name: Deploy to server
+      run: |
+        ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} <<'ENDSSH'
+          set -e
+          cd /usr/share/nginx/${{ secrets.REPO_NAME }}/
+          git checkout ${{ secrets.MAIN_BRANCH }}
+          git pull origin ${{ secrets.MAIN_BRANCH }}
+          docker-compose down
+          docker-compose up --build -d
+          docker-compose ps
+        ENDSSH
+
     - name: cleanup
       run: rm -rf ~/.ssh
