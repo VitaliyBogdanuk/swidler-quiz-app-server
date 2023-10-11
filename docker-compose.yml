@@ -4,7 +4,7 @@ services:
   web:
     build: .
     ports:
-      - "8088:8088"
+      - "${PORT}:${PORT}"
     environment:
       - RUN_MIGRATIONS_AND_SEEDS=${RUN_MIGRATIONS_AND_SEEDS}
       - NODE_ENV=${NODE_ENV}
