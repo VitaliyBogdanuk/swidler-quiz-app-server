@@ -38,8 +38,7 @@ router.get('/', async (req, res) => {
 // READ (single category)
 router.get('/:id', async (req, res) => {
     try {
-        const category = await Category.findByPk({
-            where: { id: req.params.id },
+        const category = await Category.findByPk(req.params.id, {
             include: [{
                 model: Topic,
                 as: 'topics'
@@ -73,8 +72,7 @@ router.put('/:id', async (req, res) => {
 // DELETE
 router.delete('/:id', async (req, res) => {
     try {
-        const category = await Category.findByPk({
-            where: { id: req.params.id },
+        const category = await Category.findByPk(req.params.id, {
             include: [{
                 model: Topic,
                 as: 'topics'
