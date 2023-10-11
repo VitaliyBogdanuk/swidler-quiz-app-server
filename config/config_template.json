@@ -4,20 +4,26 @@
     "password": null,
     "database": "database_development",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false,
+    "port": 5432
   },
-  "test": {
-    "username": "root",
+  "docker": {
+    "username": "postgres",
     "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "database": "docker_database",
+    "host": "db",
+    "dialect": "postgres",
+    "logging": false,
+    "port": 5432
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false,
+    "port": 5432
   }
 }

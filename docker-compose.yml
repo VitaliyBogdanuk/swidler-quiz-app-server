@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8088:8088"
+    environment:
+      - RUN_MIGRATIONS_AND_SEEDS=${RUN_MIGRATIONS_AND_SEEDS}
+      - NODE_ENV=${NODE_ENV}
+      - DATABASE_URL=${DATABASE_URL}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - PORT=${PORT}
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
