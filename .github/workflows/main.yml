@@ -10,7 +10,7 @@ jobs:
   run_pull:
     name: run pull
     runs-on: ubuntu-latest
-    
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
     - name: install ssh keys
       run: |
@@ -27,6 +27,32 @@ jobs:
           git pull origin ${{ secrets.MAIN_BRANCH }}
           docker-compose down
           docker-compose up --build -d
+          docker-compose ps
+        ENDSSH
+
+    - name: cleanup
+      run: rm -rf ~/.ssh
+
+  run_pull_with_migrations:
+    name: run pull with migrations and seeds
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+    - name: install ssh keys
+      run: |
+        install -m 600 -D /dev/null ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+
+    - name: Deploy to server with migrations and seeds
+      run: |
+        ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} <<'ENDSSH'
+          set -e
+          cd /usr/share/nginx/${{ secrets.REPO_NAME }}/
+          git checkout ${{ secrets.MAIN_BRANCH }}
+          git pull origin ${{ secrets.MAIN_BRANCH }}
+          docker-compose down
+          RUN_MIGRATIONS_AND_SEEDS=true docker-compose up --build -d
           docker-compose ps
         ENDSSH
 
