@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "docker": "docker-compose up --build",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:migrate:drop": "npx sequelize-cli db:migrate:undo:all",
     "db:seed": "npx sequelize-cli db:seed:all",
