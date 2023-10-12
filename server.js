@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const session = require('express-session');
+const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const passport = require('passport');
 const authRoutes = require('./routes/authRoutes');
@@ -16,6 +17,10 @@ const YAML = require('yamljs');
 
 
 const app = express();
+
+if(process.env.NODE_ENV == 'development' ) {
+    app.use(cors());
+}
 
 app.use(express.json());
 
@@ -37,17 +42,6 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-const options = {
-    definition: {
-        openapi: '3.0.0',
-        info: {
-            title: 'Swidler Quiz App API',
-            version: '1.0.0',
-        },
-    },
-    apis: ['./routes/*.js'], // Path to your route files
-};
 
 // Load YAML swagger file
 const swaggerDocument = YAML.load('./swagger.yaml');
