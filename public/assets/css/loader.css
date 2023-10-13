@@ -1,0 +1,29 @@
+.loader {
+    /* margin: 0 1em; */
+    height: 100%;
+    width: 218px;
+    text-align: center;
+    padding: 1em;
+    margin: 0 1em;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: saturate(200%) blur(0px);
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 0.75rem;
+}
+
+.loader.active {
+    display: flex;
+}
+
+/*
+    Set the color of the icon
+  */
+svg path,
+svg rect {
+    fill: #EC407A;
+}
