@@ -29,6 +29,7 @@ exports.register = async (req, res) => {
         req.login(user, function(err) {
             if (err) {
                 console.error(err);
+                console.log(user);
                 return res.redirect('/auth/register');
             }
             req.flash('success_msg', 'You are now registered and logged in');
