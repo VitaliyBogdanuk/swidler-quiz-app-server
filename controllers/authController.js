@@ -2,21 +2,42 @@ const { User } = require('../models/');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const passport = require('passport');
+const bcrypt = require('bcryptjs');
 
 exports.register = async (req, res) => {
-    const { username, email, password } = req.body;
+    const { name, email, password } = req.body;
 
-    User.register(new User({ username, email }), password, (err, user) => {
-        if (err) {
+    try {
+        // Check if email already exists
+        const existingUser = await User.findOne({ where: { email } });
+        if (existingUser) {
             req.flash('error', 'Email already exists');
-            res.redirect('/auth/register');
+            return res.redirect('/auth/register');
         }
 
-        passport.authenticate('local')(req, res, function () {
-            req.flash('success_msg', 'You are now registered and can log in');
-            res.redirect('/auth/login');
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Create the user
+        const user = await User.create({
+            name,
+            email,
+            password: hashedPassword
         });
-    });
+
+        // Authenticate the user
+        req.login(user, function(err) {
+            if (err) {
+                console.error(err);
+                return res.redirect('/auth/register');
+            }
+            req.flash('success_msg', 'You are now registered and logged in');
+            res.redirect('/dashboard');
+        });
+    } catch (err) {
+        console.error(err);
+        res.redirect('/auth/register');
+    }
 };
 
 exports.login = (req, res, next) => {
