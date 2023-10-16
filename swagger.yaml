@@ -21,27 +21,6 @@ tags:
     description: Operations related to quiz
 paths:
   /achievements:
-    post:
-      tags:
-        - Achievements
-      summary: Create a new achievement
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                scoreRequired:
-                  type: integer
-      responses:
-        '200':
-          description: Achievement created successfully
-        '500':
-          description: Server error
-
     get:
       tags:
         - Achievements
@@ -65,7 +44,29 @@ paths:
         '500':
           description: Server error
 
-  /achievements/{id}:
+  /achievement/:
+    post:
+      tags:
+        - Achievements
+      summary: Create a new achievement
+      parameters:
+        - in: body
+          name: achievement
+          description: The achievement to create
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              scoreRequired:
+                type: integer
+      responses:
+        '200':
+          description: Achievement created successfully
+        '500':
+          description: Server error
+
+  /achievement/{id}:  
     get:
       tags:
         - Achievements
@@ -142,25 +143,6 @@ paths:
         '500':
           description: Server error
   /answers:
-    post:
-      tags:
-        - Answers
-      summary: Create a new answer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                text:
-                  type: string
-      responses:
-        200:
-          description: Returns the created answer
-        500:
-          description: Server error
-
     get:
       tags:
         - Answers
@@ -171,7 +153,27 @@ paths:
         500:
           description: Server error
 
-  /answers/{id}:
+  /answer/:
+    post:
+      tags:
+        - Answers
+      summary: Create a new answer
+      parameters:
+        - in: body
+          name: answer
+          description: The answer to create
+          schema:
+              type: object
+              properties:
+                text:
+                  type: string
+      responses:
+        200:
+          description: Returns the created answer
+        500:
+          description: Server error
+  
+  /answer/{id}:
     get:
       tags:
         - Answers
@@ -289,25 +291,6 @@ paths:
                     type: string
 
   /categories:
-    post:
-      tags:
-        - Categories
-      summary: Create a new category
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-      responses:
-        200:
-          description: Returns the created category
-        500:
-          description: Server error
-
     get:
       tags:
         - Categories
@@ -318,7 +301,27 @@ paths:
         500:
           description: Server error
 
-  /categories/{id}:
+  /category/:
+    post:
+      tags:
+        - Categories
+      summary: Create a new category
+      parameters:
+        - in: body
+          name: category
+          description: The category to create
+          schema:
+              type: object
+              properties:
+                title:
+                  type: string
+      responses:
+        200:
+          description: Returns the created category
+        500:
+          description: Server error
+
+  /category/{id}:
     get:
       tags:
         - Categories
@@ -431,15 +434,26 @@ paths:
           description: User not found
 
   /topics:
+    get:
+      tags:
+        - Topics
+      summary: Retrieve all topics
+      responses:
+        200:
+          description: List of all topics include array of Situations for each Topic
+        500:
+          description: Server error
+
+  /topic/:
     post:
       tags:
         - Topics
       summary: Create a new topic
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
+      parameters:
+        - in: body
+          name: topic
+          description: The topic to create
+          schema:
               type: object
               properties:
                 title:
@@ -454,17 +468,7 @@ paths:
         500:
           description: Server error
 
-    get:
-      tags:
-        - Topics
-      summary: Retrieve all topics
-      responses:
-        200:
-          description: List of all topics include array of Situations for each Topic
-        500:
-          description: Server error
-
-  /topics/{id}:
+  /topic/{id}:
     get:
       tags:
         - Topics
@@ -532,15 +536,26 @@ paths:
           description: Server error
 
   /users:
+    get:
+      tags:
+        - Users
+      summary: Retrieve all users
+      responses:
+        200:
+          description: List of all users
+        500:
+          description: Server error
+
+  /user/:
     post:
       tags:
         - Users
       summary: Create a new user
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
+      parameters:
+        - in: body
+          name: user
+          description: The user to create
+          schema:
               type: object
               properties:
                 name:
@@ -559,17 +574,7 @@ paths:
         500:
           description: Server error
 
-    get:
-      tags:
-        - Users
-      summary: Retrieve all users
-      responses:
-        200:
-          description: List of all users
-        500:
-          description: Server error
-
-  /users/{id}:
+  /user/{id}:
     get:
       tags:
         - Users
@@ -645,6 +650,19 @@ paths:
           description: Server error
 
   /situations:
+    get:
+      tags:
+        - Situations
+      summary: Retrieve all situations
+      produces:
+        - application/json
+      responses:
+        200:
+          description: List of all situations
+        500:
+          description: Server error
+
+  /situation/:
     post:
       tags:
         - Situations
@@ -673,20 +691,8 @@ paths:
           description: Returns the created situation
         500:
           description: Server error
-
-    get:
-      tags:
-        - Situations
-      summary: Retrieve all situations
-      produces:
-        - application/json
-      responses:
-        200:
-          description: List of all situations
-        500:
-          description: Server error
-
-  /situations/{id}:
+  
+  /situation/{id}:
     get:
       tags:
         - Situations

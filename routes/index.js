@@ -64,7 +64,7 @@ router.get('/tables/answers', ensureAuthenticated, async (req, res) => {
     }
 });
 
-router.get('/tables/categories',  async (req, res) => {
+router.get('/tables/categories', ensureAuthenticated, async (req, res) => {
     try {
         const categoriesList = await categoryController.getCategories();
         res.render('pages/categories', { user: req.user, categoriesList: categoriesList });
@@ -102,10 +102,10 @@ router.get('/tables/topics', ensureAuthenticated, async (req, res) => {
 router.get('/profile', ensureAuthenticated, (req, res) => {
     res.render('pages/profile', { user: req.user });
 });
-router.get('/tables/add_category',  async (req, res) => {
+
+router.get('/forms/category', ensureAuthenticated, async (req, res) => {
     try {
-        //const categoriesList = await categoryController.getCategories();
-        res.render('pages/add_category',{user: req.user});
+        res.render('pages/form_category',{ user: req.user });
     } catch (error) {
         // handle error
         console.log(error);

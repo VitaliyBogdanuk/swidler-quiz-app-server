@@ -5,9 +5,11 @@ const { Category, Topic, Situation, Answer } = require('../models');
 exports.createCategory = async (req, res) => {
     try {
         await Category.create(req.body);
-        res.redirect('/tables/categories')
+        // req.flash('success_msg', 'Category successfully created!'); // TODO
+        res.redirect('/tables/categories');
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        // req.flash('error', 'Creation failed: ' + err.message); // TODO
+        res.redirect('back'); // assuming '/form/category' is where your creation form is located
     }
 };
 
@@ -99,11 +101,14 @@ exports.deleteCategory = async (req, res) => {
         });
         if (category) {
             await category.destroy();
+            // req.flash('success_msg', 'Category successfully deleted!'); // TODO
             res.json({ message: 'Category deleted' });
         } else {
+            req.flash('error', 'Category not found');
             res.status(404).json({ message: 'Category not found' });
         }
     } catch (err) {
+        // req.flash('error', 'Deleting failed: ' + err.message); // TODO
         res.status(500).json({ message: err.message });
     }
 };
