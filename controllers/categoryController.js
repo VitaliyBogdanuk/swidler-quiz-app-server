@@ -1,10 +1,11 @@
 const { Category, Topic, Situation, Answer } = require('../models');
 
+
 // CREATE
 exports.createCategory = async (req, res) => {
     try {
-        const category = await Category.create(req.body);
-        res.json(category);
+        await Category.create(req.body);
+        res.redirect('/tables/categories')
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
