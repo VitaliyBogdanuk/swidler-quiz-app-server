@@ -103,4 +103,14 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
     res.render('pages/profile', { user: req.user });
 });
 
+router.get('/forms/category', ensureAuthenticated, async (req, res) => {
+    try {
+        res.render('pages/form_category',{ user: req.user });
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
 module.exports = router;

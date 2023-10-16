@@ -31,13 +31,11 @@ if(process.env.NODE_ENV == 'development' ) {
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(flash());
 app.use(express.json());
 
 // Load YAML swagger file and set up /api-docs route BEFORE authentication
 const swaggerDocument = YAML.load('./swagger.yaml');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use('/quiz', quizRoutes);
 app.use('/', achievementRoutes);
 app.use('/', answerRoutes);
 app.use('/', categoryRoutes);
@@ -51,6 +49,8 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: false, maxAge: 60000 }  // Set to false unless using HTTPS
 }));
+
+app.use(flash());
 
 // Passport Config
 require('./config/passport')(passport);
@@ -66,9 +66,11 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.use('/auth', authRoutes);
+app.use('/quiz', quizRoutes);
 app.use('/', indexRoutes);
 app.use('/', userRoutes);
-app.use('/auth', authRoutes);
+
 app.all('*', (req, res) => {
     req.flash('error', '404! Page not found');
     res.redirect('/dashboard');
