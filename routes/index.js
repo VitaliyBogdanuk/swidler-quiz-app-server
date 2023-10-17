@@ -113,4 +113,14 @@ router.get('/forms/category', ensureAuthenticated, async (req, res) => {
         res.redirect('back');
     }
 });
+router.get('/forms/achievements', ensureAuthenticated, async (req, res) => {
+    try {
+        res.render('pages/form_achievements', { user: req.user});
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
 module.exports = router;
