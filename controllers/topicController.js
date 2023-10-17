@@ -2,9 +2,9 @@ const { Topic, Situation, Answer } = require('../models');
 
 // CREATE
 exports.createTopic = async (req, res) => {
-    try {
+    try {//console.log(req)
         const topic = await Topic.create(req.body);
-        res.json(topic);
+        res.redirect('/tables/topics');
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

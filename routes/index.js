@@ -123,4 +123,14 @@ router.get('/forms/achievements', ensureAuthenticated, async (req, res) => {
         res.redirect('back');
     }
 });
+router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
+    try {const categoriesList = await categoryController.getCategories();
+        res.render('pages/form_topics', { user: req.user, categoriesList: categoriesList });
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
 module.exports = router;
