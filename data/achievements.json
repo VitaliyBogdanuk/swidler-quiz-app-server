@@ -1,16 +1,16 @@
 [
     {
         "id": "1",
-        "title": "Beginner",
-        "image": "online_dating.svg",
+        "title": "SadFox",
+        "image": "sad.png",
         "scoreRequired": 50,
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "2",
-        "title": "Intermediate",
-        "image": "online_dating.svg",
+        "title": "CryingFox",
+        "image": "sad.png",
         "scoreRequired": 100,
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -18,7 +18,7 @@
     {
         "id": "3",
         "title": "Expert",
-        "image": "online_dating.svg",
+        "image": "sad.png",
         "scoreRequired": 200,
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
