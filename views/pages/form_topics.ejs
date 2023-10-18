@@ -1,5 +1,5 @@
 <%- include('../templates/head'); -%>
-<%- include('../templates/sidebar', {view: 'Create topic' }); -%>
+<%- include('../templates/sidebar', {view: 'Topics' }); -%>
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 	<!-- Navbar -->
 	<%- include('../templates/navbar', {breadcrumbs: 'Create topic' }); -%>
@@ -17,7 +17,7 @@
 					<div class="card-body px-0 pb-2">
 						<div class="card card-plain">
 							<div class="card-header">
-								<h4 class="font-weight-bolder">Enter a topic name</h4>
+								<h4 class="font-weight-bolder">Fill in topic data</h4>
 							</div>
 							<div class="card-body">
 								<form role="form" action="/topic" method="POST">
