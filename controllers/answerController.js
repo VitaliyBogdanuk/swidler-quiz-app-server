@@ -2,9 +2,10 @@ const { Answer } = require('../models');
 
 // CREATE
 exports.createAnswer = async (req, res) => {
+
     try {
-        const answer = await Answer.create(req.body);
-        res.json(answer);
+    await Answer.create(req.body);
+
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

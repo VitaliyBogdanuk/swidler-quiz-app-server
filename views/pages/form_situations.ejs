@@ -26,13 +26,43 @@
 										<label class="form-label" ></label>
 										<textarea rows="7" type="text" class="form-control" name="question" placeholder="Question"></textarea>
 									</div>
-                                    
-									<select class="form-control  mb-3 border p-2" aria-label="Correct answer" name="answerId">
-										<option disabled selected >Select answer</option>
-										<% answersList.forEach(function(answer) { %>
-											<option value="<%= answer.id %>"><%= answer.text %></option>
-											<% }); %>
-									  </select>
+
+									  <p class="d-inline-flex gap-1">
+					
+										<button onclick="answerToggle()" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+										  Create answers
+										</button>
+									  </p>
+									  <div class="collapse" id="collapseExample">
+											<div class="input-group input-group-outline mb-3">
+												<label class="form-label">Answer 1</label>
+												<input id="answer1" type="text" class="form-control" name="answer1">
+												
+											</div>
+											<div class="input-group input-group-outline mb-3">
+												<label class="form-label">Answer 2</label>
+												<input id="answer2" type="text" class="form-control" name="answer2">
+												
+											</div>
+											<div class="input-group input-group-outline mb-3">
+												<label class="form-label">Answer 3</label>
+												<input id="answer3" type="text" class="form-control" name="answer3">
+												
+											</div>
+											<label class="form-label">Select correct answer</label>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="0">
+												<label class="form-check-label" for="inlineRadio1">1</label>
+											  </div>
+											  <div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="1">
+												<label class="form-check-label" for="inlineRadio2">2</label>
+											  </div>
+											  <div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="2">
+												<label class="form-check-label" for="inlineRadio3">3 </label>
+											  </div>
+									  </div>
                                       <select class="form-control  mb-3 border p-2" aria-label="Topic" name="topicId">
 										<option disabled selected >Select topic</option>
 										<% topicsList.forEach(function(topic) { %>
@@ -60,3 +90,11 @@
 </main>
 
 <%- include('../templates/scripts'); -%>
+<script>
+	function answerToggle(){
+		const Element = document.getElementById('answer')
+		Element.toggleAttribute('disabled')
+		Element.setAttribute('value','')
+		
+	}
+</script>
