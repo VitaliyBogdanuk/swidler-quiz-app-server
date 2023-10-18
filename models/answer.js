@@ -1,5 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     const Answer = sequelize.define('Answer', {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         text: DataTypes.STRING
     }, {
         defaultScope: {

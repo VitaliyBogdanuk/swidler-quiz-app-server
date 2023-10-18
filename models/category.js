@@ -1,7 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
     const Category = sequelize.define('Category', {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         title: DataTypes.STRING,
-        image: DataTypes.STRING,
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
     }, {
         defaultScope: {
             attributes: { exclude: ['createdAt', 'updatedAt'] },
