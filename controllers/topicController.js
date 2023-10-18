@@ -2,7 +2,7 @@ const { Topic, Situation, Answer } = require('../models');
 
 // CREATE
 exports.createTopic = async (req, res) => {
-    try {//console.log(req)
+    try {
         const topic = await Topic.create(req.body);
         res.redirect('/tables/topics');
     } catch (err) {
