@@ -1,5 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     const Topic = sequelize.define('Topic', {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         title: DataTypes.STRING,
         description: DataTypes.TEXT,
         categoryId: {

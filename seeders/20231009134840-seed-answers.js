@@ -1,13 +1,20 @@
 'use strict';
 
 const answersData = require('../data/answers.json');
+const tableName = 'Answers';
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Answers', answersData, { returning: true });
+    await queryInterface.bulkInsert(tableName, answersData, { returning: true });
+    // Set autoincrement initial value after seeding
+    const result = await queryInterface.sequelize.query(`SELECT COUNT(*) from "${tableName}";`);
+    const sequenceName = '"Answers_id_seq"';
+    const restartWith = Number(result[0][0].count) + 1;
+    await queryInterface.sequelize.query(`SELECT setval('${sequenceName}', ${restartWith}, false);`);
+
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Answers', null, {});
+    await queryInterface.bulkDelete(tableName, null, {});
   }
 };
