@@ -1,16 +1,16 @@
-const { Situation, Topic, Answer } = require('../models');
+const { Situation, Topic, Answer, SituationToAnswer } = require('../models');
 
 // CREATE
 exports.createSituation = async (req, res) => {
     const t = await Situation.sequelize.transaction();
-
+    const ids = []
     try {
         await Answer.create({ text: req.body.answer1 })
-            .then(() => {
+            .then((result) => {ids.push(result.id)
                 Answer.create({ text: req.body.answer2 })
-                    .then(() => {
+                    .then((result) => {ids.push(result.id)
                         Answer.create({ text: req.body.answer3 })
-                            .then(result => {
+                            .then(result => {ids.push(result.id)
                                 switch (req.body.inlineRadioOptions) {
                                     case ("0"): req.body.answerId = result.id - 2;
                                         break;
@@ -20,8 +20,14 @@ exports.createSituation = async (req, res) => {
                                 }
                             })
                             .then(() => {
-                                Situation.create(req.body);
+                                Situation.create(req.body)
+                                .then((result)=>{
+                                       ids.forEach(async element=>{
+                                           await SituationToAnswer.create({situationId : result.id, answerId: element})
+                                       }) 
+                                   })
                             })
+                            
                     })
             })
         res.redirect('/tables/situations');
