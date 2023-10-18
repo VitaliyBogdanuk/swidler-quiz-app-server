@@ -32,7 +32,9 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: 'application'
         },
         authId: DataTypes.STRING,
-        score: DataTypes.INTEGER
+        score: DataTypes.INTEGER,
+        correctAnswersCount: DataTypes.INTEGER,
+        wrongAnswersCount: DataTypes.INTEGER
     }, {
         defaultScope: {
             attributes: { exclude: ['createdAt', 'updatedAt'] },

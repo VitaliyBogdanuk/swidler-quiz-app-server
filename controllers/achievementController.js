@@ -3,7 +3,7 @@ const { Achievement } = require('../models');
 // CREATE
 exports.createAchievement = async (req, res) => {
     try {
-        const achievement = await Achievement.create(req.body);
+        await Achievement.create(req.body);
         res.redirect('/tables/achievements');
     } catch (err) {
         res.status(500).json({ message: err.message });

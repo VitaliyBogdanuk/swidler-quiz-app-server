@@ -37,7 +37,9 @@ paths:
                   properties:
                     id:
                       type: integer
-                    name:
+                    title:
+                      type: string
+                    image:
                       type: string
                     scoreRequired:
                       type: integer
@@ -56,7 +58,9 @@ paths:
           schema:
             type: object
             properties:
-              name:
+              title:
+                type: string
+              image:
                 type: string
               scoreRequired:
                 type: integer
@@ -87,7 +91,9 @@ paths:
                 properties:
                   id:
                     type: integer
-                  name:
+                  title:
+                    type: string
+                  image:
                     type: string
                   scoreRequired:
                     type: integer
@@ -113,8 +119,10 @@ paths:
             schema:
               type: object
               properties:
-                name:
+                title:
                   type: string
+                image:
+                    type: string
                 scoreRequired:
                   type: integer
       responses:
@@ -315,6 +323,8 @@ paths:
               properties:
                 title:
                   type: string
+                image:
+                    type: string
       responses:
         200:
           description: Returns the created category
@@ -336,6 +346,15 @@ paths:
       responses:
         200:
           description: Returns the category with the specified ID include array of Topics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  image:
+                      type: string
         404:
           description: Category not found
         500:
@@ -359,8 +378,10 @@ paths:
             schema:
               type: object
               properties:
-                text:
+                title:
                   type: string
+                image:
+                    type: string
       responses:
         200:
           description: Returns the updated category
@@ -568,6 +589,10 @@ paths:
                   type: string
                 score:
                   type: integer
+                correctAnswersCount:
+                  type: integer
+                wrongAnswersCount:
+                  type: integer
       responses:
         200:
           description: Returns the created user
@@ -621,6 +646,10 @@ paths:
                 authId:
                   type: string
                 score:
+                  type: integer
+                correctAnswersCount:
+                  type: integer
+                wrongAnswersCount:
                   type: integer
       responses:
         200:

@@ -2,21 +2,28 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Achievements', {
+    await queryInterface.createTable('UserToTopics', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING
+      userId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id'
+        },
+        onDelete: 'CASCADE'
       },
-      image: {
-        type: Sequelize.STRING
-      },
-      scoreRequired: {
-        type: Sequelize.INTEGER
+      topicId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Topics',
+          key: 'id'
+        },
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +39,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Achievements');
+    await queryInterface.dropTable('UserToTopics');
   }
 };
