@@ -4,7 +4,7 @@ const { Situation, Topic, Answer } = require('../models');
 exports.createSituation = async (req, res) => {
     try {
         const situation = await Situation.create(req.body);
-        res.json(situation);
+        res.redirect('/tables/situations');
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
