@@ -4,7 +4,7 @@ const { Achievement } = require('../models');
 exports.createAchievement = async (req, res) => {
     try {
         const achievement = await Achievement.create(req.body);
-        res.json(achievement);
+        res.redirect('/tables/achievements');
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -43,7 +43,7 @@ exports.getAchievement = async () => {
     }
 };
 
-exports.readAchievement = async (req, res) => {    
+exports.readAchievement = async (req, res) => {
     try {
         const achievement = await exports.getAchievement();
         if (achievement) {
@@ -76,7 +76,7 @@ exports.deleteAchievement = async (req, res) => {
     try {
         const achievement = await Achievement.findByPk(req.params.id);
         if (achievement) {
-            req.flash('success_msg', `Achievement ${achievement.name} successfully removed!`);
+            //  req.flash('success_msg', `Achievement ${achievement.name} successfully removed!`);
             await achievement.destroy();
             res.json({ message: 'Achievement deleted' });
         } else {

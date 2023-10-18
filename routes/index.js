@@ -113,4 +113,24 @@ router.get('/forms/category', ensureAuthenticated, async (req, res) => {
         res.redirect('back');
     }
 });
+router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
+    try {
+        res.render('pages/form_achievements', { user: req.user});
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
+router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
+    try {const categoriesList = await categoryController.getCategories();
+        res.render('pages/form_topics', { user: req.user, categoriesList: categoriesList });
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
 module.exports = router;
