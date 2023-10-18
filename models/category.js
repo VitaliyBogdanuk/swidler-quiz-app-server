@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Category = sequelize.define('Category', {
-        title: DataTypes.STRING
+        title: DataTypes.STRING,
+        image: DataTypes.STRING,
     }, {
         defaultScope: {
             attributes: { exclude: ['createdAt', 'updatedAt'] },

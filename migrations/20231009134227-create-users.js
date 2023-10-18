@@ -40,6 +40,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         defaultValue: 0
       },
+      correctAnswersCount: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
+      },
+      wrongAnswersCount: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
