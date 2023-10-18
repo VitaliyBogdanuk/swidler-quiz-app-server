@@ -2,10 +2,32 @@ const { Situation, Topic, Answer } = require('../models');
 
 // CREATE
 exports.createSituation = async (req, res) => {
+    const t = await Situation.sequelize.transaction();
+
     try {
-        const situation = await Situation.create(req.body);
-        res.json(situation);
+        await Answer.create({ text: req.body.answer1 })
+            .then(() => {
+                Answer.create({ text: req.body.answer2 })
+                    .then(() => {
+                        Answer.create({ text: req.body.answer3 })
+                            .then(result => {
+                                switch (req.body.inlineRadioOptions) {
+                                    case ("0"): req.body.answerId = result.id - 2;
+                                        break;
+                                    case ("1"): req.body.answerId = result.id - 1;
+                                        break;
+                                    case ("2"): req.body.answerId = result.id;
+                                }
+                            })
+                            .then(() => {
+                                Situation.create(req.body);
+                            })
+                    })
+            })
+        res.redirect('/tables/situations');
+        await t.commit();
     } catch (err) {
+        await t.rollback();
         res.status(500).json({ message: err.message });
     }
 };
