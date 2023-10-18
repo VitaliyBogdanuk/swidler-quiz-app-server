@@ -113,7 +113,7 @@ router.get('/forms/category', ensureAuthenticated, async (req, res) => {
         res.redirect('back');
     }
 });
-router.get('/forms/achievements', ensureAuthenticated, async (req, res) => {
+router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
     try {
         res.render('pages/form_achievements', { user: req.user});
     } catch (error) {
