@@ -34,6 +34,7 @@ app.use(cors({
 }));
 
 app.options('*', cors());
+app.enable('trust proxy');
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
