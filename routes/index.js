@@ -133,4 +133,15 @@ router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
         res.redirect('back');
     }
 });
+router.get('/forms/situation', ensureAuthenticated, async (req, res) => {
+    try {const answersList = await answerController.getAnswers();
+        const topicsList = await topicController.getTopics();
+        res.render('pages/form_situations', { user: req.user, answersList: answersList, topicsList: topicsList });
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
 module.exports = router;

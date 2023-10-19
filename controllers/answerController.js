@@ -3,7 +3,7 @@ const { Answer } = require('../models');
 // CREATE
 exports.createAnswer = async (req, res) => {
     try {
-        const answer = await Answer.create(req.body);
+        await Answer.create(req.body);
         res.json(answer);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -13,7 +13,11 @@ exports.createAnswer = async (req, res) => {
 // READ (all answers)
 exports.getAnswers = async () => {
     try {
-        return await Answer.findAll();
+        return await Answer.findAll({
+            order: [
+                ['id', 'ASC']
+            ]
+        });
     } catch (err) {
         throw new Error(err.message);
     }

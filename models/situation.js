@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
                 key: 'id'
             }
         },
-        wrongAnswerDescription: DataTypes.STRING
+        wrongAnswerDescription: DataTypes.STRING,
     }, {
         defaultScope: {
             attributes: { exclude: ['createdAt', 'updatedAt'] },
