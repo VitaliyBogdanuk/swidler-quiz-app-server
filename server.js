@@ -26,12 +26,14 @@ const userRoutes = require('./routes/users');
 const app = express();
 app.use(express.static('public'));
 
-if(process.env.NODE_ENV == 'development' ) {
-    app.use(cors({
-        origin: process.env.APP_URL, // or your frontend server's address
-        credentials: true,  // <-- REQUIRED backend setting
-    }));
-}
+app.use(cors({
+	origin: process.env.APP_URL,
+	credentials: true,
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+    optionsSuccessStatus: 200,
+}));
+
+app.options('*', cors());
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
