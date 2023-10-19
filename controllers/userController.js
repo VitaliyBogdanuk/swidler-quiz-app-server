@@ -39,7 +39,7 @@ exports.createUser = async (req, res) => {
     });
     } catch (err) {
         res.render('pages/form_users',{ 
-            //usersList: await exports.getUsers(), 
+           
             error: err
         });
     }
