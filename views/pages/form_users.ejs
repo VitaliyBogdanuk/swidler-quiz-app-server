@@ -1,0 +1,71 @@
+<%- include('../templates/head'); -%>
+<%- include('../templates/sidebar', {view: 'Users' }); -%>
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+	<!-- Navbar -->
+	<%- include('../templates/navbar', {breadcrumbs: 'Create new user' }); -%>
+	<!-- End Navbar -->
+	<div class="container-fluid py-4">
+		<div class="row">
+			<div class="col-12">
+				<div class="card my-4">
+					<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+						<div
+							class="d-flex justify-content-lg-between bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+							<h6 class="text-white text-capitalize ps-3">Create new user</h6>
+						</div>
+					</div>
+					<div class="card-body px-0 pb-2">
+						<div class="card card-plain">
+							<div class="card-header">
+								<h4 class="font-weight-bolder">Fill in user data</h4>
+							</div>
+							<div class="card-body">
+								<form role="form" action="/user" method="POST">
+									<div class="input-group input-group-outline mb-3">
+										<label class="form-label">User name</label>
+										<input type="text" class="form-control" name="name">
+									</div>
+                                    <div class="input-group input-group-outline mb-3">
+										<label class="form-label">Email</label>
+										<input type="text" class="form-control" name="email">
+									</div>
+                                    <div class="form-check">
+                                        <input  class="form-check-input" type="radio" id="flexRadioDefault1" name="role" value="user" checked>
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                          User
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="flexRadioDefault2" name="role"  value="admin">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                          Admin
+                                        </label>
+                                      </div>
+                                    <div class="input-group input-group-outline mb-3">
+										<label class="form-label">Password</label>
+										<input type="password" class="form-control" name="password">
+									</div>
+                                    <div class="input-group input-group-outline mb-3">
+										<label class="form-label">Repeat password</label>
+										<input type="password" class="form-control" name="repeatedPassword">
+									</div>
+									<div class="text-center">
+										<button
+											class="btn btn-lg bg-gradient-primary btn-lg w-25 mt-4 mb-0">SAVE</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%- include('../templates/footer'); -%>
+	</div>
+	<%- include('../templates/messages'); -%>
+</main>
+
+<%- include('../templates/scripts'); -%>
+<script>
+    window.history.pushState({}, '', '/forms/user');
+</script>

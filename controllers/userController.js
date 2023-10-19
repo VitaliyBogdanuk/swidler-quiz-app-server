@@ -29,11 +29,19 @@ exports.listUsers = async (req, res) => {
 
 // Create a user
 exports.createUser = async (req, res) => {
-    try {
-        const user = await User.create(req.body);
-        res.json(user);
+    try {if(req.body.repeatedPassword !== req.body.password)
+        throw("Wrong password")
+        await User.create(req.body);
+        res.render('pages/users',{ 
+        success_msg: 'User created successfully',
+        usersList: await exports.getUsers(), 
+        error: []
+    });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.render('pages/form_users',{ 
+            //usersList: await exports.getUsers(), 
+            error: err
+        });
     }
 };
 
