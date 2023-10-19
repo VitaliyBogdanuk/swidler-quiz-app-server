@@ -29,17 +29,17 @@ exports.listUsers = async (req, res) => {
 
 // Create a user
 exports.createUser = async (req, res) => {
-    try {if(req.body.repeatedPassword !== req.body.password) //TODO pass validation on view
-        throw("Wrong password")
+    try {
+        if (req.body.repeatedPassword !== req.body.password) //TODO pass validation on view
+            throw ("Wrong password")
         await User.create(req.body);
-        res.render('pages/users',{ 
-        success_msg: 'User created successfully',
-        usersList: await exports.getUsers(), 
-        error: []
-    });
+        res.render('pages/users', {
+            success_msg: 'User created successfully',
+            usersList: await exports.getUsers(),
+            error: []
+        });
     } catch (err) {
-        res.render('pages/form_users',{ 
-           
+        res.render('pages/form_users', {
             error: err
         });
     }
@@ -54,7 +54,7 @@ exports.getUser = async () => {
     }
 };
 
-exports.readUser = async (req, res) => {    
+exports.readUser = async (req, res) => {
     try {
         const user = await exports.getUser();
         if (user) {
