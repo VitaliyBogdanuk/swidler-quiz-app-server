@@ -144,4 +144,25 @@ router.get('/forms/situation', ensureAuthenticated, async (req, res) => {
         res.redirect('back');
     }
 });
+router.get('/forms/user', ensureAuthenticated, async (req, res) => {
+    try {
+        res.render('pages/form_users', { user: req.user});
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
+router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
+    try {
+        const situationsList = await situationController.getSituations();
+        res.render('pages/form_answers', { user: req.user, situationsList: situationsList});
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
 module.exports = router;

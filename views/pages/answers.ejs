@@ -9,8 +9,9 @@
             <div class="col-12">
                 <div class="card my-4">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                        <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                        <div class="d-flex justify-content-lg-between bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                             <h6 class="text-white text-capitalize ps-3">Answers</h6>
+                            <a href="/forms/answer" class="text-white px-3"><i class="fa fa-plus p-1"></i>Add answer</a>
                         </div>
                     </div>
                     <div class="card-body px-0 pb-2">
@@ -80,21 +81,8 @@
     <%- include('../templates/messages'); -%>
 </main>
 
-<script>
-    function deleteAchievement(answerId) {
-        fetch('/answer/' + answerId, {
-            method: 'DELETE',
-        }).then(function(response) {
-            if (response.ok) {
-                console.log('Answer was deleted');
-                location.reload();
-            } else {
-                console.error('An error occurred');
-            }
-        }).catch(function(error) {
-            console.error('An error occurred', error);
-        });
-    }
-</script>
-
 <%- include('../templates/scripts'); -%>
+
+<script>
+    window.history.pushState({}, '', '/tables/answers');
+</script>

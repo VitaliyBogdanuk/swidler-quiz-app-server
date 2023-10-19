@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, UserToTopic } = require('../models');
 
 // List all users
 exports.getUsers = async () => {
@@ -30,10 +30,18 @@ exports.listUsers = async (req, res) => {
 // Create a user
 exports.createUser = async (req, res) => {
     try {
-        const user = await User.create(req.body);
-        res.json(user);
+        if (req.body.repeatedPassword !== req.body.password) //TODO pass validation on view
+            throw ("Wrong password")
+        await User.create(req.body);
+        res.render('pages/users', {
+            success_msg: 'User created successfully',
+            usersList: await exports.getUsers(),
+            error: []
+        });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.render('pages/form_users', {
+            error: err
+        });
     }
 };
 
@@ -46,7 +54,7 @@ exports.getUser = async () => {
     }
 };
 
-exports.readUser = async (req, res) => {    
+exports.readUser = async (req, res) => {
     try {
         const user = await exports.getUser();
         if (user) {
@@ -83,6 +91,54 @@ exports.deleteUser = async (req, res) => {
         req.flash('success_msg', `User ${user.name} successfully removed!`);
         await user.destroy();
         res.json({ message: 'User deleted' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+exports.updateUserTopics = async (req, res) => {
+    try {
+        await UserToTopic.create(req.body);
+        res.json();
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+}
+// Update a user score
+exports.updateUserScore = async (req, res) => {
+    try {
+        const user = await User.findByPk(req.body.id);
+        if (!user) {
+            res.status(404).json({ message: 'User not found' });
+        }
+        await user.update({ id: req.body.id, score: user.score + req.body.score });
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+// Update a user correct answer
+exports.updateUserCorrectAnswer = async (req, res) => {
+    try {
+        const user = await User.findByPk(req.params.id);
+        if (!user) {
+            res.status(404).json({ message: 'User not found' });
+        }
+        await user.update({ id: req.params.id, correctAnswersCount: ++user.correctAnswersCount });
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+// Update a user wrong answer
+exports.updateUserWrongAnswer = async (req, res) => {
+    try {
+        const user = await User.findByPk(req.params.id);
+        if (!user) {
+            res.status(404).json({ message: 'User not found' });
+        }
+        await user.update({ id: req.params.id, wrongAnswersCount: ++user.wrongAnswersCount });
+        res.json(user);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

@@ -1,12 +1,22 @@
-const { Answer } = require('../models');
+const { Answer, SituationToAnswer } = require('../models');
 
 // CREATE
 exports.createAnswer = async (req, res) => {
+    transaction = await Answer.sequelize.transaction();
     try {
-        await Answer.create(req.body);
-        res.json(answer);
+        const answer = await Answer.create(req.body);
+        await SituationToAnswer.create({ situationId: req.body.stuationId, answerId: answer.id })
+        await transaction.commit();
+        res.render('pages/answers', {
+            success_msg: 'Answer created successfully',
+            answersList: await exports.getAnswers(),
+            error: []
+        });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        await transaction.rollback();
+        res.render('pages/form_answers', {
+            error: err
+        });
     }
 };
 
