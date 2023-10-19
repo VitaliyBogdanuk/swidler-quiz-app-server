@@ -81,22 +81,8 @@
     <%- include('../templates/messages'); -%>
 </main>
 
+<%- include('../templates/scripts'); -%>
+
 <script>
-    function deleteAchievement(answerId) {
-        fetch('/answer/' + answerId, {
-            method: 'DELETE',
-        }).then(function(response) {
-            if (response.ok) {
-                console.log('Answer was deleted');
-                location.reload();
-            } else {
-                console.error('An error occurred');
-            }
-        }).catch(function(error) {
-            console.error('An error occurred', error);
-        });
-    }
     window.history.pushState({}, '', '/tables/answers');
 </script>
-
-<%- include('../templates/scripts'); -%>
