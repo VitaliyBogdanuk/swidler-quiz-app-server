@@ -31,7 +31,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             defaultValue: 'application'
         },
-        authId: DataTypes.STRING,
+        googleId: {
+            type: DataTypes.STRING,
+            unique: true
+        },
         score: DataTypes.INTEGER,
         correctAnswersCount: DataTypes.INTEGER,
         wrongAnswersCount: DataTypes.INTEGER

@@ -33,8 +33,9 @@ module.exports = {
       authProvider: {
         type: Sequelize.STRING
       },
-      authId: {
-        type: Sequelize.STRING
+      googleId: {
+        type: Sequelize.STRING,
+        unique: true
       },
       score: {
         type: Sequelize.INTEGER,
