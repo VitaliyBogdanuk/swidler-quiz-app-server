@@ -4,6 +4,7 @@ const { Answer } = require('../models');
 exports.createAnswer = async (req, res) => {
     try {
         await Answer.create(req.body);
+        res.json(answer);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
