@@ -117,4 +117,29 @@ exports.updateUserScore = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
-
+// Update a user correct answer
+exports.updateUserCorrectAnswer = async (req, res) => {
+    try {
+        const user = await User.findByPk(req.params.id);
+        if (!user) {
+            res.status(404).json({ message: 'User not found' });
+        }
+        await user.update({ id: req.params.id, correctAnswersCount: ++user.correctAnswersCount });
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+// Update a user wrong answer
+exports.updateUserWrongAnswer = async (req, res) => {
+    try {
+        const user = await User.findByPk(req.params.id);
+        if (!user) {
+            res.status(404).json({ message: 'User not found' });
+        }
+        await user.update({ id: req.params.id, wrongAnswersCount: ++user.wrongAnswersCount });
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
