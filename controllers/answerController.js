@@ -1,10 +1,11 @@
-const { Answer } = require('../models');
+const { Answer, SituationToAnswer } = require('../models');
 
 // CREATE
 exports.createAnswer = async (req, res) => {
+    transaction = await Answer.sequelize.transaction();
     try {
-        await Answer.create(req.body);
-        res.json(answer);
+        const answer = await Answer.create(req.body);
+        await SituationToAnswer.create({situationId:answer.body.id, answerId: req.body.stuationId})
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
