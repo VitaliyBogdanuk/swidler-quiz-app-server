@@ -29,7 +29,7 @@ exports.listUsers = async (req, res) => {
 
 // Create a user
 exports.createUser = async (req, res) => {
-    try {if(req.body.repeatedPassword !== req.body.password)
+    try {if(req.body.repeatedPassword !== req.body.password) //TODO pass validation on view
         throw("Wrong password")
         await User.create(req.body);
         res.render('pages/users',{ 
