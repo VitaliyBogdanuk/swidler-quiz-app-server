@@ -28,7 +28,10 @@ exports.getCategories = async () => {
                         as: 'answers'
                     }]
                 }]
-            }]
+            }],
+            order: [
+                ['id', 'ASC']
+            ]
         });
     } catch (err) {
         throw new Error(err.message);

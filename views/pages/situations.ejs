@@ -87,7 +87,7 @@
             method: 'DELETE',
         }).then(function(response) {
             if (response.ok) {
-                console.log('Situation was deleted');
+                displayToast('success', 'Situation and its answers deleted');
                 location.reload();
             } else {
                 console.error('An error occurred');
@@ -96,6 +96,9 @@
             console.error('An error occurred', error);
         });
     }
+
+    window.history.pushState({}, '', '/tables/situations');
+
 </script>
 
 <%- include('../templates/scripts'); -%>

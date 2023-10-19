@@ -14,7 +14,11 @@ exports.createAnswer = async (req, res) => {
 // READ (all answers)
 exports.getAnswers = async () => {
     try {
-        return await Answer.findAll();
+        return await Answer.findAll({
+            order: [
+                ['id', 'ASC']
+            ]
+        });
     } catch (err) {
         throw new Error(err.message);
     }

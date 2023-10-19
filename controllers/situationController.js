@@ -2,38 +2,58 @@ const { Situation, Topic, Answer, SituationToAnswer } = require('../models');
 
 // CREATE
 exports.createSituation = async (req, res) => {
-    const t = await Situation.sequelize.transaction();
-    const ids = []
+    let transaction;
+
     try {
-        await Answer.create({ text: req.body.answer1 })
-            .then((result) => {ids.push(result.id)
-                Answer.create({ text: req.body.answer2 })
-                    .then((result) => {ids.push(result.id)
-                        Answer.create({ text: req.body.answer3 })
-                            .then(result => {ids.push(result.id)
-                                switch (req.body.inlineRadioOptions) {
-                                    case ("0"): req.body.answerId = result.id - 2;
-                                        break;
-                                    case ("1"): req.body.answerId = result.id - 1;
-                                        break;
-                                    case ("2"): req.body.answerId = result.id;
-                                }
-                            })
-                            .then(() => {
-                                Situation.create(req.body)
-                                .then((result)=>{
-                                       ids.forEach(async element=>{
-                                           await SituationToAnswer.create({situationId : result.id, answerId: element})
-                                       }) 
-                                   })
-                            })
-                            
-                    })
-            })
-        res.redirect('/tables/situations');
-        await t.commit();
+        // Start a transaction
+        transaction = await Situation.sequelize.transaction();
+
+        // Extract values from the request body
+        const { question, correctAnswer, answers, topicId, wrongAnswerDescription } = req.body;
+
+        // Create a situation (without the correct answer ID for now)
+        const situation = await Situation.create({
+            question,
+            // We will update the answerId later once we have created the answers
+            topicId,
+            wrongAnswerDescription
+        }, { transaction });
+
+        // Create answers and keep track of their IDs
+        let createdAnswers = [];
+        for (let text of answers) {
+            const answer = await Answer.create({ text }, { transaction });
+            createdAnswers.push(answer);
+        }
+
+        // Determine the correct answer based on the index from the request
+        const correctAnswerIndex = parseInt(correctAnswer) - 1; // because arrays are zero-indexed
+        if (correctAnswerIndex < 0 || correctAnswerIndex >= createdAnswers.length) {
+            throw new Error('Correct answer index out of range');
+        }
+        const correctAnswerId = createdAnswers[correctAnswerIndex].id;
+
+        // Update the situation with the correct answer ID
+        await situation.update({ answerId: correctAnswerId }, { transaction });
+
+        // Associate answers with the situation
+        await situation.addAnswers(createdAnswers, { transaction });
+
+        // If everything went well, commit the transaction
+        await transaction.commit();
+
+        res.render('pages/situations', {
+            success_msg: 'Situation created successfully',
+            situation: {
+                ...situation.toJSON(), // basic data of the situation
+                answers: createdAnswers // including created answers
+            },
+            situationsList: await exports.getSituations(),
+            error: [],
+        });
     } catch (err) {
-        await t.rollback();
+        // If there's an error, rollback the transaction
+        if (transaction) await transaction.rollback();
         res.status(500).json({ message: err.message });
     }
 };
@@ -51,6 +71,9 @@ exports.getSituations = async () => {
                     model: Answer,
                     as: 'answers'
                 }
+            ],
+            order: [
+                ['id', 'ASC']
             ]
         });
     } catch (err) {
@@ -124,8 +147,18 @@ exports.deleteSituation = async (req, res) => {
     try {
         const situation = await Situation.findByPk(req.params.id);
         if (situation) {
+            // Fetch all answers related to this situation
+            const answers = await situation.getAnswers();
+            if (answers.length > 0) {
+                // Delete each answer related to the situation
+                for (let answer of answers) {
+                    await answer.destroy();
+                }
+            }
+
+            // Now, delete the situation
             await situation.destroy();
-            res.json({ message: 'Situation deleted' });
+            res.json({ message: 'Situation and its answers deleted' });
         } else {
             res.status(404).json({ message: 'Situation not found' });
         }

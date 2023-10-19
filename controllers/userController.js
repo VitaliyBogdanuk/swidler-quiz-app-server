@@ -3,7 +3,11 @@ const { User } = require('../models');
 // List all users
 exports.getUsers = async () => {
     try {
-        return await User.findAll();
+        return await User.findAll({
+            order: [
+                ['id', 'ASC']
+            ]
+        });
     } catch (err) {
         throw new Error(err.message);
     }

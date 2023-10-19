@@ -1,4 +1,4 @@
-<% if (locals.error.length > 0 || error.length > 0) { %>
+<% if ((locals.error && locals.error.length > 0) || (error && error.length > 0)) { %>
     <div class="position-fixed bottom-1 end-1 z-index-2">
         <div class="toast fade hide p-2 mt-2 bg-white show" role="alert" aria-live="assertive" id="dangerToast"
             aria-atomic="true">
@@ -15,7 +15,7 @@
         </div>
     </div>
 <% } %>
-<% if (locals.success_msg.length > 0 || success_msg.length > 0) { %>
+<% if ((locals.success_msg && locals.success_msg.length > 0) || (success_msg && success_msg.length > 0)) { %>
     <div class="position-fixed bottom-1 end-1 z-index-2">
         <div class="toast fade hide p-2 bg-white show" role="alert" aria-live="assertive" id="successToast"
             aria-atomic="true">
@@ -31,3 +31,52 @@
         </div>
     </div>
 <% } %>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function createToastTemplate(type, message) {
+        return `<div class="position-fixed bottom-1 end-1 z-index-2">
+                    <div class="toast fade hide p-2 mt-2 bg-white show" role="alert" aria-live="assertive" id="${type}Toast"
+                        aria-atomic="true">
+                        <div class="toast-header border-0">
+                            <i class="material-icons text-${type} me-2"></i>
+                            <span class="me-auto text-gradient text-${type} font-weight-bold">Помилка</span>
+                            <i class="fas fa-times text-md ms-3 cursor-pointer" data-bs-dismiss="toast"
+                                aria-label="Close"></i>
+                        </div>
+                        <hr class="horizontal dark m-0">
+                        <div class="toast-body">
+                            ${message}
+                        </div>
+                    </div>
+                </div>`;
+    }
+
+    window.displayToast = function(type, message) {
+        let mainElement = document.querySelector('main');
+
+        // Convert string to DOM Node
+        function stringToHTML(str) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(str, 'text/html');
+            return doc.body.firstChild;
+        }
+
+        if (type === 'error') {
+            let toast = createToastTemplate('danger', message);
+            mainElement.appendChild(stringToHTML(toast));
+
+        } else if (type === 'success') {
+            let toast = createToastTemplate('success', message);
+            mainElement.appendChild(stringToHTML(toast));
+        } else {
+            return;
+        }
+    }
+
+
+    // Usage example
+    // displayToast('error', 'This is an error message.');
+    // displayToast('success', 'Operation successful.');
+});
+</script>

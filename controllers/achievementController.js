@@ -14,7 +14,11 @@ exports.createAchievement = async (req, res) => {
 // Separate function to retrieve achievements
 exports.getAchievements = async () => {
     try {
-        return await Achievement.findAll();
+        return await Achievement.findAll({
+            order: [
+                ['id', 'ASC']
+            ]
+        });
     } catch (err) {
         throw new Error(err.message);
     }

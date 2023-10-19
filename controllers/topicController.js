@@ -21,7 +21,10 @@ exports.getTopics = async () => {
                     model: Answer,
                     as: 'answers'
                 }]
-            }]
+            }],
+            order: [
+                ['id', 'ASC']
+            ]
         });
     } catch (err) {
         throw new Error(err.message);
