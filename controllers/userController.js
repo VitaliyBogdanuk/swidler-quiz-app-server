@@ -96,11 +96,25 @@ exports.deleteUser = async (req, res) => {
     }
 };
 
-exports.updateUserTopics = async(req,res) =>{
-    try{
+exports.updateUserTopics = async (req, res) => {
+    try {
         await UserToTopic.create(req.body);
         res.json();
-    } catch (err){
+    } catch (err) {
         res.status(500).json({ message: err.message });
     }
 }
+// Update a user score
+exports.updateUserScore = async (req, res) => {
+    try {
+        const user = await User.findByPk(req.body.id);
+        if (!user) {
+            res.status(404).json({ message: 'User not found' });
+        }
+        await user.update({ id: req.body.id, score: user.score + req.body.score });
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
