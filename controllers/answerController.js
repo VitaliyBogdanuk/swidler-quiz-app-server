@@ -2,10 +2,8 @@ const { Answer } = require('../models');
 
 // CREATE
 exports.createAnswer = async (req, res) => {
-
     try {
-    await Answer.create(req.body);
-
+        await Answer.create(req.body);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
