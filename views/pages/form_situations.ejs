@@ -94,55 +94,55 @@
 <script>
 window.addEventListener("DOMContentLoaded", () => {
 
-function createTemplate(isChecked, radioValue) {
-	return `<div class="input-group input-group-outline mb-3 item d-flex align-items-center">
-				<div class="col-1">
-					<input class="" type="radio" name="correctAnswer" value="${radioValue}" ${isChecked ? 'checked' : ''}>
-				</div>
-				<div class="col-9">
-					<input type="text" placeholder="Enter answer text" class="form-control" name="answers">
-				</div>
-				<div class="col-2">
-					<button class="btn btn-outline-danger remove mb-0 ms-auto d-flex" type="button">X</button>
-				</div>
-			</div>`;
-}
-
-let add = document.getElementById("addAnswer");
-let items = document.getElementById("answers");
-
-add.addEventListener("click", () => {
-	let currentCount = items.querySelectorAll('input[type="radio"][name="correctAnswer"]').length;
-	if (currentCount >= 10) {
-		alert("Maximum Limit Reached");
-	} else {
-		currentCount++;
-		let template = createTemplate(false, currentCount);
-		items.innerHTML += template;
+	function createTemplate(isChecked, radioValue) {
+		return `<div class="input-group input-group-outline mb-3 item d-flex align-items-center">
+					<div class="col-1">
+						<input class="" type="radio" name="correctAnswer" value="${radioValue}" ${isChecked ? 'checked' : ''}>
+					</div>
+					<div class="col-9">
+						<input type="text" placeholder="Enter answer text" class="form-control" name="answers">
+					</div>
+					<div class="col-2">
+						<button class="btn btn-outline-danger remove mb-0 ms-auto d-flex" type="button">X</button>
+					</div>
+				</div>`;
 	}
-});
 
-document.body.addEventListener("click", (e) => {
-	const target = e.target;
-	if (target.classList.contains("remove")) {
+	let add = document.getElementById("addAnswer");
+	let items = document.getElementById("answers");
+
+	add.addEventListener("click", () => {
 		let currentCount = items.querySelectorAll('input[type="radio"][name="correctAnswer"]').length;
-		if (currentCount == 2) {
-			displayToast('error', 'Maximum Limit Reached');
-			return;
+		if (currentCount >= 10) {
+			alert("Maximum Limit Reached");
+		} else {
+			currentCount++;
+			let template = createTemplate(false, currentCount);
+			items.innerHTML += template;
 		}
+	});
 
-		target.closest('.item').remove();
-		
-		// Re-order the radio values
-		reorderRadioValues();
-	}
-});
+	document.body.addEventListener("click", (e) => {
+		const target = e.target;
+		if (target.classList.contains("remove")) {
+			let currentCount = items.querySelectorAll('input[type="radio"][name="correctAnswer"]').length;
+			if (currentCount == 2) {
+				displayToast('error', 'Maximum Limit Reached');
+				return;
+			}
 
-function reorderRadioValues() {
-	const radioButtons = items.querySelectorAll('input[type="radio"][name="correctAnswer"]');
-	for(let j = 0; j < radioButtons.length; j++) {
-		radioButtons[j].value = j + 1;
+			target.closest('.item').remove();
+			
+			// Re-order the radio values
+			reorderRadioValues();
+		}
+	});
+
+	function reorderRadioValues() {
+		const radioButtons = items.querySelectorAll('input[type="radio"][name="correctAnswer"]');
+		for(let j = 0; j < radioButtons.length; j++) {
+			radioButtons[j].value = j + 1;
+		}
 	}
-}
 });
 </script>

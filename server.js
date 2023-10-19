@@ -20,13 +20,17 @@ const topicRoutes = require('./routes/topics');
 
 const indexRoutes = require('./routes/index');
 const authRoutes = require('./routes/auth');
+const apiRoutes = require('./routes/apiRoutes');
 const userRoutes = require('./routes/users');
 
 const app = express();
 app.use(express.static('public'));
 
 if(process.env.NODE_ENV == 'development' ) {
-    app.use(cors());
+    app.use(cors({
+        origin: process.env.APP_URL, // or your frontend server's address
+        credentials: true,  // <-- REQUIRED backend setting
+    }));
 }
 
 // Middleware
@@ -42,12 +46,14 @@ app.use('/', categoryRoutes);
 app.use('/', situationRoutes);
 app.use('/', topicRoutes);
 
-// Set up session middleware
 app.use(session({
     secret: process.env.SESSION_SECRET || 'your_secret_string',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, maxAge: 60000 }  // Set to false unless using HTTPS
+    cookie: { 
+        secure: process.env.NODE_ENV === 'docker', // set to true if you're using https in production
+        maxAge: 60000 
+    }
 }));
 
 app.use(flash());
@@ -67,6 +73,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/auth', authRoutes);
+app.use('/api', apiRoutes);
 app.use('/quiz', quizRoutes);
 app.use('/', indexRoutes);
 app.use('/', userRoutes);

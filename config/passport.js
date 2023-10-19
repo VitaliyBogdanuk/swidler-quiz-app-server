@@ -5,7 +5,11 @@ const User = models.User;
 const bcrypt = require('bcryptjs');
 
 module.exports = (passport) => {
-    passport.use(new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
+    passport.use(new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password'
+      }, 
+      async (email, password, done) => {
         try {
             // Find the user by email
             const user = await User.findOne({ where: { email: email } });
@@ -14,7 +18,7 @@ module.exports = (passport) => {
             if (!user) {
                 return done(null, false, { message: 'That email is not registered' });
             }
-
+            
             // Match password
             const isMatch = await bcrypt.compare(password, user.password);
 
