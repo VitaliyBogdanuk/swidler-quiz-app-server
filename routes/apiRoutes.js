@@ -1,4 +1,5 @@
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
 const apiController = require('../controllers/apiController');
 const { sessionChecker } = require('../middlewares/apiAuth');
@@ -11,6 +12,19 @@ router.post('/register', apiController.register);
 router.post('/login', apiController.login);
 router.post('/forgot-password', apiController.forgotPassword);
 router.post('/logout', apiController.logout);
+// Route for redirecting to Google's OAuth service
+router.get('/auth/google',
+    passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+// The callback route after successful Google authentication
+router.get('/auth/google/callback', 
+    passport.authenticate('google', { failureRedirect: '/login' }),
+    (req, res) => {
+        // Successful authentication, redirect home.
+        res.redirect('/');
+    }
+);
 
 router.get('/categories', sessionChecker, listCategories);
 router.get('/category/:id', sessionChecker, readCategory);
@@ -23,6 +37,7 @@ router.get('/topic/:id', sessionChecker, readTopic);
 
 router.get('/achievements', sessionChecker, listAchievements);
 router.get('/achievement/:id', sessionChecker, readAchievement);
+
 
 // TODO add a route for '/reset/:token' to handle the password reset process.
 
