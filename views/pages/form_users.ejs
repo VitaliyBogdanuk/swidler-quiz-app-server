@@ -29,18 +29,11 @@
 										<label class="form-label">Email</label>
 										<input type="text" class="form-control" name="email">
 									</div>
-                                    <div class="form-check">
-                                        <input  class="form-check-input" type="radio" id="flexRadioDefault1" name="role" value="user" checked>
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                          User
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="flexRadioDefault2" name="role"  value="admin">
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                          Admin
-                                        </label>
-                                      </div>
+                                    <select class="form-control  mb-3 border p-2" aria-label="Role" name="role">
+										<option disabled selected >Select role</option>
+										<option value="user" >user</option>
+                                        <option value="admin" >admin</option>
+									  </select>
                                     <div class="input-group input-group-outline mb-3">
 										<label class="form-label">Password</label>
 										<input type="password" class="form-control" name="password">
