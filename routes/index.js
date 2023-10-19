@@ -157,7 +157,7 @@ router.get('/forms/user', ensureAuthenticated, async (req, res) => {
 router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
     try {
         const situationsList = await situationController.getSituations();
-        res.render('pages/form_users', { user: req.user},{situationsList: situationsList});
+        res.render('pages/form_answers', { user: req.user, situationsList: situationsList});
     } catch (error) {
         // handle error
         console.log(error);

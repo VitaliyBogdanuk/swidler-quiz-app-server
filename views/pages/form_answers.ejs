@@ -20,7 +20,7 @@
 								<h4 class="font-weight-bolder">Fill in answer data</h4>
 							</div>
 							<div class="card-body">
-								<form role="form" action="/user" method="POST">
+								<form role="form" action="/answer" method="POST">
 									<div class="input-group input-group-outline mb-3">
 										<label class="form-label">Answer text</label>
 										<input type="text" class="form-control" name="text">
@@ -29,8 +29,8 @@
 										name="stuationId">
 										<option disabled selected>Select situation</option>
 										<% situationsList.forEach(function(situation) { %>
-											<option value="<%= topic.id %>">
-												<%= situation.title %>
+											<option value="<%= situation.id %>">
+												<%= situation.question %>
 											</option>
 											<% }); %>
 									</select>
@@ -53,5 +53,5 @@
 
 <%- include('../templates/scripts'); -%>
 <script>
-    window.history.pushState({}, '', '/forms/user');
+    window.history.pushState({}, '', '/forms/answer');
 </script>
