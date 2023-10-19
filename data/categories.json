@@ -2,42 +2,42 @@
     {
         "id": "1",
         "title": "Фінансові шахрайства",
-        "image": "caterory_icon_1.svg",
+        "image": "caterory_icon_1.png",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "2",
         "title": "Особиста безпека",
-        "image": "caterory_icon_2.svg",
+        "image": "caterory_icon_2.png",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "3",
         "title": "Соціальні мережі",
-        "image": "caterory_icon_3.svg",
+        "image": "caterory_icon_3.png",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "4",
         "title": "Робота та заробіток",
-        "image": "caterory_icon_4.svg",
+        "image": "caterory_icon_4.png",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "5",
         "title": "Онлайн-освіта",
-        "image": "caterory_icon_5.svg",
+        "image": "caterory_icon_5.png",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "id": "6",
         "title": "Інтернет-знайомства",
-        "image": "caterory_icon_6.svg",
+        "image": "caterory_icon_6.png",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     }
