@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, UserToTopic } = require('../models');
 
 // List all users
 exports.getUsers = async () => {
@@ -95,3 +95,12 @@ exports.deleteUser = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
+exports.updateUserTopics = async(req,res) =>{
+    try{
+        await UserToTopic.create(req.body);
+        res.json();
+    } catch (err){
+        res.status(500).json({ message: err.message });
+    }
+}
