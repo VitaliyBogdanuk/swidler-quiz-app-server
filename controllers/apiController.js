@@ -2,6 +2,7 @@ const { User } = require('../models');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const passport = require('passport');
+const chatGpt = require('../utils/chatGpt');
 
 exports.login = (req, res, next) => {
     passport.authenticate('local', {session: true}, (err, user, info) => {
@@ -85,7 +86,14 @@ exports.logout = (req, res) => {
     res.status(200).json({ message: 'Logged out successfully' });
 };
 
-exports.chat = (req, res) => {
-    console.log(req.body);
-    res.status(200).json({ answer: 'Here is your answer' });
+// In your controller file
+exports.chat = async (req, res) => {
+    console.log('TEST----------------------- req', req.body);
+    try {
+        const answerData = await chatGpt.askChatGpt(req); // Note: We're not passing 'res' anymore
+        res.status(200).json({ answer: answerData });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message }); // Respond with the error message
+    }
 };
