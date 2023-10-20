@@ -1,18 +1,18 @@
 module.exports = (sequelize, DataTypes) => {
-    const CheaterPhone = sequelize.define('CheaterPhone', {
+    const PhoneDescription = sequelize.define('PhoneDescription', {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        phone: DataTypes.STRING,
-        userId: DataTypes.INTEGER,
+        description: DataTypes.STRING,
+        phoneId: DataTypes.INTEGER,
     }, {
         defaultScope: {
             attributes: { exclude: ['createdAt', 'updatedAt'] },
         }
     });
 
-    return CheaterPhone;
+    return PhoneDescription;
 };
