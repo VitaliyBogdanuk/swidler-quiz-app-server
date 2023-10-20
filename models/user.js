@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
         wrongAnswersCount: DataTypes.INTEGER
     }, {
         defaultScope: {
-            attributes: { exclude: ['createdAt', 'updatedAt'] },
+            attributes: { exclude: [ 'role', 'googleId', 'passwordResetExpires', 'passwordResetToken', 'createdAt', 'updatedAt'] },
         },
         hooks: {
             beforeCreate: async (user) => {
@@ -60,6 +60,15 @@ module.exports = (sequelize, DataTypes) => {
 
     User.prototype.isValidPassword = async function(password) {
         return await bcrypt.compare(password, this.password);
+    };
+
+    User.associate = function (models) {
+        User.belongsToMany(models.Topic, {
+            through: models.UserToTopic, // the junction table
+            foreignKey: 'userId',
+            otherKey: 'topicId',
+            as: 'finishedTopics' // alias used in querying
+        });
     };
 
     return User;

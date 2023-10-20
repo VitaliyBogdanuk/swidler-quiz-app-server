@@ -1,4 +1,4 @@
-const { User, UserToTopic } = require('../models');
+const { User, UserToTopic, Topic } = require('../models');
 
 // List all users
 exports.getUsers = async () => {
@@ -46,9 +46,19 @@ exports.createUser = async (req, res) => {
 };
 
 // Read a user
-exports.getUser = async () => {
+exports.getUser = async (req) => {
     try {
-        return await User.findByPk(req.params.id);
+        return await User.findByPk(req.params.id, {
+            attributes: ['id', 'name', 'email', /* other user fields you need */],
+            include: [{
+                model: Topic,
+                as: 'finishedTopics',
+                attributes: ['id'],  // This line ensures that only the 'id' field of the Topic model is returned.
+                through: {
+                    attributes: [], // This line ensures that no attributes of the join table (UserToTopic) are returned.
+                }
+            }]
+        });
     } catch (err) {
         throw new Error(err.message);
     }
@@ -56,7 +66,7 @@ exports.getUser = async () => {
 
 exports.readUser = async (req, res) => {
     try {
-        const user = await exports.getUser();
+        const user = await exports.getUser(req);
         if (user) {
             res.json(user);
         } else {
@@ -99,7 +109,7 @@ exports.deleteUser = async (req, res) => {
 exports.updateUserTopics = async (req, res) => {
     try {
         await UserToTopic.create(req.body);
-        res.json();
+        res.status(200).json({ message: 'Updated successfully'});
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -112,7 +122,7 @@ exports.updateUserScore = async (req, res) => {
             res.status(404).json({ message: 'User not found' });
         }
         await user.update({ id: req.body.id, score: user.score + req.body.score });
-        res.json(user);
+        res.status(200).json({ message: 'Updated successfully', user: user });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -125,7 +135,7 @@ exports.updateUserCorrectAnswer = async (req, res) => {
             res.status(404).json({ message: 'User not found' });
         }
         await user.update({ id: req.params.id, correctAnswersCount: ++user.correctAnswersCount });
-        res.json(user);
+        res.status(200).json({ message: 'Updated successfully', user: user });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -138,7 +148,7 @@ exports.updateUserWrongAnswer = async (req, res) => {
             res.status(404).json({ message: 'User not found' });
         }
         await user.update({ id: req.params.id, wrongAnswersCount: ++user.wrongAnswersCount });
-        res.json(user);
+        res.status(200).json({ message: 'Updated successfully', user: user });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

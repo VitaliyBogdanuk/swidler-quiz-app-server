@@ -7,6 +7,13 @@ const { listCategories, readCategory } = require('../controllers/categoryControl
 const { listAchievements, readAchievement } = require('../controllers/achievementController');
 const { listTopics, readTopic } = require('../controllers/topicController');
 const { listSituations, readSituation } = require('../controllers/situationController');
+const { listUsers, 
+        readUser, 
+        updateUserTopics, 
+        updateUserScore, 
+        updateUserCorrectAnswer, 
+        updateUserWrongAnswer
+    } = require('../controllers/userController');
 
 router.post('/register', apiController.register);
 router.post('/login', apiController.login);
@@ -38,6 +45,12 @@ router.get('/topic/:id', sessionChecker, readTopic);
 router.get('/achievements', sessionChecker, listAchievements);
 router.get('/achievement/:id', sessionChecker, readAchievement);
 
+router.get('/users', sessionChecker, listUsers);
+router.get('/user/:id', sessionChecker, readUser);
+router.post('/user/updateTopics', sessionChecker, updateUserTopics);
+router.post('/user/updateScore', sessionChecker, updateUserScore);
+router.put('/user/countCorrectAnswer/:id', sessionChecker, updateUserCorrectAnswer);
+router.put('/user/countWrongAnswer/:id', sessionChecker, updateUserWrongAnswer);
 
 // TODO add a route for '/reset/:token' to handle the password reset process.
 

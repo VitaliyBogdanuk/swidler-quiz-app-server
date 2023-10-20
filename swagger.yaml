@@ -20,7 +20,7 @@ tags:
   - name: Quiz
     description: Operations related to quiz
 paths:
-  /achievements:
+  /api/achievements:
     get:
       tags:
         - Achievements
@@ -46,31 +46,7 @@ paths:
         '500':
           description: Server error
 
-  /achievement/:
-    post:
-      tags:
-        - Achievements
-      summary: Create a new achievement
-      parameters:
-        - in: body
-          name: achievement
-          description: The achievement to create
-          schema:
-            type: object
-            properties:
-              title:
-                type: string
-              image:
-                type: string
-              scoreRequired:
-                type: integer
-      responses:
-        '200':
-          description: Achievement created successfully
-        '500':
-          description: Server error
-
-  /achievement/{id}:  
+  /api/achievement/{id}:  
     get:
       tags:
         - Achievements
@@ -102,55 +78,7 @@ paths:
         '500':
           description: Server error
 
-    put:
-      tags:
-        - Achievements
-      summary: Update an achievement by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                image:
-                    type: string
-                scoreRequired:
-                  type: integer
-      responses:
-        '200':
-          description: Achievement updated successfully
-        '404':
-          description: Achievement not found
-        '500':
-          description: Server error
-
-    delete:
-      tags:
-        - Achievements
-      summary: Delete an achievement by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Achievement deleted successfully
-        '404':
-          description: Achievement not found
-        '500':
-          description: Server error
-  /answers:
+  /api/answers:
     get:
       tags:
         - Answers
@@ -161,27 +89,7 @@ paths:
         500:
           description: Server error
 
-  /answer/:
-    post:
-      tags:
-        - Answers
-      summary: Create a new answer
-      parameters:
-        - in: body
-          name: answer
-          description: The answer to create
-          schema:
-              type: object
-              properties:
-                text:
-                  type: string
-      responses:
-        200:
-          description: Returns the created answer
-        500:
-          description: Server error
-  
-  /answer/{id}:
+  /api/answer/{id}:
     get:
       tags:
         - Answers
@@ -201,104 +109,7 @@ paths:
         500:
           description: Server error
 
-    put:
-      tags:
-        - Answers
-      summary: Update an answer by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the answer to update
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                text:
-                  type: string
-      responses:
-        200:
-          description: Returns the updated answer
-        404:
-          description: Answer not found
-        500:
-          description: Server error
-
-    delete:
-      tags:
-        - Answers
-      summary: Delete an answer by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the answer to delete
-          schema:
-            type: integer
-      responses:
-        200:
-          description: Answer deleted successfully
-        404:
-          description: Answer not found
-        500:
-          description: Server error
-
-  /auth/login:
-    post:
-      tags:
-        - Auth
-      summary: Authenticate a user
-      description: Authenticate a user based on their authentication provider and ID.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - authProvider
-                - authId
-              properties:
-                authProvider:
-                  type: string
-                  description: The authentication provider (e.g., "google" or "facebook").
-                authId:
-                  type: string
-                  description: The unique ID associated with the user for the given authentication provider.
-      responses:
-        200:
-          description: Returns the authenticated user's data.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  name:
-                    type: string
-                  authProvider:
-                    type: string
-                  authId:
-                    type: string
-                  score:
-                    type: integer
-        404:
-          description: User not found.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-
-  /categories:
+  /api/categories:
     get:
       tags:
         - Categories
@@ -309,29 +120,7 @@ paths:
         500:
           description: Server error
 
-  /category/:
-    post:
-      tags:
-        - Categories
-      summary: Create a new category
-      parameters:
-        - in: body
-          name: category
-          description: The category to create
-          schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                image:
-                    type: string
-      responses:
-        200:
-          description: Returns the created category
-        500:
-          description: Server error
-
-  /category/{id}:
+  /api/category/{id}:
     get:
       tags:
         - Categories
@@ -360,56 +149,7 @@ paths:
         500:
           description: Server error
 
-    put:
-      tags:
-        - Categories
-      summary: Update a category by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the category to update
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                image:
-                    type: string
-      responses:
-        200:
-          description: Returns the updated category
-        404:
-          description: Category not found
-        500:
-          description: Server error
-
-    delete:
-      tags:
-        - Categories
-      summary: Delete a category by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the category to delete
-          schema:
-            type: integer
-      responses:
-        200:
-          description: Category deleted successfully
-        404:
-          description: Category not found
-        500:
-          description: Server error
-
-  /quiz/situations:
+  /api/quiz/situations:
     get:
       tags:
         - Quiz
@@ -418,7 +158,7 @@ paths:
         200:
           description: List of all situations
 
-  /quiz/situations/{id}/answers:
+  /api/quiz/situations/{id}/answers:
     get:
       tags:
         - Quiz
@@ -436,7 +176,7 @@ paths:
         404:
           description: Answers not found for this situation
 
-  /quiz/achievements/{userId}:
+  /api/quiz/achievements/{userId}:
     get:
       tags:
         - Quiz
@@ -454,7 +194,7 @@ paths:
         404:
           description: User not found
 
-  /topics:
+  /api/topics:
     get:
       tags:
         - Topics
@@ -465,31 +205,7 @@ paths:
         500:
           description: Server error
 
-  /topic/:
-    post:
-      tags:
-        - Topics
-      summary: Create a new topic
-      parameters:
-        - in: body
-          name: topic
-          description: The topic to create
-          schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                description:
-                  type: string
-                categoryId:
-                  type: integer
-      responses:
-        200:
-          description: Returns the created topic
-        500:
-          description: Server error
-
-  /topic/{id}:
+  /api/topic/{id}:
     get:
       tags:
         - Topics
@@ -509,176 +225,7 @@ paths:
         500:
           description: Server error
 
-    put:
-      tags:
-        - Topics
-      summary: Update a topic by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the topic to update
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                text:
-                  type: string
-      responses:
-        200:
-          description: Returns the updated topic
-        404:
-          description: Topic not found
-        500:
-          description: Server error
-
-    delete:
-      tags:
-        - Topics
-      summary: Delete a topic by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the topic to delete
-          schema:
-            type: integer
-      responses:
-        200:
-          description: Topic deleted successfully
-        404:
-          description: Topic not found
-        500:
-          description: Server error
-
-  /users:
-    get:
-      tags:
-        - Users
-      summary: Retrieve all users
-      responses:
-        200:
-          description: List of all users
-        500:
-          description: Server error
-
-  /user/:
-    post:
-      tags:
-        - Users
-      summary: Create a new user
-      parameters:
-        - in: body
-          name: user
-          description: The user to create
-          schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                email:
-                  type: string
-                authProvider:
-                  type: string
-                authId:
-                  type: string
-                score:
-                  type: integer
-                correctAnswersCount:
-                  type: integer
-                wrongAnswersCount:
-                  type: integer
-      responses:
-        200:
-          description: Returns the created user
-        500:
-          description: Server error
-
-  /user/{id}:
-    get:
-      tags:
-        - Users
-      summary: Retrieve a single user by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the user to retrieve
-          schema:
-            type: integer
-      responses:
-        200:
-          description: Returns the user with the specified ID
-        404:
-          description: User not found
-        500:
-          description: Server error
-
-    put:
-      tags:
-        - Users
-      summary: Update a user by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the user to update
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                email:
-                  type: string
-                authProvider:
-                  type: string
-                authId:
-                  type: string
-                score:
-                  type: integer
-                correctAnswersCount:
-                  type: integer
-                wrongAnswersCount:
-                  type: integer
-      responses:
-        200:
-          description: Returns the updated user
-        404:
-          description: User not found
-        500:
-          description: Server error
-
-    delete:
-      tags:
-        - Users
-      summary: Delete a user by ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: ID of the user to delete
-          schema:
-            type: integer
-      responses:
-        200:
-          description: User deleted successfully
-        404:
-          description: User not found
-        500:
-          description: Server error
-
-  /situations:
+  /api/situations:
     get:
       tags:
         - Situations
@@ -691,37 +238,7 @@ paths:
         500:
           description: Server error
 
-  /situation/:
-    post:
-      tags:
-        - Situations
-      summary: Create a new situation
-      consumes:
-        - application/json
-      parameters:
-        - in: body
-          name: situation
-          description: The situation to create
-          schema:
-            type: object
-            required:
-              - question
-            properties:
-              question:
-                type: string
-              answerId:
-                type: integer
-              topicId:
-                type: integer
-              wrongAnswerDescription:
-                type: string
-      responses:
-        200:
-          description: Returns the created situation
-        500:
-          description: Server error
-  
-  /situation/{id}:
+  /api/situation/{id}:
     get:
       tags:
         - Situations
@@ -742,54 +259,130 @@ paths:
         500:
           description: Server error
 
-    put:
+  /api/users:
+    get:
       tags:
-        - Situations
-      summary: Update a situation by ID
-      consumes:
-        - application/json
-      parameters:
-        - in: path
-          name: id
-          required: true
-          type: integer
-          description: ID of the situation to update
-        - in: body
-          name: situation
-          description: The situation details to update
-          schema:
-            type: object
-            properties:
-              question:
-                type: string
-              answerId:
-                type: integer
-              topicId:
-                type: integer
-              wrongAnswerDescription:
-                type: string
+        - Users
+      summary: Retrieve all users
       responses:
         200:
-          description: Returns the updated situation
-        404:
-          description: Situation not found
+          description: List of all users
         500:
           description: Server error
 
-    delete:
+  /api/user/{id}:
+    get:
       tags:
-        - Situations
-      summary: Delete a situation by ID
+        - Users
+      summary: Retrieve a single user by ID
       parameters:
         - in: path
           name: id
           required: true
-          type: integer
-          description: ID of the situation to delete
+          description: ID of the user to retrieve
+          schema:
+            type: integer
       responses:
         200:
-          description: Situation deleted successfully
+          description: Returns the user with the specified ID
         404:
-          description: Situation not found
+          description: User not found
         500:
           description: Server error
+
+  /api/user/updateTopics:
+    post:
+      tags:
+        - Users
+      summary: Update user's topics
+      parameters:
+        - in: body
+          name: updateUserTopics
+          description: Allows the addition of new topics to a user's profile.
+          schema:
+            type: object
+            properties:
+              userId:
+                type: integer
+              topicId:
+                type: integer
+      responses:
+        '200':
+          description: Topics updated successfully
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /api/user/updateScore:
+    post:
+      tags:
+        - Users
+      summary: Update a user's score
+      parameters:
+        - in: body
+          name: updateScore
+          description: Updates the score of a specific user based on the provided user ID and score increment.
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              score:
+                type: integer
+      responses:
+        '200':
+          description: User score updated successfully
+        '404':
+          description: User not found
+        '500':
+          description: Internal server error
+
+  /api/user/countCorrectAnswer/{id}:
+    put:
+      tags:
+        - Users
+      summary: Increment user's correct answer count
+      description: Increments the count of correct answers for a specific user by one.
+      operationId: updateUserCorrectAnswer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the user
+      responses:
+        '200':
+          description: User's count of correct answers incremented
+        '404':
+          description: User not found
+        '500':
+          description: Internal server error
+
+  /api/user/countWrongAnswer/{id}:
+    put:
+      tags:
+        - Users
+      summary: Increment user's wrong answer count
+      description: Increments the count of wrong answers for a specific user by one.
+      operationId: updateUserWrongAnswer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the user
+      responses:
+        '200':
+          description: User's count of wrong answers incremented
+        '404':
+          description: User not found
+        '500':
+          description: Internal server error

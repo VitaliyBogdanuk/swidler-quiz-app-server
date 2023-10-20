@@ -2,7 +2,6 @@ const { User } = require('../models');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const passport = require('passport');
-const bcrypt = require('bcryptjs');
 
 exports.login = (req, res, next) => {
     passport.authenticate('local', {session: true}, (err, user, info) => {
@@ -59,7 +58,7 @@ exports.forgotPassword = async (req, res) => {
         const smtpTransport = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: 'v.bogdanuk@gmail.com',
+                user: 'your-email',
                 pass: 'your-password' // make sure to use environment variable in production
             }
         });

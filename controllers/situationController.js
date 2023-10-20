@@ -1,4 +1,4 @@
-const { Situation, Topic, Answer, SituationToAnswer } = require('../models');
+const { Situation, Topic, Answer } = require('../models');
 
 // CREATE
 exports.createSituation = async (req, res) => {
