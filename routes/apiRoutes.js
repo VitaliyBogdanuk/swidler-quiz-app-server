@@ -19,10 +19,10 @@ router.get('/auth/google',
 
 // The callback route after successful Google authentication
 router.get('/auth/google/callback', 
-    passport.authenticate('google', { failureRedirect: '/login' }),
+    passport.authenticate('google', { failureRedirect: 'https://bro.savvydev.tech/auth' }),
     (req, res) => {
         // Successful authentication, redirect home.
-        res.redirect('https://bro.savvydev.tech');
+        res.redirect('https://bro.savvydev.tech/categories');
     }
 );
 
