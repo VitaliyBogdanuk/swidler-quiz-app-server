@@ -22,6 +22,7 @@ const indexRoutes = require('./routes/index');
 const authRoutes = require('./routes/auth');
 const apiRoutes = require('./routes/apiRoutes');
 const userRoutes = require('./routes/users');
+const cheaterPhoneRoutes = require('./routes/cheaterPhones');
 
 const app = express();
 app.use(express.static('public'));
@@ -48,6 +49,7 @@ app.use('/', answerRoutes);
 app.use('/', categoryRoutes);
 app.use('/', situationRoutes);
 app.use('/', topicRoutes);
+app.use('/', cheaterPhoneRoutes)
 
 app.use(session({
     secret: process.env.SESSION_SECRET || 'your_secret_string',

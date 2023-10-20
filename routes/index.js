@@ -7,6 +7,7 @@ const answerController = require('../controllers/answerController');
 const categoryController = require('../controllers/categoryController');
 const situationController = require('../controllers/situationController');
 const topicController = require('../controllers/topicController');
+const cheaterPhoneController = require('../controllers/сheaterPhoneController');
 
 router.get('/', ensureAuthenticated, (req, res) => {
     res.render('index', { session: req.session });
@@ -91,6 +92,18 @@ router.get('/tables/topics', ensureAuthenticated, async (req, res) => {
     try {
         const topicsList = await topicController.getTopics();
         res.render('pages/topics', { user: req.user, topicsList: topicsList });
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
+
+router.get('/tables/cheaterPhones', ensureAuthenticated, async (req, res) => {
+    try {
+        const cheaterPhonesList = await cheaterPhoneController.getCheaterPhones();
+        res.render('pages/cheaterPhones', { user: req.user, cheaterPhonesList: cheaterPhonesList });
     } catch (error) {
         // handle error
         console.log(error);
