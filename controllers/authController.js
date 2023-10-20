@@ -2,7 +2,6 @@ const { User } = require('../models/');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const passport = require('passport');
-const bcrypt = require('bcryptjs');
 
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
@@ -15,14 +14,11 @@ exports.register = async (req, res) => {
             return res.redirect('/auth/register');
         }
 
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 10);
-
         // Create the user
         const user = await User.create({
             name,
             email,
-            password: hashedPassword
+            password
         });
 
         // Authenticate the user
@@ -44,9 +40,6 @@ exports.register = async (req, res) => {
 exports.login = (req, res, next) => {
     passport.authenticate('local', {
         successRedirect: '/dashboard',
-
-        // successRedirect: '/submit',
-
         failureRedirect: '/auth/login',
         failureFlash: true
     })(req, res, next);

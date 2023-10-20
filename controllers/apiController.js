@@ -25,18 +25,15 @@ exports.register = async (req, res) => {
             return res.status(400).json({ error: 'Email already exists' });
         }
 
-        bcrypt.hash(req.body.password, 10, async (error, hashedPassword)=> {
-            const user = await User.create({
-                name,
-                email,
-                password: hashedPassword
-            });
+        const user = await User.create({
+            name,
+            email,
+            password
+        });
 
-            // Send the user information back to the frontend
-            return res.status(201).json({ message: 'User created successfully', user });
-        })
-
-        // const hashedPassword = await bcrypt.hash(password, 10);
+        // Send the user information back to the frontend
+        return res.status(201).json({ message: 'User created successfully', user });
+      
     } catch (err) {
         console.error(err);
         return res.status(500).json({ error: 'Internal server error' });
