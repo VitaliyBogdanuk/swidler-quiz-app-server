@@ -22,7 +22,7 @@ router.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/login' }),
     (req, res) => {
         // Successful authentication, redirect home.
-        res.redirect('/');
+        res.redirect('https://bro.savvydev.tech');
     }
 );
 
