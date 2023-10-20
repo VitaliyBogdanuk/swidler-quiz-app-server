@@ -84,3 +84,8 @@ exports.logout = (req, res) => {
     req.logout();
     res.status(200).json({ message: 'Logged out successfully' });
 };
+
+exports.chat = (req, res) => {
+    console.log(req.body);
+    res.status(200).json({ answer: 'Here is your answer' });
+};

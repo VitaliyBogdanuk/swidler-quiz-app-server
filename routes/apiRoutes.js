@@ -33,6 +33,8 @@ router.get('/auth/google/callback',
     }
 );
 
+router.post('/foxChat', sessionChecker, apiController.chat);
+
 router.get('/categories', sessionChecker, listCategories);
 router.get('/category/:id', sessionChecker, readCategory);
 
