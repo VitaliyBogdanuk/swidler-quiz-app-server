@@ -29,6 +29,7 @@ Swidler Quiz App is a Node.js application that provides a backend API for quiz f
    - Update the `config/config.json` file with your database credentials.
    - Create your `.env` file based on `.env_template`
    - Update the `.env` file with your settings.
+   - Ask your teamlead about GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET
 
 4. **Run Migrations and Seeds**:
    ```bash
