@@ -98,7 +98,7 @@ exports.readCheaterPhone = async (req, res) => {
     try {
         const cheaterPhone = await exports.getCheaterPhone(req);
         if (cheaterPhone) {
-            res.json(cheaterPhone);
+            res.status(200).json(cheaterPhone);
         } else {
             res.status(404).json({ message: 'Phone not found' });
         }
@@ -113,7 +113,7 @@ exports.updateCheaterPhone = async (req, res) => {
         const cheaterPhone = await CheaterPhone.findByPk(req.params.id);
         if (cheaterPhone) {
             await cheaterPhone.update(req.body);
-            res.json(cheaterPhone);
+            res.status(200).json(cheaterPhone);
         } else {
             res.status(404).json({ message: 'Phone not found' });
         }
