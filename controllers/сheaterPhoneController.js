@@ -68,7 +68,7 @@ exports.listCheaterPhones = async (req, res) => {
     try {
         const cheaterPhones = await exports.getCheaterPhones();
         if (cheaterPhones) {
-            res.json(cheaterPhones);
+            res.status(200).json(cheaterPhones);
         } else {
             res.status(404).json({ message: 'Phones not found' });
         }
@@ -98,7 +98,7 @@ exports.readCheaterPhone = async (req, res) => {
     try {
         const cheaterPhone = await exports.getCheaterPhone(req);
         if (cheaterPhone) {
-            res.json(cheaterPhone);
+            res.status(200).json(cheaterPhone);
         } else {
             res.status(404).json({ message: 'Phone not found' });
         }
@@ -113,7 +113,7 @@ exports.updateCheaterPhone = async (req, res) => {
         const cheaterPhone = await CheaterPhone.findByPk(req.params.id);
         if (cheaterPhone) {
             await cheaterPhone.update(req.body);
-            res.json(cheaterPhone);
+            res.status(200).json(cheaterPhone);
         } else {
             res.status(404).json({ message: 'Phone not found' });
         }
@@ -135,7 +135,7 @@ exports.deleteCheaterPhone = async (req, res) => {
         if (cheaterPhone) {
             await cheaterPhone.destroy();
             // req.flash('success_msg', 'Category successfully deleted!'); // TODO
-            res.json({ message: 'Phone deleted' });
+            res.status(200).json({ message: 'Phone deleted' });
         } else {
             req.flash('error', 'Phone deleted');
             res.status(404).json({ message: 'Category not found' });
