@@ -10,8 +10,9 @@ exports.createCheaterPhoneAdmin = async (req, res) => {
         if (!existingPhone) {
             const cheaterPhone = await CheaterPhone.create(req.body);
             await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id });
+        } else {
+            await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
         }
-        else await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
         await transaction.commit();
         res.render('pages/cheaterPhones', {
             success_msg: 'Phone created successfully',
@@ -29,15 +30,16 @@ exports.createCheaterPhoneAdmin = async (req, res) => {
 exports.createCheaterPhoneUser = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
     try {
-        req.params.phone = req.body.phone
+        req.params.phone = req.body.phone;
         const existingPhone = await exports.getCheaterPhone(req);
         if (!existingPhone) {
             const cheaterPhone = await CheaterPhone.create(req.body);
             await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id });
+        } else {
+            await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
         }
-        else await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
         await transaction.commit();
-        res.json('Success');
+        res.status(404)({ message: "Cheater added succesfully" });
     } catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
