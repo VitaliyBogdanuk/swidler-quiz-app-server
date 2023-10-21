@@ -13,6 +13,18 @@ module.exports = (sequelize, DataTypes) => {
             attributes: { exclude: ['createdAt', 'updatedAt'] },
         }
     });
-
+    CheaterPhone.associate = function (models) {
+        CheaterPhone.belongsTo(models.User, {
+            foreignKey: 'userId',
+            as: 'user'
+        });
+        CheaterPhone.hasMany(models.PhoneDescription, {
+            foreignKey: 'phoneId',
+            as: 'descriptions',
+            onDelete: 'cascade', 
+            hooks:true
+        });
+    }
+    
     return CheaterPhone;
 };

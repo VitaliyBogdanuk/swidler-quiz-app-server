@@ -70,6 +70,14 @@ module.exports = (sequelize, DataTypes) => {
             as: 'finishedTopics' // alias used in querying
         });
     };
+    User.associate = function (models) {
+        // associations can be defined here
+        User.hasMany(models.CheaterPhone, {
+            foreignKey: 'userId',
+            as: 'user'
+        });
+    };
+
 
     return User;
 };
