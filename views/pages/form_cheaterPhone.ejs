@@ -1,0 +1,61 @@
+<%- include('../templates/head'); -%>
+<%- include('../templates/sidebar', {view: 'Cheater phones' }); -%>
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+	<!-- Navbar -->
+	<%- include('../templates/navbar', {breadcrumbs: 'Create cheater phone' }); -%>
+	<!-- End Navbar -->
+	<div class="container-fluid py-4">
+		<div class="row">
+			<div class="col-12">
+				<div class="card my-4">
+					<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+						<div
+							class="d-flex justify-content-lg-between bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+							<h6 class="text-white text-capitalize ps-3">Create cheater phone</h6>
+						</div>
+					</div>
+					<div class="card-body px-0 pb-2">
+						<div class="card card-plain">
+							<div class="card-header">
+								<h4 class="font-weight-bolder">Enter a cheater phone</h4>
+							</div>
+							<div class="card-body">
+								<form role="form" action="/cheaterPhone" method="POST">
+									<div class="input-group input-group-outline mb-3">
+										<label class="form-label">Phone</label>
+										<input type="text" class="form-control" name="phone">
+									</div>
+									<div class="input-group input-group-outline mb-3">
+										<label class="form-label"></label>
+										<textarea rows="7" type="text" class="form-control" name="description"
+											placeholder="Question"></textarea>
+									</div>
+									<select class="form-control  mb-3 border p-2" aria-label="Topic"
+										name="userId">
+										<option disabled selected>Select user</option>
+										<% usersList.forEach(function(user) { %>
+											<option value="<%= user.id %>">
+												<%= user.name %>
+											</option>
+											<% }); %>
+									</select>
+									<div class="text-center">
+										<button
+											class="btn btn-lg bg-gradient-primary btn-lg w-25 mt-4 mb-0">SAVE</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%- include('../templates/footer'); -%>
+	</div>
+	<%- include('../templates/messages'); -%>
+</main>
+
+<%- include('../templates/scripts'); -%>
+<script>
+	window.history.pushState({}, '', '/tables/cheaterPhones');
+</script>

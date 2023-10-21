@@ -178,4 +178,15 @@ router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
         res.redirect('back');
     }
 });
+router.get('/forms/cheaterPhone', ensureAuthenticated, async (req, res) => {
+    try {
+        const usersList = await userController.getUsers();
+        res.render('pages/form_cheaterPhone', { user: req.user, usersList: usersList});
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
 module.exports = router;

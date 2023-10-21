@@ -13,6 +13,12 @@ module.exports = (sequelize, DataTypes) => {
             attributes: { exclude: ['createdAt', 'updatedAt'] },
         }
     });
+    PhoneDescription.associate = function (models) {
+        PhoneDescription.belongsTo(models.CheaterPhone, {
+            foreignKey: 'phoneId',
+            as: 'descriptions'
+        })
 
+    }
     return PhoneDescription;
 };

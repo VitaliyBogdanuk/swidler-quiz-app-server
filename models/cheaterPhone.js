@@ -18,6 +18,13 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'userId',
             as: 'user'
         });
+        CheaterPhone.hasMany(models.PhoneDescription, {
+            foreignKey: 'phoneId',
+            as: 'descriptions',
+            onDelete: 'cascade', 
+            hooks:true
+        });
     }
+    
     return CheaterPhone;
 };

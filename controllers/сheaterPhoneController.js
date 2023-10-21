@@ -1,17 +1,20 @@
-const { CheaterPhone, User } = require('../models');
+const { CheaterPhone, User, PhoneDescription } = require('../models');
 
 
 // CREATE
 exports.createCheaterPhone = async (req, res) => {
+    transaction = await CheaterPhone.sequelize.transaction();
     try {
-        await CheaterPhone.create(req.body);
-        // req.flash('success_msg', 'Category successfully created!'); // TODO
+        const cheaterPhone = await CheaterPhone.create(req.body);
+        await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id })
+        await transaction.commit();
         res.render('pages/cheaterPhones', {
-            success_msg: 'Cheater phone created successfully',
+            success_msg: 'Phone created successfully',
             cheaterPhonesList: await exports.getCheaterPhones(),
             error: []
         });
-    } catch (err) {
+    }  catch (err) {
+        await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.render('pages/form_cheaterPhone', {
             error: err
@@ -53,12 +56,13 @@ exports.listCheaterPhones = async (req, res) => {
 // READ (single category)
 exports.getCheaterPhone = async (req) => {
     try {
-        return await CheaterPhone.findOne({where: { phone: req.params.phone }}, {
+        return await CheaterPhone.findOne({
             include: [{
-                model: User,
-                as: 'user',
-                    attributes: ['id', 'name', 'email']
-            }]
+                model: PhoneDescription,
+                as: 'descriptions',
+                attributes: ['description'] 
+            }],
+            where: { phone: req.params.phone }
         });
     } catch (err) {
         throw new Error(err.message);
