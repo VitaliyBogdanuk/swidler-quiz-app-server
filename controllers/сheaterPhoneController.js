@@ -68,7 +68,7 @@ exports.listCheaterPhones = async (req, res) => {
     try {
         const cheaterPhones = await exports.getCheaterPhones();
         if (cheaterPhones) {
-            res.json(cheaterPhones);
+            res.status(200).json(cheaterPhones);
         } else {
             res.status(404).json({ message: 'Phones not found' });
         }
@@ -135,7 +135,7 @@ exports.deleteCheaterPhone = async (req, res) => {
         if (cheaterPhone) {
             await cheaterPhone.destroy();
             // req.flash('success_msg', 'Category successfully deleted!'); // TODO
-            res.json({ message: 'Phone deleted' });
+            res.status(200).json({ message: 'Phone deleted' });
         } else {
             req.flash('error', 'Phone deleted');
             res.status(404).json({ message: 'Category not found' });
