@@ -30,15 +30,8 @@
 										<textarea rows="7" type="text" class="form-control" name="description"
 											placeholder="Question"></textarea>
 									</div>
-									<select class="form-control  mb-3 border p-2" aria-label="Topic"
-										name="userId">
-										<option disabled selected>Select user</option>
-										<% usersList.forEach(function(user) { %>
-											<option value="<%= user.id %>">
-												<%= user.name %>
-											</option>
-											<% }); %>
-									</select>
+									<input type="hidden" value="1" name="userId">
+									
 									<div class="text-center">
 										<button
 											class="btn btn-lg bg-gradient-primary btn-lg w-25 mt-4 mb-0">SAVE</button>
