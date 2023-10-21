@@ -7,7 +7,7 @@ exports.createFeedback = async (req, res) => {
         const feedback = await Feedback.create(req.body);
         // req.flash('success_msg', 'Category successfully created!'); // TODO
         if (feedback)
-            res.json(feedback);
+            res.status(200).json(feedback);
     } catch (err) {
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.redirect('back'); // assuming '/form/category' is where your creation form is located
@@ -27,7 +27,7 @@ exports.listFeedbacks = async (req, res) => {
     try {
         const feedbacks = await exports.getFeedbacks();
         if (feedbacks) {
-            res.json(feedbacks);
+            res.status(200).json(feedbacks);
         } else {
             res.status(404).json({ message: 'Feedbacks not found' });
         }
@@ -43,7 +43,7 @@ exports.deleteFeedback = async (req, res) => {
         if (feedback) {
             await feedback.destroy();
             // req.flash('success_msg', 'Category successfully deleted!'); // TODO
-            res.json({ message: 'Feedback deleted' });
+            res.status(200).json({ message: 'Feedback deleted' });
         } else {
             req.flash('error', 'Feedback not found');
             res.status(404).json({ message: 'Feedback not found' });
