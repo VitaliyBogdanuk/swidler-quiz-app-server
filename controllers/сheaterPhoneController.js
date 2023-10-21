@@ -39,7 +39,7 @@ exports.createCheaterPhoneUser = async (req, res) => {
             await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
         }
         await transaction.commit();
-        res.status(200).json({ message: "Cheater added succesfully" });
+        res.status(200).json({message: "Cheater added succesfully"});
     } catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO

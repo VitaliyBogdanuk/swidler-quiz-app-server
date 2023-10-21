@@ -8,6 +8,7 @@ const categoryController = require('../controllers/categoryController');
 const situationController = require('../controllers/situationController');
 const topicController = require('../controllers/topicController');
 const cheaterPhoneController = require('../controllers/сheaterPhoneController');
+const feedbackController = require('../controllers/feedbackController');
 
 router.get('/', ensureAuthenticated, (req, res) => {
     res.render('index', { session: req.session });
@@ -104,6 +105,18 @@ router.get('/tables/cheaterPhones', ensureAuthenticated, async (req, res) => {
     try {
         const cheaterPhonesList = await cheaterPhoneController.getCheaterPhones();
         res.render('pages/cheaterPhones', { user: req.user, cheaterPhonesList: cheaterPhonesList });
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
+
+router.get('/tables/feedbacks', ensureAuthenticated, async (req, res) => {
+    try {
+        const feedbacksList = await feedbackController.getFeedbacks();
+        res.render('pages/feedbacks', { user: req.user, feedbacksList: feedbacksList });
     } catch (error) {
         // handle error
         console.log(error);
