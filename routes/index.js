@@ -118,7 +118,7 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
 
 router.get('/forms/category', ensureAuthenticated, async (req, res) => {
     try {
-        res.render('pages/form_category',{ user: req.user });
+        res.render('pages/form_category', { user: req.user });
     } catch (error) {
         // handle error
         console.log(error);
@@ -128,7 +128,7 @@ router.get('/forms/category', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
     try {
-        res.render('pages/form_achievements', { user: req.user});
+        res.render('pages/form_achievements', { user: req.user });
     } catch (error) {
         // handle error
         console.log(error);
@@ -137,7 +137,8 @@ router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
     }
 });
 router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
-    try {const categoriesList = await categoryController.getCategories();
+    try {
+        const categoriesList = await categoryController.getCategories();
         res.render('pages/form_topics', { user: req.user, categoriesList: categoriesList });
     } catch (error) {
         // handle error
@@ -147,7 +148,8 @@ router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
     }
 });
 router.get('/forms/situation', ensureAuthenticated, async (req, res) => {
-    try {const answersList = await answerController.getAnswers();
+    try {
+        const answersList = await answerController.getAnswers();
         const topicsList = await topicController.getTopics();
         res.render('pages/form_situations', { user: req.user, answersList: answersList, topicsList: topicsList });
     } catch (error) {
@@ -159,7 +161,7 @@ router.get('/forms/situation', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/user', ensureAuthenticated, async (req, res) => {
     try {
-        res.render('pages/form_users', { user: req.user});
+        res.render('pages/form_users', { user: req.user });
     } catch (error) {
         // handle error
         console.log(error);
@@ -170,7 +172,7 @@ router.get('/forms/user', ensureAuthenticated, async (req, res) => {
 router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
     try {
         const situationsList = await situationController.getSituations();
-        res.render('pages/form_answers', { user: req.user, situationsList: situationsList});
+        res.render('pages/form_answers', { user: req.user, situationsList: situationsList });
     } catch (error) {
         // handle error
         console.log(error);
@@ -181,7 +183,7 @@ router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
 router.get('/forms/cheaterPhone', ensureAuthenticated, async (req, res) => {
     try {
         const usersList = await userController.getUsers();
-        res.render('pages/form_cheaterPhone', { user: req.user, usersList: usersList});
+        res.render('pages/form_cheaterPhone', { user: req.user, usersList: usersList });
     } catch (error) {
         // handle error
         console.log(error);
