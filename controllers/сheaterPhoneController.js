@@ -4,10 +4,11 @@ const { CheaterPhone, User, PhoneDescription } = require('../models');
 // CREATE
 exports.createCheaterPhoneAdmin = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
-    try { req.params.phone = req.body.phone
+    try {
+        req.params.phone = req.body.phone
         const existingPhone = await exports.getCheaterPhone(req);
-        if (!existingPhone)
-          {  const cheaterPhone = await CheaterPhone.create(req.body);
+        if (!existingPhone) {
+            const cheaterPhone = await CheaterPhone.create(req.body);
             await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id });
         }
         else await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
@@ -27,11 +28,11 @@ exports.createCheaterPhoneAdmin = async (req, res) => {
 };
 exports.createCheaterPhoneUser = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
-    try { 
+    try {
         req.params.phone = req.body.phone
         const existingPhone = await exports.getCheaterPhone(req);
-        if (!existingPhone)
-          {  const cheaterPhone = await CheaterPhone.create(req.body);
+        if (!existingPhone) {
+            const cheaterPhone = await CheaterPhone.create(req.body);
             await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id });
         }
         else await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
@@ -84,7 +85,7 @@ exports.getCheaterPhone = async (req) => {
                 attributes: ['description']
             }],
             where: { phone: req.params.phone }
-            
+
         });
     } catch (err) {
         throw new Error(err.message);
