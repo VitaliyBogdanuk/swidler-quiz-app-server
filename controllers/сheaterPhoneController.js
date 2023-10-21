@@ -2,18 +2,22 @@ const { CheaterPhone, User, PhoneDescription } = require('../models');
 
 
 // CREATE
-exports.createCheaterPhone = async (req, res) => {
+exports.createCheaterPhoneAdmin = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
-    try {
-        const cheaterPhone = await CheaterPhone.create(req.body);
-        await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id })
+    try { req.params.phone = req.body.phone
+        const existingPhone = await exports.getCheaterPhone(req);
+        if (!existingPhone)
+          {  const cheaterPhone = await CheaterPhone.create(req.body);
+            await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id });
+        }
+        else await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
         await transaction.commit();
         res.render('pages/cheaterPhones', {
             success_msg: 'Phone created successfully',
             cheaterPhonesList: await exports.getCheaterPhones(),
             error: []
         });
-    }  catch (err) {
+    } catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.render('pages/form_cheaterPhone', {
@@ -21,7 +25,24 @@ exports.createCheaterPhone = async (req, res) => {
         });
     }
 };
-
+exports.createCheaterPhoneUser = async (req, res) => {
+    transaction = await CheaterPhone.sequelize.transaction();
+    try { 
+        req.params.phone = req.body.phone
+        const existingPhone = await exports.getCheaterPhone(req);
+        if (!existingPhone)
+          {  const cheaterPhone = await CheaterPhone.create(req.body);
+            await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id });
+        }
+        else await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
+        await transaction.commit();
+        res.json('Success');
+    } catch (err) {
+        await transaction.rollback();
+        // req.flash('error', 'Creation failed: ' + err.message); // TODO
+        res.json(err);
+    }
+};
 // READ (all categories)
 exports.getCheaterPhones = async () => {
     try {
@@ -29,7 +50,7 @@ exports.getCheaterPhones = async () => {
             include: [{
                 model: User,
                 as: 'user',
-                attributes: ['id','name','email'] 
+                attributes: ['id', 'name', 'email']
             }],
             order: [
                 ['id', 'ASC']
@@ -60,9 +81,10 @@ exports.getCheaterPhone = async (req) => {
             include: [{
                 model: PhoneDescription,
                 as: 'descriptions',
-                attributes: ['description'] 
+                attributes: ['description']
             }],
             where: { phone: req.params.phone }
+            
         });
     } catch (err) {
         throw new Error(err.message);
