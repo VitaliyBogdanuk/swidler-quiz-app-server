@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  title: Swidler API's documentation
+  title: BRO API's documentation
   version: 1.0.0
 tags:
   - name: Achievements
