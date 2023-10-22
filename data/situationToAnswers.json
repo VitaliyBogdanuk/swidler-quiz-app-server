@@ -1219,19 +1219,145 @@
     },
     {
         "situationId": "69",
-        "answerId": "195",
+        "answerId": "198",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "situationId": "69",
-        "answerId": "196",
+        "answerId": "199",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
         "situationId": "69",
-        "answerId": "197",
+        "answerId": "200",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "70",
+        "answerId": "201",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "70",
+        "answerId": "202",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "70",
+        "answerId": "203",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "71",
+        "answerId": "204",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "71",
+        "answerId": "205",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "71",
+        "answerId": "206",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "72",
+        "answerId": "207",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "72",
+        "answerId": "208",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "72",
+        "answerId": "209",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "73",
+        "answerId": "210",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "73",
+        "answerId": "211",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "73",
+        "answerId": "212",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "74",
+        "answerId": "213",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "74",
+        "answerId": "214",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "74",
+        "answerId": "215",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "75",
+        "answerId": "216",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "75",
+        "answerId": "217",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "75",
+        "answerId": "218",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "76",
+        "answerId": "219",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "76",
+        "answerId": "220",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "76",
+        "answerId": "221",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     }
