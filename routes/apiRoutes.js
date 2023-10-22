@@ -17,7 +17,7 @@ const { listUsers,
 
 const { listCheaterPhones, 
         createCheaterPhoneUser, 
-        readCheaterPhone } = require('../controllers/сheaterPhoneController');
+        readCheaterPhone } = require('../controllers/cheaterPhoneController');
 
 const { createFeedback } = require('../controllers/feedbackController');
 

@@ -7,7 +7,7 @@ const answerController = require('../controllers/answerController');
 const categoryController = require('../controllers/categoryController');
 const situationController = require('../controllers/situationController');
 const topicController = require('../controllers/topicController');
-const cheaterPhoneController = require('../controllers/сheaterPhoneController');
+const cheaterPhoneController = require('../controllers/cheaterPhoneController');
 const feedbackController = require('../controllers/feedbackController');
 
 router.get('/', ensureAuthenticated, (req, res) => {

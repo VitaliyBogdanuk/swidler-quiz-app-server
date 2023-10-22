@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { listCheaterPhones, createCheaterPhoneAdmin, createCheaterPhoneUser, readCheaterPhone, updateCheaterPhone, deleteCheaterPhone } = require('../controllers/сheaterPhoneController');
+const { listCheaterPhones, createCheaterPhoneAdmin, createCheaterPhoneUser, readCheaterPhone, updateCheaterPhone, deleteCheaterPhone } = require('../controllers/cheaterPhoneController');
 
 router.get('/cheaterPhones', listCheaterPhones);
 router.post('/cheaterPhone', createCheaterPhoneUser);
