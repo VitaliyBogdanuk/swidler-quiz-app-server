@@ -50,7 +50,11 @@ exports.getTopic = async (req) => {
         return await Topic.findByPk(req.params.id, {
             include: [{
                 model: Situation,
-                as: 'situations'
+                as: 'situations',
+                include: [{
+                    model: Answer,
+                    as: 'answers'
+                }]
             }]
         });
     } catch (err) {
