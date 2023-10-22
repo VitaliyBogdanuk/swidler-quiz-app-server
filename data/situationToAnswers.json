@@ -336,11 +336,11 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "20",
+        "situationId": "19",
         "answerId": "57",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
+    }
     {
         "situationId": "20",
         "answerId": "58",
@@ -354,7 +354,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "21",
+        "situationId": "20",
         "answerId": "60",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -372,7 +372,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "22",
+        "situationId": "21",
         "answerId": "63",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -390,7 +390,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "23",
+        "situationId": "22",
         "answerId": "66",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -408,7 +408,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "24",
+        "situationId": "23",
         "answerId": "69",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -426,7 +426,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "25",
+        "situationId": "24",
         "answerId": "72",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -444,7 +444,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "26",
+        "situationId": "25",
         "answerId": "75",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -462,7 +462,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "27",
+        "situationId": "26",
         "answerId": "78",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -480,7 +480,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "28",
+        "situationId": "27",
         "answerId": "81",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -498,7 +498,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "29",
+        "situationId": "28",
         "answerId": "84",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -516,7 +516,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "30",
+        "situationId": "29",
         "answerId": "87",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -534,7 +534,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "31",
+        "situationId": "30",
         "answerId": "90",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -552,7 +552,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "32",
+        "situationId": "31",
         "answerId": "93",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -570,7 +570,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "33",
+        "situationId": "32",
         "answerId": "96",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -588,7 +588,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "34",
+        "situationId": "33",
         "answerId": "99",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -606,7 +606,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "35",
+        "situationId": "34",
         "answerId": "102",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -624,7 +624,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "36",
+        "situationId": "35",
         "answerId": "105",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -642,7 +642,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "37",
+        "situationId": "36",
         "answerId": "108",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -660,7 +660,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "38",
+        "situationId": "37",
         "answerId": "111",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -678,7 +678,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "39",
+        "situationId": "38",
         "answerId": "114",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -696,7 +696,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "40",
+        "situationId": "39",
         "answerId": "117",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -714,7 +714,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "41",
+        "situationId": "40",
         "answerId": "120",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -732,7 +732,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "42",
+        "situationId": "41",
         "answerId": "123",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -750,7 +750,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "43",
+        "situationId": "42",
         "answerId": "126",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -768,7 +768,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "44",
+        "situationId": "43",
         "answerId": "129",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -786,7 +786,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "45",
+        "situationId": "44",
         "answerId": "132",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -804,7 +804,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "46",
+        "situationId": "45",
         "answerId": "135",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -822,7 +822,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "47",
+        "situationId": "46",
         "answerId": "138",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -840,7 +840,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "48",
+        "situationId": "47",
         "answerId": "141",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -858,7 +858,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "49",
+        "situationId": "48",
         "answerId": "144",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -876,7 +876,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "50",
+        "situationId": "49",
         "answerId": "147",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -894,7 +894,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "51",
+        "situationId": "50",
         "answerId": "150",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -912,7 +912,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "52",
+        "situationId": "51",
         "answerId": "153",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -930,7 +930,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "53",
+        "situationId": "52",
         "answerId": "156",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -948,7 +948,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "54",
+        "situationId": "53",
         "answerId": "159",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -966,7 +966,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "55",
+        "situationId": "54",
         "answerId": "162",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -984,7 +984,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "56",
+        "situationId": "55",
         "answerId": "165",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -1002,7 +1002,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "57",
+        "situationId": "56",
         "answerId": "168",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -1020,7 +1020,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "58",
+        "situationId": "57",
         "answerId": "171",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -1038,7 +1038,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "59",
+        "situationId": "58",
         "answerId": "174",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -1056,7 +1056,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "60",
+        "situationId": "59",
         "answerId": "177",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -1074,7 +1074,7 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "61",
+        "situationId": "60",
         "answerId": "180",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
@@ -1092,272 +1092,278 @@
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "62",
-        "answerId": "180",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "situationId": "62",
-        "answerId": "181",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "situationId": "62",
-        "answerId": "182",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "situationId": "63",
+        "situationId": "61",
         "answerId": "183",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "63",
+        "situationId": "62",
         "answerId": "184",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "63",
+        "situationId": "62",
         "answerId": "185",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "64",
+        "situationId": "62",
         "answerId": "186",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "64",
+        "situationId": "63",
         "answerId": "187",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "64",
+        "situationId": "63",
         "answerId": "188",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "65",
+        "situationId": "63",
         "answerId": "189",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "65",
+        "situationId": "64",
         "answerId": "190",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "65",
+        "situationId": "64",
         "answerId": "191",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "66",
-        "answerId": "189",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "situationId": "66",
-        "answerId": "190",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "situationId": "66",
-        "answerId": "191",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "situationId": "67",
+        "situationId": "64",
         "answerId": "192",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "67",
+        "situationId": "65",
         "answerId": "193",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "67",
+        "situationId": "65",
         "answerId": "194",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "68",
+        "situationId": "65",
         "answerId": "195",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "68",
+        "situationId": "66",
         "answerId": "196",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "68",
+        "situationId": "66",
         "answerId": "197",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "69",
+        "situationId": "66",
         "answerId": "198",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "69",
+        "situationId": "67",
         "answerId": "199",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "69",
+        "situationId": "67",
         "answerId": "200",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "70",
+        "situationId": "67",
         "answerId": "201",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "70",
+        "situationId": "68",
         "answerId": "202",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "70",
+        "situationId": "68",
         "answerId": "203",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "71",
+        "situationId": "68",
         "answerId": "204",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "71",
+        "situationId": "69",
         "answerId": "205",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "71",
+        "situationId": "69",
         "answerId": "206",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "72",
+        "situationId": "69",
         "answerId": "207",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "72",
+        "situationId": "70",
         "answerId": "208",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "72",
+        "situationId": "70",
         "answerId": "209",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "73",
+        "situationId": "70",
         "answerId": "210",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "73",
+        "situationId": "71",
         "answerId": "211",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "73",
+        "situationId": "71",
         "answerId": "212",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "74",
+        "situationId": "71",
         "answerId": "213",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "74",
+        "situationId": "72",
         "answerId": "214",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "74",
+        "situationId": "72",
         "answerId": "215",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "75",
+        "situationId": "72",
         "answerId": "216",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "75",
+        "situationId": "73",
         "answerId": "217",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "75",
+        "situationId": "73",
         "answerId": "218",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "76",
+        "situationId": "73",
         "answerId": "219",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "76",
+        "situationId": "74",
         "answerId": "220",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     },
     {
-        "situationId": "76",
+        "situationId": "74",
         "answerId": "221",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "74",
+        "answerId": "222",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "75",
+        "answerId": "223",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "75",
+        "answerId": "224",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "75",
+        "answerId": "225",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "76",
+        "answerId": "226",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "76",
+        "answerId": "227",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "situationId": "76",
+        "answerId": "228",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     }
