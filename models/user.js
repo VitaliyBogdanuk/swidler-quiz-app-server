@@ -35,7 +35,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             unique: true
         },
-        score: DataTypes.INTEGER,
+        score: {
+            type: DataTypes.INTEGER,
+            defaultValue: '50'
+        },
         correctAnswersCount: DataTypes.INTEGER,
         wrongAnswersCount: DataTypes.INTEGER
     }, {
