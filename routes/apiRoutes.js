@@ -15,23 +15,37 @@ const { listUsers,
         updateUserWrongAnswer
     } = require('../controllers/userController');
 
+const { listCheaterPhones, 
+        createCheaterPhoneUser, 
+        readCheaterPhone } = require('../controllers/cheaterPhoneController');
+
+const { createFeedback } = require('../controllers/feedbackController');
+
+router.post('/feedback', createFeedback);
+
+router.get('/cheaterPhones', listCheaterPhones);
+router.post('/cheaterPhone', createCheaterPhoneUser);
+router.get('/cheaterPhone/:phone', readCheaterPhone);
+
 router.post('/register', apiController.register);
 router.post('/login', apiController.login);
 router.post('/forgot-password', apiController.forgotPassword);
 router.post('/logout', apiController.logout);
+
+//TODO Google Auth
 // Route for redirecting to Google's OAuth service
-router.get('/auth/google',
-    passport.authenticate('google', { scope: ['profile', 'email'] })
-);
+// router.get('/auth/google',
+//     passport.authenticate('google', { scope: ['profile', 'email'] })
+// );
 
 // The callback route after successful Google authentication
-router.get('/auth/google/callback', 
-    passport.authenticate('google', { failureRedirect: '/login' }),
-    (req, res) => {
-        // Successful authentication, redirect home.
-        res.redirect('https://bro.savvydev.tech');
-    }
-);
+// router.get('/auth/google/callback', 
+//     passport.authenticate('google', { failureRedirect: '/login' }),
+//     (req, res) => {
+//         // Successful authentication, redirect home.
+//         res.redirect('https://bro.savvydev.tech');
+//     }
+// );
 
 router.post('/foxChat', sessionChecker, apiController.chat);
 
