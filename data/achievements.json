@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "title": "achievement_1",
+        "title": "Кмітливець",
         "image": "achievement_1.png",
         "scoreRequired": 50,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -9,7 +9,7 @@
     },
     {
         "id": "2",
-        "title": "achievement_2",
+        "title": "Силач",
         "image": "achievement_2.png",
         "scoreRequired": 100,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -17,7 +17,7 @@
     },
     {
         "id": "3",
-        "title": "achievement_3",
+        "title": "Ковбой",
         "image": "achievement_3.png",
         "scoreRequired": 200,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -25,7 +25,7 @@
     },
     {
         "id": "4",
-        "title": "achievement_4",
+        "title": "Халепа",
         "image": "achievement_4.png",
         "scoreRequired": 300,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -33,7 +33,7 @@
     },
     {
         "id": "5",
-        "title": "achievement_5",
+        "title": "Зірка",
         "image": "achievement_5.png",
         "scoreRequired": 400,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -41,7 +41,7 @@
     },
     {
         "id": "6",
-        "title": "achievement_6",
+        "title": "Сподівайко",
         "image": "achievement_6.png",
         "scoreRequired": 500,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -49,7 +49,7 @@
     },
     {
         "id": "7",
-        "title": "achievement_7",
+        "title": "Любчик",
         "image": "achievement_7.png",
         "scoreRequired": 600,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -57,7 +57,7 @@
     },
     {
         "id": "8",
-        "title": "achievement_8",
+        "title": "Шухер",
         "image": "achievement_8.png",
         "scoreRequired": 700,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -65,7 +65,7 @@
     },
     {
         "id": "9",
-        "title": "achievement_9",
+        "title": "Трудяга",
         "image": "achievement_9.png",
         "scoreRequired": 800,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -73,7 +73,7 @@
     },
     {
         "id": "10",
-        "title": "achievement_10",
+        "title": "Щасливчик",
         "image": "achievement_10.png",
         "scoreRequired": 900,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -81,7 +81,7 @@
     },
     {
         "id": "11",
-        "title": "achievement_11",
+        "title": "Попадун",
         "image": "achievement_11.png",
         "scoreRequired": 1000,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -89,7 +89,7 @@
     },
     {
         "id": "12",
-        "title": "achievement_12",
+        "title": "Везунчик",
         "image": "achievement_12.png",
         "scoreRequired": 1100,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -97,7 +97,7 @@
     },
     {
         "id": "13",
-        "title": "achievement_13",
+        "title": "Пічалька",
         "image": "achievement_13.png",
         "scoreRequired": 1200,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -105,7 +105,7 @@
     },
     {
         "id": "14",
-        "title": "achievement_14",
+        "title": "Нетерпун",
         "image": "achievement_14.png",
         "scoreRequired": 1300,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -113,7 +113,7 @@
     },
     {
         "id": "15",
-        "title": "achievement_15",
+        "title": "Веселун",
         "image": "achievement_15.png",
         "scoreRequired": 1400,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -121,7 +121,7 @@
     },
     {
         "id": "16",
-        "title": "achievement_16",
+        "title": "Розумаха",
         "image": "achievement_16.png",
         "scoreRequired": 1500,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -129,7 +129,7 @@
     },
     {
         "id": "17",
-        "title": "achievement_17",
+        "title": "Нехочуха",
         "image": "achievement_17.png",
         "scoreRequired": 1600,
         "createdAt": "2023-10-09T12:00:00.000Z",
@@ -137,33 +137,9 @@
     },
     {
         "id": "18",
-        "title": "achievement_18",
+        "title": "Злюка",
         "image": "achievement_18.png",
         "scoreRequired": 1700,
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "id": "19",
-        "title": "achievement_19",
-        "image": "achievement_19.png",
-        "scoreRequired": 1800,
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "id": "20",
-        "title": "achievement_20",
-        "image": "achievement_20.png",
-        "scoreRequired": 1900,
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
-    },
-    {
-        "id": "21",
-        "title": "achievement_21",
-        "image": "achievement_21.png",
-        "scoreRequired": 2000,
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
     }
