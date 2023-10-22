@@ -14,12 +14,11 @@ const { listUsers,
         updateUserCorrectAnswer, 
         updateUserWrongAnswer
     } = require('../controllers/userController');
+const { createFeedback } = require('../controllers/feedbackController');
 
 const { listCheaterPhones, 
         createCheaterPhoneUser, 
         readCheaterPhone } = require('../controllers/cheaterPhoneController');
-
-const { createFeedback } = require('../controllers/feedbackController');
 
 router.post('/feedback', createFeedback);
 

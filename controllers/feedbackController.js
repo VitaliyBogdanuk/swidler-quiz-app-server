@@ -6,8 +6,9 @@ exports.createFeedback = async (req, res) => {
     try {
         const feedback = await Feedback.create(req.body);
         // req.flash('success_msg', 'Category successfully created!'); // TODO
-        if (feedback)
+        if (feedback) {
             res.status(200).json(feedback);
+        }
     } catch (err) {
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.redirect('back'); // assuming '/form/category' is where your creation form is located
