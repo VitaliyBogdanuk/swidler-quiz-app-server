@@ -47,26 +47,26 @@ router.post('/logout', apiController.logout);
 //     }
 // );
 
-router.post('/foxChat', sessionChecker, apiController.chat);
+router.post('/foxChat', apiController.chat);
 
-router.get('/categories', sessionChecker, listCategories);
-router.get('/category/:id', sessionChecker, readCategory);
+router.get('/categories', listCategories);
+router.get('/category/:id', readCategory);
 
-router.get('/situations', sessionChecker, listSituations);
-router.get('/situation/:id', sessionChecker, readSituation);
+router.get('/situations', listSituations);
+router.get('/situation/:id', readSituation);
 
-router.get('/topics', sessionChecker, listTopics);
-router.get('/topic/:id', sessionChecker, readTopic);
+router.get('/topics', listTopics);
+router.get('/topic/:id', readTopic);
 
-router.get('/achievements', sessionChecker, listAchievements);
-router.get('/achievement/:id', sessionChecker, readAchievement);
+router.get('/achievements', listAchievements);
+router.get('/achievement/:id', readAchievement);
 
-router.get('/users', sessionChecker, listUsers);
-router.get('/user/:id', sessionChecker, readUser);
-router.post('/user/updateTopics', sessionChecker, updateUserTopics);
-router.post('/user/updateScore', sessionChecker, updateUserScore);
-router.put('/user/countCorrectAnswer/:id', sessionChecker, updateUserCorrectAnswer);
-router.put('/user/countWrongAnswer/:id', sessionChecker, updateUserWrongAnswer);
+router.get('/users', listUsers);
+router.get('/user/:id', readUser);
+router.post('/user/updateTopics', updateUserTopics);
+router.post('/user/updateScore', updateUserScore);
+router.put('/user/countCorrectAnswer/:id', updateUserCorrectAnswer);
+router.put('/user/countWrongAnswer/:id', updateUserWrongAnswer);
 
 // TODO add a route for '/reset/:token' to handle the password reset process.
 
