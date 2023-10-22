@@ -40,5 +40,19 @@
         "image": "caterory_icon_6.png",
         "createdAt": "2023-10-09T12:00:00.000Z",
         "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "id": "7",
+        "title": "Банківські шахрайства",
+        "image": "caterory_icon_7.png",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
+    },
+    {
+        "id": "8",
+        "title": "Мобільні шахрайства",
+        "image": "caterory_icon_8.png",
+        "createdAt": "2023-10-09T12:00:00.000Z",
+        "updatedAt": "2023-10-09T12:00:00.000Z"
     }
 ]
