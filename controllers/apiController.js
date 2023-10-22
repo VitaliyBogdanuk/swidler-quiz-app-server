@@ -88,7 +88,6 @@ exports.logout = (req, res) => {
 
 // In your controller file
 exports.chat = async (req, res) => {
-    console.log('TEST----------------------- req', req.body);
     try {
         const answerData = await chatGpt.askChatGpt(req); // Note: We're not passing 'res' anymore
         res.status(200).json({ answer: answerData });

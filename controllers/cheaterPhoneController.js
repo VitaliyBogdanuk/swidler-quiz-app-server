@@ -55,6 +55,11 @@ exports.getCheaterPhones = async () => {
                 as: 'user',
                 attributes: ['id', 'name', 'email']
             }],
+            include: [{
+                model: PhoneDescription,
+                as: 'descriptions',
+                attributes: ['description']
+            }],
             order: [
                 ['id', 'ASC']
             ]

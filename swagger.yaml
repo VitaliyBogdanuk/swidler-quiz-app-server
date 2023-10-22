@@ -386,3 +386,66 @@ paths:
           description: User not found
         '500':
           description: Internal server error
+
+  /api/cheaterPhone/{phone}:
+    get:
+      tags:
+        - Cheaters
+      summary: Increment user's wrong answer count
+      description: Return Cheater object with descriptions
+      operationId: Return Cheater object
+      parameters:
+        - name: phone
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The Cheater phone
+      responses:
+        '200':
+          description: Cheater phone object
+        '404':
+          description: Cheater not found
+        '500':
+          description: Internal server error
+
+  /api/cheaterPhones:
+    get:
+      tags:
+        - Cheaters
+      summary: Retrieve all Cheaters
+      description: Return all Cheaters object with descriptions
+      operationId: Return all Cheaters object
+      responses:
+        '200':
+          description: Retrieve all Cheaters
+        '404':
+          description: Cheaters not found
+        '500':
+          description: Internal server error
+
+  /api/cheaterPhone:
+    post:
+      tags:
+        - Cheaters
+      summary: Create Cheater phone and description
+      parameters:
+        - in: body
+          name: cheaterPhone
+          description: Create cheater phone and description
+          schema:
+            type: object
+            properties:
+              userId:
+                type: integer
+              phone:
+                type: string
+              description:
+                type: string
+      responses:
+        '200':
+          description: Cheater added succesfully
+        '404':
+          description: Cheater not found
+        '500':
+          description: Internal server error
