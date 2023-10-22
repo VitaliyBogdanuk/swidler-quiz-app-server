@@ -87,7 +87,7 @@ app.use('/', userRoutes);
 
 app.all('*', (req, res) => {
     req.flash('error', '404! Page not found');
-    res.redirect('/dashboard');
+    res.redirect('/users');
 });
 
 // View engine setup
