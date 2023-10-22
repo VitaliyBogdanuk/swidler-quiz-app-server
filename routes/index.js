@@ -26,8 +26,9 @@ router.get('/auth/forgot', (req, res) => {
     res.render('auth/forgot');
 });
 
-router.get('/dashboard', ensureAuthenticated, (req, res) => {
-    res.render('pages/dashboard', { user: req.user });
+router.get('/dashboard', ensureAuthenticated, async (req, res) => {
+    const usersList = await userController.getUsers();
+    res.render('pages/users', { user: req.user, usersList: usersList });
 });
 
 router.get('/tables/users', ensureAuthenticated, async (req, res) => {
