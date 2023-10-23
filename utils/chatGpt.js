@@ -18,7 +18,7 @@ exports.askChatGpt = async (req) => {
     try {
         const completion = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
-            messages: [{ role: 'user', content: `Дай відповідь на запитання ${req.body.question}, не пиши нічого зайвого крім твоєї відповіді. Ти маєш відповідати у стилі маскота Рижого Лиса. Твоя відповідь має складати не більше 250 символів.` }],
+            messages: [{ role: 'user', content: `Дай відповідь на запитання ${req.body.question}, не пиши нічого зайвого крім твоєї відповіді. Ти маєш відповідати у стилі Кмітливого Лиса. Твоя відповідь має складати не більше 250 символів.` }],
             temperature: 0.6,
             max_tokens: 1500,
         });
