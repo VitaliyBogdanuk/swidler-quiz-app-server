@@ -166,3 +166,29 @@ exports.deleteSituation = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
+exports._getSituations = async () => {
+    try {
+        return await Situation.findAll({
+            
+            order: [
+                ['id', 'ASC']
+            ]
+        });
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
+
+exports._listSituations = async (req, res) => {
+    try {
+        const situations = await exports._getSituations();
+        if (situations) {
+            res.json(situations);
+        } else {
+            res.status(404).json({ message: 'Situations not found' });
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};

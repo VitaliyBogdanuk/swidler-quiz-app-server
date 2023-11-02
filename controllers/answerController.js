@@ -97,3 +97,41 @@ exports.deleteAnswer = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
+exports._getAnswers = async () => {
+    try {
+        return await Answer.findAll({
+            order: [
+                ['id', 'ASC']
+            ]
+        });
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
+
+exports._listAnswers = async (req, res) => {
+    try {
+        const answers = await exports._getAnswers();
+        if (answers) {
+            res.json(answers);
+        } else {
+            res.status(404).json({ message: 'Answers not found' });
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+exports._getSituationToAnswer = async (req,res) => {
+    try {
+        const result =  await SituationToAnswer.findAll({
+            order: [
+                ['id', 'ASC']
+            ]
+        });
+        return res.json(result)
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
