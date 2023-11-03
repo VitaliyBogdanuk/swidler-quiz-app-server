@@ -18,13 +18,13 @@ router.get('/auth/login', (req, res) => {
     res.render('auth/sign-in', { messages: false });
 });
 
-// router.get('/auth/register', (req, res) => {
-//     res.render('auth/sign-up', { messages: false });
-// });
+ router.get('/auth/register', (req, res) => {
+     res.render('auth/sign-up', { messages: false });
+ });
 
-// router.get('/auth/forgot', (req, res) => {
-//     res.render('auth/forgot');
-// });
+ router.get('/auth/forgot', (req, res) => {
+     res.render('auth/forgot');
+ });
 
 router.get('/dashboard', ensureAuthenticated, async (req, res) => {
     const usersList = await userController.getUsers();

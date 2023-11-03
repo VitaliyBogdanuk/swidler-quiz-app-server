@@ -1,1389 +1,1766 @@
 [
     {
-        "situationId": "1",
-        "answerId": "1",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 1,
+        "situationId": 1,
+        "answerId": 1,
+        "createdAt": "2023-11-02T17:08:01.193Z",
+        "updatedAt": "2023-11-02T17:08:01.193Z"
     },
     {
-        "situationId": "1",
-        "answerId": "2",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 2,
+        "situationId": 1,
+        "answerId": 2,
+        "createdAt": "2023-11-02T17:08:01.193Z",
+        "updatedAt": "2023-11-02T17:08:01.193Z"
     },
     {
-        "situationId": "1",
-        "answerId": "3",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 3,
+        "situationId": 1,
+        "answerId": 3,
+        "createdAt": "2023-11-02T17:08:01.193Z",
+        "updatedAt": "2023-11-02T17:08:01.193Z"
     },
     {
-        "situationId": "2",
-        "answerId": "4",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 4,
+        "situationId": 2,
+        "answerId": 4,
+        "createdAt": "2023-11-02T17:11:02.428Z",
+        "updatedAt": "2023-11-02T17:11:02.428Z"
     },
     {
-        "situationId": "2",
-        "answerId": "5",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 5,
+        "situationId": 2,
+        "answerId": 5,
+        "createdAt": "2023-11-02T17:11:02.428Z",
+        "updatedAt": "2023-11-02T17:11:02.428Z"
     },
     {
-        "situationId": "2",
-        "answerId": "6",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 6,
+        "situationId": 2,
+        "answerId": 6,
+        "createdAt": "2023-11-02T17:11:02.428Z",
+        "updatedAt": "2023-11-02T17:11:02.428Z"
     },
     {
-        "situationId": "3",
-        "answerId": "7",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 7,
+        "situationId": 3,
+        "answerId": 7,
+        "createdAt": "2023-11-02T17:12:10.644Z",
+        "updatedAt": "2023-11-02T17:12:10.644Z"
     },
     {
-        "situationId": "3",
-        "answerId": "8",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 8,
+        "situationId": 3,
+        "answerId": 8,
+        "createdAt": "2023-11-02T17:12:10.644Z",
+        "updatedAt": "2023-11-02T17:12:10.644Z"
     },
     {
-        "situationId": "3",
-        "answerId": "9",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 9,
+        "situationId": 3,
+        "answerId": 9,
+        "createdAt": "2023-11-02T17:12:10.644Z",
+        "updatedAt": "2023-11-02T17:12:10.644Z"
     },
     {
-        "situationId": "4",
-        "answerId": "10",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 10,
+        "situationId": 4,
+        "answerId": 10,
+        "createdAt": "2023-11-02T17:17:00.619Z",
+        "updatedAt": "2023-11-02T17:17:00.619Z"
     },
     {
-        "situationId": "4",
-        "answerId": "11",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 11,
+        "situationId": 4,
+        "answerId": 11,
+        "createdAt": "2023-11-02T17:17:00.619Z",
+        "updatedAt": "2023-11-02T17:17:00.619Z"
     },
     {
-        "situationId": "4",
-        "answerId": "12",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 12,
+        "situationId": 4,
+        "answerId": 12,
+        "createdAt": "2023-11-02T17:17:00.619Z",
+        "updatedAt": "2023-11-02T17:17:00.619Z"
     },
     {
-        "situationId": "5",
-        "answerId": "13",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 16,
+        "situationId": 6,
+        "answerId": 16,
+        "createdAt": "2023-11-02T17:24:44.260Z",
+        "updatedAt": "2023-11-02T17:24:44.260Z"
     },
     {
-        "situationId": "5",
-        "answerId": "14",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 17,
+        "situationId": 6,
+        "answerId": 17,
+        "createdAt": "2023-11-02T17:24:44.260Z",
+        "updatedAt": "2023-11-02T17:24:44.260Z"
     },
     {
-        "situationId": "5",
-        "answerId": "15",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 18,
+        "situationId": 6,
+        "answerId": 18,
+        "createdAt": "2023-11-02T17:24:44.260Z",
+        "updatedAt": "2023-11-02T17:24:44.260Z"
     },
     {
-        "situationId": "6",
-        "answerId": "16",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 19,
+        "situationId": 7,
+        "answerId": 19,
+        "createdAt": "2023-11-02T17:27:56.068Z",
+        "updatedAt": "2023-11-02T17:27:56.068Z"
     },
     {
-        "situationId": "6",
-        "answerId": "17",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 20,
+        "situationId": 7,
+        "answerId": 20,
+        "createdAt": "2023-11-02T17:27:56.068Z",
+        "updatedAt": "2023-11-02T17:27:56.068Z"
     },
     {
-        "situationId": "6",
-        "answerId": "18",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 21,
+        "situationId": 7,
+        "answerId": 21,
+        "createdAt": "2023-11-02T17:27:56.068Z",
+        "updatedAt": "2023-11-02T17:27:56.068Z"
     },
     {
-        "situationId": "7",
-        "answerId": "19",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 22,
+        "situationId": 8,
+        "answerId": 22,
+        "createdAt": "2023-11-02T17:32:38.281Z",
+        "updatedAt": "2023-11-02T17:32:38.281Z"
     },
     {
-        "situationId": "7",
-        "answerId": "20",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 23,
+        "situationId": 8,
+        "answerId": 23,
+        "createdAt": "2023-11-02T17:32:38.281Z",
+        "updatedAt": "2023-11-02T17:32:38.281Z"
     },
     {
-        "situationId": "7",
-        "answerId": "21",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 24,
+        "situationId": 8,
+        "answerId": 24,
+        "createdAt": "2023-11-02T17:32:38.281Z",
+        "updatedAt": "2023-11-02T17:32:38.281Z"
     },
     {
-        "situationId": "8",
-        "answerId": "22",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 25,
+        "situationId": 9,
+        "answerId": 25,
+        "createdAt": "2023-11-02T17:34:10.583Z",
+        "updatedAt": "2023-11-02T17:34:10.583Z"
     },
     {
-        "situationId": "8",
-        "answerId": "23",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 26,
+        "situationId": 9,
+        "answerId": 26,
+        "createdAt": "2023-11-02T17:34:10.583Z",
+        "updatedAt": "2023-11-02T17:34:10.583Z"
     },
     {
-        "situationId": "8",
-        "answerId": "24",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 27,
+        "situationId": 9,
+        "answerId": 27,
+        "createdAt": "2023-11-02T17:34:10.583Z",
+        "updatedAt": "2023-11-02T17:34:10.583Z"
     },
     {
-        "situationId": "9",
-        "answerId": "25",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 28,
+        "situationId": 10,
+        "answerId": 28,
+        "createdAt": "2023-11-02T17:35:13.492Z",
+        "updatedAt": "2023-11-02T17:35:13.492Z"
     },
     {
-        "situationId": "9",
-        "answerId": "26",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 29,
+        "situationId": 10,
+        "answerId": 29,
+        "createdAt": "2023-11-02T17:35:13.492Z",
+        "updatedAt": "2023-11-02T17:35:13.492Z"
     },
     {
-        "situationId": "9",
-        "answerId": "27",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 30,
+        "situationId": 10,
+        "answerId": 30,
+        "createdAt": "2023-11-02T17:35:13.492Z",
+        "updatedAt": "2023-11-02T17:35:13.492Z"
     },
     {
-        "situationId": "10",
-        "answerId": "28",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 31,
+        "situationId": 11,
+        "answerId": 31,
+        "createdAt": "2023-11-02T17:39:19.150Z",
+        "updatedAt": "2023-11-02T17:39:19.150Z"
     },
     {
-        "situationId": "10",
-        "answerId": "29",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 32,
+        "situationId": 11,
+        "answerId": 32,
+        "createdAt": "2023-11-02T17:39:19.150Z",
+        "updatedAt": "2023-11-02T17:39:19.150Z"
     },
     {
-        "situationId": "10",
-        "answerId": "30",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 33,
+        "situationId": 11,
+        "answerId": 33,
+        "createdAt": "2023-11-02T17:39:19.150Z",
+        "updatedAt": "2023-11-02T17:39:19.150Z"
     },
     {
-        "situationId": "11",
-        "answerId": "31",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 34,
+        "situationId": 12,
+        "answerId": 34,
+        "createdAt": "2023-11-02T17:40:52.846Z",
+        "updatedAt": "2023-11-02T17:40:52.846Z"
     },
     {
-        "situationId": "11",
-        "answerId": "32",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 35,
+        "situationId": 12,
+        "answerId": 35,
+        "createdAt": "2023-11-02T17:40:52.846Z",
+        "updatedAt": "2023-11-02T17:40:52.846Z"
     },
     {
-        "situationId": "11",
-        "answerId": "33",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 36,
+        "situationId": 12,
+        "answerId": 36,
+        "createdAt": "2023-11-02T17:40:52.846Z",
+        "updatedAt": "2023-11-02T17:40:52.846Z"
     },
     {
-        "situationId": "12",
-        "answerId": "34",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 40,
+        "situationId": 14,
+        "answerId": 40,
+        "createdAt": "2023-11-02T19:02:38.246Z",
+        "updatedAt": "2023-11-02T19:02:38.246Z"
     },
     {
-        "situationId": "12",
-        "answerId": "35",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 41,
+        "situationId": 14,
+        "answerId": 41,
+        "createdAt": "2023-11-02T19:02:38.246Z",
+        "updatedAt": "2023-11-02T19:02:38.246Z"
     },
     {
-        "situationId": "12",
-        "answerId": "36",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 42,
+        "situationId": 14,
+        "answerId": 42,
+        "createdAt": "2023-11-02T19:02:38.246Z",
+        "updatedAt": "2023-11-02T19:02:38.246Z"
     },
     {
-        "situationId": "13",
-        "answerId": "37",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 43,
+        "situationId": 15,
+        "answerId": 43,
+        "createdAt": "2023-11-02T19:04:13.536Z",
+        "updatedAt": "2023-11-02T19:04:13.536Z"
     },
     {
-        "situationId": "13",
-        "answerId": "38",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 44,
+        "situationId": 15,
+        "answerId": 44,
+        "createdAt": "2023-11-02T19:04:13.536Z",
+        "updatedAt": "2023-11-02T19:04:13.536Z"
     },
     {
-        "situationId": "13",
-        "answerId": "39",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 45,
+        "situationId": 15,
+        "answerId": 45,
+        "createdAt": "2023-11-02T19:04:13.536Z",
+        "updatedAt": "2023-11-02T19:04:13.536Z"
     },
     {
-        "situationId": "14",
-        "answerId": "40",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 46,
+        "situationId": 16,
+        "answerId": 46,
+        "createdAt": "2023-11-02T19:52:26.099Z",
+        "updatedAt": "2023-11-02T19:52:26.099Z"
     },
     {
-        "situationId": "14",
-        "answerId": "41",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 47,
+        "situationId": 16,
+        "answerId": 47,
+        "createdAt": "2023-11-02T19:52:26.099Z",
+        "updatedAt": "2023-11-02T19:52:26.099Z"
     },
     {
-        "situationId": "14",
-        "answerId": "42",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 48,
+        "situationId": 16,
+        "answerId": 48,
+        "createdAt": "2023-11-02T19:52:26.099Z",
+        "updatedAt": "2023-11-02T19:52:26.099Z"
     },
     {
-        "situationId": "15",
-        "answerId": "43",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 49,
+        "situationId": 17,
+        "answerId": 49,
+        "createdAt": "2023-11-02T19:55:36.111Z",
+        "updatedAt": "2023-11-02T19:55:36.111Z"
     },
     {
-        "situationId": "15",
-        "answerId": "44",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 50,
+        "situationId": 17,
+        "answerId": 50,
+        "createdAt": "2023-11-02T19:55:36.111Z",
+        "updatedAt": "2023-11-02T19:55:36.111Z"
     },
     {
-        "situationId": "15",
-        "answerId": "45",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 51,
+        "situationId": 17,
+        "answerId": 51,
+        "createdAt": "2023-11-02T19:55:36.111Z",
+        "updatedAt": "2023-11-02T19:55:36.111Z"
     },
     {
-        "situationId": "16",
-        "answerId": "46",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 52,
+        "situationId": 18,
+        "answerId": 52,
+        "createdAt": "2023-11-02T19:57:48.727Z",
+        "updatedAt": "2023-11-02T19:57:48.727Z"
     },
     {
-        "situationId": "16",
-        "answerId": "47",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 53,
+        "situationId": 18,
+        "answerId": 53,
+        "createdAt": "2023-11-02T19:57:48.727Z",
+        "updatedAt": "2023-11-02T19:57:48.727Z"
     },
     {
-        "situationId": "16",
-        "answerId": "48",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 54,
+        "situationId": 18,
+        "answerId": 54,
+        "createdAt": "2023-11-02T19:57:48.727Z",
+        "updatedAt": "2023-11-02T19:57:48.727Z"
     },
     {
-        "situationId": "17",
-        "answerId": "49",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 55,
+        "situationId": 19,
+        "answerId": 55,
+        "createdAt": "2023-11-02T19:59:22.336Z",
+        "updatedAt": "2023-11-02T19:59:22.336Z"
     },
     {
-        "situationId": "17",
-        "answerId": "50",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 56,
+        "situationId": 19,
+        "answerId": 56,
+        "createdAt": "2023-11-02T19:59:22.336Z",
+        "updatedAt": "2023-11-02T19:59:22.336Z"
     },
     {
-        "situationId": "17",
-        "answerId": "51",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 57,
+        "situationId": 19,
+        "answerId": 57,
+        "createdAt": "2023-11-02T19:59:22.336Z",
+        "updatedAt": "2023-11-02T19:59:22.336Z"
     },
     {
-        "situationId": "18",
-        "answerId": "52",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 58,
+        "situationId": 20,
+        "answerId": 58,
+        "createdAt": "2023-11-02T20:00:23.887Z",
+        "updatedAt": "2023-11-02T20:00:23.887Z"
     },
     {
-        "situationId": "18",
-        "answerId": "53",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 59,
+        "situationId": 20,
+        "answerId": 59,
+        "createdAt": "2023-11-02T20:00:23.887Z",
+        "updatedAt": "2023-11-02T20:00:23.887Z"
     },
     {
-        "situationId": "18",
-        "answerId": "54",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 60,
+        "situationId": 20,
+        "answerId": 60,
+        "createdAt": "2023-11-02T20:00:23.887Z",
+        "updatedAt": "2023-11-02T20:00:23.887Z"
     },
     {
-        "situationId": "19",
-        "answerId": "55",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 61,
+        "situationId": 21,
+        "answerId": 61,
+        "createdAt": "2023-11-02T20:02:33.600Z",
+        "updatedAt": "2023-11-02T20:02:33.600Z"
     },
     {
-        "situationId": "19",
-        "answerId": "56",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 62,
+        "situationId": 21,
+        "answerId": 62,
+        "createdAt": "2023-11-02T20:02:33.600Z",
+        "updatedAt": "2023-11-02T20:02:33.600Z"
     },
     {
-        "situationId": "19",
-        "answerId": "57",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 63,
+        "situationId": 21,
+        "answerId": 63,
+        "createdAt": "2023-11-02T20:02:33.600Z",
+        "updatedAt": "2023-11-02T20:02:33.600Z"
     },
     {
-        "situationId": "20",
-        "answerId": "58",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 64,
+        "situationId": 22,
+        "answerId": 64,
+        "createdAt": "2023-11-02T20:03:28.539Z",
+        "updatedAt": "2023-11-02T20:03:28.539Z"
     },
     {
-        "situationId": "20",
-        "answerId": "59",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 65,
+        "situationId": 22,
+        "answerId": 65,
+        "createdAt": "2023-11-02T20:03:28.539Z",
+        "updatedAt": "2023-11-02T20:03:28.539Z"
     },
     {
-        "situationId": "20",
-        "answerId": "60",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 66,
+        "situationId": 22,
+        "answerId": 66,
+        "createdAt": "2023-11-02T20:03:28.539Z",
+        "updatedAt": "2023-11-02T20:03:28.539Z"
     },
     {
-        "situationId": "21",
-        "answerId": "61",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 67,
+        "situationId": 23,
+        "answerId": 67,
+        "createdAt": "2023-11-02T20:04:15.131Z",
+        "updatedAt": "2023-11-02T20:04:15.131Z"
     },
     {
-        "situationId": "21",
-        "answerId": "62",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 68,
+        "situationId": 23,
+        "answerId": 68,
+        "createdAt": "2023-11-02T20:04:15.131Z",
+        "updatedAt": "2023-11-02T20:04:15.131Z"
     },
     {
-        "situationId": "21",
-        "answerId": "63",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 69,
+        "situationId": 23,
+        "answerId": 69,
+        "createdAt": "2023-11-02T20:04:15.131Z",
+        "updatedAt": "2023-11-02T20:04:15.131Z"
     },
     {
-        "situationId": "22",
-        "answerId": "64",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 70,
+        "situationId": 24,
+        "answerId": 70,
+        "createdAt": "2023-11-02T20:05:07.478Z",
+        "updatedAt": "2023-11-02T20:05:07.478Z"
     },
     {
-        "situationId": "22",
-        "answerId": "65",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 71,
+        "situationId": 24,
+        "answerId": 71,
+        "createdAt": "2023-11-02T20:05:07.478Z",
+        "updatedAt": "2023-11-02T20:05:07.478Z"
     },
     {
-        "situationId": "22",
-        "answerId": "66",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 72,
+        "situationId": 24,
+        "answerId": 72,
+        "createdAt": "2023-11-02T20:05:07.478Z",
+        "updatedAt": "2023-11-02T20:05:07.478Z"
     },
     {
-        "situationId": "23",
-        "answerId": "67",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 73,
+        "situationId": 25,
+        "answerId": 73,
+        "createdAt": "2023-11-02T20:06:09.802Z",
+        "updatedAt": "2023-11-02T20:06:09.802Z"
     },
     {
-        "situationId": "23",
-        "answerId": "68",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 74,
+        "situationId": 25,
+        "answerId": 74,
+        "createdAt": "2023-11-02T20:06:09.802Z",
+        "updatedAt": "2023-11-02T20:06:09.802Z"
     },
     {
-        "situationId": "23",
-        "answerId": "69",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 75,
+        "situationId": 25,
+        "answerId": 75,
+        "createdAt": "2023-11-02T20:06:09.802Z",
+        "updatedAt": "2023-11-02T20:06:09.802Z"
     },
     {
-        "situationId": "24",
-        "answerId": "70",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 76,
+        "situationId": 26,
+        "answerId": 76,
+        "createdAt": "2023-11-02T20:27:34.105Z",
+        "updatedAt": "2023-11-02T20:27:34.105Z"
     },
     {
-        "situationId": "24",
-        "answerId": "71",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 77,
+        "situationId": 26,
+        "answerId": 77,
+        "createdAt": "2023-11-02T20:27:34.105Z",
+        "updatedAt": "2023-11-02T20:27:34.105Z"
     },
     {
-        "situationId": "24",
-        "answerId": "72",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 78,
+        "situationId": 26,
+        "answerId": 78,
+        "createdAt": "2023-11-02T20:27:34.105Z",
+        "updatedAt": "2023-11-02T20:27:34.105Z"
     },
     {
-        "situationId": "25",
-        "answerId": "73",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 79,
+        "situationId": 27,
+        "answerId": 79,
+        "createdAt": "2023-11-02T20:28:41.666Z",
+        "updatedAt": "2023-11-02T20:28:41.666Z"
     },
     {
-        "situationId": "25",
-        "answerId": "74",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 80,
+        "situationId": 27,
+        "answerId": 80,
+        "createdAt": "2023-11-02T20:28:41.666Z",
+        "updatedAt": "2023-11-02T20:28:41.666Z"
     },
     {
-        "situationId": "25",
-        "answerId": "75",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 81,
+        "situationId": 27,
+        "answerId": 81,
+        "createdAt": "2023-11-02T20:28:41.666Z",
+        "updatedAt": "2023-11-02T20:28:41.666Z"
     },
     {
-        "situationId": "26",
-        "answerId": "76",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 82,
+        "situationId": 28,
+        "answerId": 82,
+        "createdAt": "2023-11-02T20:29:47.185Z",
+        "updatedAt": "2023-11-02T20:29:47.185Z"
     },
     {
-        "situationId": "26",
-        "answerId": "77",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 83,
+        "situationId": 28,
+        "answerId": 83,
+        "createdAt": "2023-11-02T20:29:47.185Z",
+        "updatedAt": "2023-11-02T20:29:47.185Z"
     },
     {
-        "situationId": "26",
-        "answerId": "78",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 84,
+        "situationId": 28,
+        "answerId": 84,
+        "createdAt": "2023-11-02T20:29:47.185Z",
+        "updatedAt": "2023-11-02T20:29:47.185Z"
     },
     {
-        "situationId": "27",
-        "answerId": "79",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 85,
+        "situationId": 29,
+        "answerId": 85,
+        "createdAt": "2023-11-02T20:30:54.288Z",
+        "updatedAt": "2023-11-02T20:30:54.288Z"
     },
     {
-        "situationId": "27",
-        "answerId": "80",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 86,
+        "situationId": 29,
+        "answerId": 86,
+        "createdAt": "2023-11-02T20:30:54.288Z",
+        "updatedAt": "2023-11-02T20:30:54.288Z"
     },
     {
-        "situationId": "27",
-        "answerId": "81",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 87,
+        "situationId": 29,
+        "answerId": 87,
+        "createdAt": "2023-11-02T20:30:54.288Z",
+        "updatedAt": "2023-11-02T20:30:54.288Z"
     },
     {
-        "situationId": "28",
-        "answerId": "82",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 88,
+        "situationId": 30,
+        "answerId": 88,
+        "createdAt": "2023-11-02T20:36:43.465Z",
+        "updatedAt": "2023-11-02T20:36:43.465Z"
     },
     {
-        "situationId": "28",
-        "answerId": "83",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 89,
+        "situationId": 30,
+        "answerId": 89,
+        "createdAt": "2023-11-02T20:36:43.465Z",
+        "updatedAt": "2023-11-02T20:36:43.465Z"
     },
     {
-        "situationId": "28",
-        "answerId": "84",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 90,
+        "situationId": 30,
+        "answerId": 90,
+        "createdAt": "2023-11-02T20:36:43.465Z",
+        "updatedAt": "2023-11-02T20:36:43.465Z"
     },
     {
-        "situationId": "29",
-        "answerId": "85",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 91,
+        "situationId": 31,
+        "answerId": 91,
+        "createdAt": "2023-11-02T20:38:51.301Z",
+        "updatedAt": "2023-11-02T20:38:51.301Z"
     },
     {
-        "situationId": "29",
-        "answerId": "86",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 92,
+        "situationId": 31,
+        "answerId": 92,
+        "createdAt": "2023-11-02T20:38:51.301Z",
+        "updatedAt": "2023-11-02T20:38:51.301Z"
     },
     {
-        "situationId": "29",
-        "answerId": "87",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 93,
+        "situationId": 31,
+        "answerId": 93,
+        "createdAt": "2023-11-02T20:38:51.301Z",
+        "updatedAt": "2023-11-02T20:38:51.301Z"
     },
     {
-        "situationId": "30",
-        "answerId": "88",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 94,
+        "situationId": 32,
+        "answerId": 94,
+        "createdAt": "2023-11-02T20:39:49.688Z",
+        "updatedAt": "2023-11-02T20:39:49.688Z"
     },
     {
-        "situationId": "30",
-        "answerId": "89",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 95,
+        "situationId": 32,
+        "answerId": 95,
+        "createdAt": "2023-11-02T20:39:49.688Z",
+        "updatedAt": "2023-11-02T20:39:49.688Z"
     },
     {
-        "situationId": "30",
-        "answerId": "90",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 96,
+        "situationId": 32,
+        "answerId": 96,
+        "createdAt": "2023-11-02T20:39:49.688Z",
+        "updatedAt": "2023-11-02T20:39:49.688Z"
     },
     {
-        "situationId": "31",
-        "answerId": "91",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 97,
+        "situationId": 33,
+        "answerId": 97,
+        "createdAt": "2023-11-02T20:40:35.108Z",
+        "updatedAt": "2023-11-02T20:40:35.108Z"
     },
     {
-        "situationId": "31",
-        "answerId": "92",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 98,
+        "situationId": 33,
+        "answerId": 98,
+        "createdAt": "2023-11-02T20:40:35.108Z",
+        "updatedAt": "2023-11-02T20:40:35.108Z"
     },
     {
-        "situationId": "31",
-        "answerId": "93",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 99,
+        "situationId": 33,
+        "answerId": 99,
+        "createdAt": "2023-11-02T20:40:35.108Z",
+        "updatedAt": "2023-11-02T20:40:35.108Z"
     },
     {
-        "situationId": "32",
-        "answerId": "94",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 100,
+        "situationId": 34,
+        "answerId": 100,
+        "createdAt": "2023-11-02T20:41:17.848Z",
+        "updatedAt": "2023-11-02T20:41:17.848Z"
     },
     {
-        "situationId": "32",
-        "answerId": "95",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 101,
+        "situationId": 34,
+        "answerId": 101,
+        "createdAt": "2023-11-02T20:41:17.848Z",
+        "updatedAt": "2023-11-02T20:41:17.848Z"
     },
     {
-        "situationId": "32",
-        "answerId": "96",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 102,
+        "situationId": 34,
+        "answerId": 102,
+        "createdAt": "2023-11-02T20:41:17.848Z",
+        "updatedAt": "2023-11-02T20:41:17.848Z"
     },
     {
-        "situationId": "33",
-        "answerId": "97",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 103,
+        "situationId": 35,
+        "answerId": 103,
+        "createdAt": "2023-11-02T20:42:21.298Z",
+        "updatedAt": "2023-11-02T20:42:21.298Z"
     },
     {
-        "situationId": "33",
-        "answerId": "98",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 104,
+        "situationId": 35,
+        "answerId": 104,
+        "createdAt": "2023-11-02T20:42:21.298Z",
+        "updatedAt": "2023-11-02T20:42:21.298Z"
     },
     {
-        "situationId": "33",
-        "answerId": "99",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 105,
+        "situationId": 35,
+        "answerId": 105,
+        "createdAt": "2023-11-02T20:42:21.298Z",
+        "updatedAt": "2023-11-02T20:42:21.298Z"
     },
     {
-        "situationId": "34",
-        "answerId": "100",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 106,
+        "situationId": 36,
+        "answerId": 106,
+        "createdAt": "2023-11-02T20:43:00.625Z",
+        "updatedAt": "2023-11-02T20:43:00.625Z"
     },
     {
-        "situationId": "34",
-        "answerId": "101",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 107,
+        "situationId": 36,
+        "answerId": 107,
+        "createdAt": "2023-11-02T20:43:00.625Z",
+        "updatedAt": "2023-11-02T20:43:00.625Z"
     },
     {
-        "situationId": "34",
-        "answerId": "102",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 108,
+        "situationId": 36,
+        "answerId": 108,
+        "createdAt": "2023-11-02T20:43:00.625Z",
+        "updatedAt": "2023-11-02T20:43:00.625Z"
     },
     {
-        "situationId": "35",
-        "answerId": "103",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 109,
+        "situationId": 37,
+        "answerId": 109,
+        "createdAt": "2023-11-02T20:44:44.069Z",
+        "updatedAt": "2023-11-02T20:44:44.069Z"
     },
     {
-        "situationId": "35",
-        "answerId": "104",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 110,
+        "situationId": 37,
+        "answerId": 110,
+        "createdAt": "2023-11-02T20:44:44.069Z",
+        "updatedAt": "2023-11-02T20:44:44.069Z"
     },
     {
-        "situationId": "35",
-        "answerId": "105",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 111,
+        "situationId": 37,
+        "answerId": 111,
+        "createdAt": "2023-11-02T20:44:44.069Z",
+        "updatedAt": "2023-11-02T20:44:44.069Z"
     },
     {
-        "situationId": "36",
-        "answerId": "106",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 112,
+        "situationId": 38,
+        "answerId": 112,
+        "createdAt": "2023-11-02T20:45:28.290Z",
+        "updatedAt": "2023-11-02T20:45:28.290Z"
     },
     {
-        "situationId": "36",
-        "answerId": "107",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 113,
+        "situationId": 38,
+        "answerId": 113,
+        "createdAt": "2023-11-02T20:45:28.290Z",
+        "updatedAt": "2023-11-02T20:45:28.290Z"
     },
     {
-        "situationId": "36",
-        "answerId": "108",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 114,
+        "situationId": 38,
+        "answerId": 114,
+        "createdAt": "2023-11-02T20:45:28.290Z",
+        "updatedAt": "2023-11-02T20:45:28.290Z"
     },
     {
-        "situationId": "37",
-        "answerId": "109",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 115,
+        "situationId": 39,
+        "answerId": 115,
+        "createdAt": "2023-11-02T20:46:11.487Z",
+        "updatedAt": "2023-11-02T20:46:11.487Z"
     },
     {
-        "situationId": "37",
-        "answerId": "110",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 116,
+        "situationId": 39,
+        "answerId": 116,
+        "createdAt": "2023-11-02T20:46:11.487Z",
+        "updatedAt": "2023-11-02T20:46:11.487Z"
     },
     {
-        "situationId": "37",
-        "answerId": "111",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 117,
+        "situationId": 39,
+        "answerId": 117,
+        "createdAt": "2023-11-02T20:46:11.487Z",
+        "updatedAt": "2023-11-02T20:46:11.487Z"
     },
     {
-        "situationId": "38",
-        "answerId": "112",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 118,
+        "situationId": 40,
+        "answerId": 118,
+        "createdAt": "2023-11-02T20:46:48.102Z",
+        "updatedAt": "2023-11-02T20:46:48.102Z"
     },
     {
-        "situationId": "38",
-        "answerId": "113",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 119,
+        "situationId": 40,
+        "answerId": 119,
+        "createdAt": "2023-11-02T20:46:48.102Z",
+        "updatedAt": "2023-11-02T20:46:48.102Z"
     },
     {
-        "situationId": "38",
-        "answerId": "114",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 120,
+        "situationId": 40,
+        "answerId": 120,
+        "createdAt": "2023-11-02T20:46:48.102Z",
+        "updatedAt": "2023-11-02T20:46:48.102Z"
     },
     {
-        "situationId": "39",
-        "answerId": "115",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 121,
+        "situationId": 41,
+        "answerId": 121,
+        "createdAt": "2023-11-02T20:47:48.891Z",
+        "updatedAt": "2023-11-02T20:47:48.891Z"
     },
     {
-        "situationId": "39",
-        "answerId": "116",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 122,
+        "situationId": 41,
+        "answerId": 122,
+        "createdAt": "2023-11-02T20:47:48.891Z",
+        "updatedAt": "2023-11-02T20:47:48.891Z"
     },
     {
-        "situationId": "39",
-        "answerId": "117",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 123,
+        "situationId": 41,
+        "answerId": 123,
+        "createdAt": "2023-11-02T20:47:48.891Z",
+        "updatedAt": "2023-11-02T20:47:48.891Z"
     },
     {
-        "situationId": "40",
-        "answerId": "118",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 124,
+        "situationId": 42,
+        "answerId": 124,
+        "createdAt": "2023-11-02T20:48:27.054Z",
+        "updatedAt": "2023-11-02T20:48:27.054Z"
     },
     {
-        "situationId": "40",
-        "answerId": "119",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 125,
+        "situationId": 42,
+        "answerId": 125,
+        "createdAt": "2023-11-02T20:48:27.054Z",
+        "updatedAt": "2023-11-02T20:48:27.054Z"
     },
     {
-        "situationId": "40",
-        "answerId": "120",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 126,
+        "situationId": 42,
+        "answerId": 126,
+        "createdAt": "2023-11-02T20:48:27.054Z",
+        "updatedAt": "2023-11-02T20:48:27.054Z"
     },
     {
-        "situationId": "41",
-        "answerId": "121",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 127,
+        "situationId": 43,
+        "answerId": 127,
+        "createdAt": "2023-11-02T20:49:19.053Z",
+        "updatedAt": "2023-11-02T20:49:19.053Z"
     },
     {
-        "situationId": "41",
-        "answerId": "122",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 128,
+        "situationId": 43,
+        "answerId": 128,
+        "createdAt": "2023-11-02T20:49:19.053Z",
+        "updatedAt": "2023-11-02T20:49:19.053Z"
     },
     {
-        "situationId": "41",
-        "answerId": "123",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 129,
+        "situationId": 43,
+        "answerId": 129,
+        "createdAt": "2023-11-02T20:49:19.053Z",
+        "updatedAt": "2023-11-02T20:49:19.053Z"
     },
     {
-        "situationId": "42",
-        "answerId": "124",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 130,
+        "situationId": 44,
+        "answerId": 130,
+        "createdAt": "2023-11-02T20:49:53.050Z",
+        "updatedAt": "2023-11-02T20:49:53.050Z"
     },
     {
-        "situationId": "42",
-        "answerId": "125",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 131,
+        "situationId": 44,
+        "answerId": 131,
+        "createdAt": "2023-11-02T20:49:53.050Z",
+        "updatedAt": "2023-11-02T20:49:53.050Z"
     },
     {
-        "situationId": "42",
-        "answerId": "126",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 132,
+        "situationId": 44,
+        "answerId": 132,
+        "createdAt": "2023-11-02T20:49:53.050Z",
+        "updatedAt": "2023-11-02T20:49:53.050Z"
     },
     {
-        "situationId": "43",
-        "answerId": "127",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 133,
+        "situationId": 45,
+        "answerId": 133,
+        "createdAt": "2023-11-02T20:50:45.792Z",
+        "updatedAt": "2023-11-02T20:50:45.792Z"
     },
     {
-        "situationId": "43",
-        "answerId": "128",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 134,
+        "situationId": 45,
+        "answerId": 134,
+        "createdAt": "2023-11-02T20:50:45.792Z",
+        "updatedAt": "2023-11-02T20:50:45.792Z"
     },
     {
-        "situationId": "43",
-        "answerId": "129",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 135,
+        "situationId": 45,
+        "answerId": 135,
+        "createdAt": "2023-11-02T20:50:45.792Z",
+        "updatedAt": "2023-11-02T20:50:45.792Z"
     },
     {
-        "situationId": "44",
-        "answerId": "130",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 136,
+        "situationId": 46,
+        "answerId": 136,
+        "createdAt": "2023-11-02T20:52:05.309Z",
+        "updatedAt": "2023-11-02T20:52:05.309Z"
     },
     {
-        "situationId": "44",
-        "answerId": "131",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 137,
+        "situationId": 46,
+        "answerId": 137,
+        "createdAt": "2023-11-02T20:52:05.309Z",
+        "updatedAt": "2023-11-02T20:52:05.309Z"
     },
     {
-        "situationId": "44",
-        "answerId": "132",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 138,
+        "situationId": 46,
+        "answerId": 138,
+        "createdAt": "2023-11-02T20:52:05.309Z",
+        "updatedAt": "2023-11-02T20:52:05.309Z"
     },
     {
-        "situationId": "45",
-        "answerId": "133",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 139,
+        "situationId": 47,
+        "answerId": 139,
+        "createdAt": "2023-11-02T20:52:38.564Z",
+        "updatedAt": "2023-11-02T20:52:38.564Z"
     },
     {
-        "situationId": "45",
-        "answerId": "134",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 140,
+        "situationId": 47,
+        "answerId": 140,
+        "createdAt": "2023-11-02T20:52:38.564Z",
+        "updatedAt": "2023-11-02T20:52:38.564Z"
     },
     {
-        "situationId": "45",
-        "answerId": "135",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 141,
+        "situationId": 47,
+        "answerId": 141,
+        "createdAt": "2023-11-02T20:52:38.564Z",
+        "updatedAt": "2023-11-02T20:52:38.564Z"
     },
     {
-        "situationId": "46",
-        "answerId": "136",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 142,
+        "situationId": 48,
+        "answerId": 142,
+        "createdAt": "2023-11-02T20:53:41.956Z",
+        "updatedAt": "2023-11-02T20:53:41.956Z"
     },
     {
-        "situationId": "46",
-        "answerId": "137",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 143,
+        "situationId": 48,
+        "answerId": 143,
+        "createdAt": "2023-11-02T20:53:41.956Z",
+        "updatedAt": "2023-11-02T20:53:41.956Z"
     },
     {
-        "situationId": "46",
-        "answerId": "138",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 144,
+        "situationId": 48,
+        "answerId": 144,
+        "createdAt": "2023-11-02T20:53:41.956Z",
+        "updatedAt": "2023-11-02T20:53:41.956Z"
     },
     {
-        "situationId": "47",
-        "answerId": "139",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 145,
+        "situationId": 49,
+        "answerId": 145,
+        "createdAt": "2023-11-02T21:17:31.492Z",
+        "updatedAt": "2023-11-02T21:17:31.492Z"
     },
     {
-        "situationId": "47",
-        "answerId": "140",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 146,
+        "situationId": 49,
+        "answerId": 146,
+        "createdAt": "2023-11-02T21:17:31.492Z",
+        "updatedAt": "2023-11-02T21:17:31.492Z"
     },
     {
-        "situationId": "47",
-        "answerId": "141",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 147,
+        "situationId": 49,
+        "answerId": 147,
+        "createdAt": "2023-11-02T21:17:31.492Z",
+        "updatedAt": "2023-11-02T21:17:31.492Z"
     },
     {
-        "situationId": "48",
-        "answerId": "142",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 148,
+        "situationId": 50,
+        "answerId": 148,
+        "createdAt": "2023-11-02T21:19:40.302Z",
+        "updatedAt": "2023-11-02T21:19:40.302Z"
     },
     {
-        "situationId": "48",
-        "answerId": "143",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 149,
+        "situationId": 50,
+        "answerId": 149,
+        "createdAt": "2023-11-02T21:19:40.302Z",
+        "updatedAt": "2023-11-02T21:19:40.302Z"
     },
     {
-        "situationId": "48",
-        "answerId": "144",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 150,
+        "situationId": 50,
+        "answerId": 150,
+        "createdAt": "2023-11-02T21:19:40.302Z",
+        "updatedAt": "2023-11-02T21:19:40.302Z"
     },
     {
-        "situationId": "49",
-        "answerId": "145",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 151,
+        "situationId": 51,
+        "answerId": 151,
+        "createdAt": "2023-11-02T21:20:53.716Z",
+        "updatedAt": "2023-11-02T21:20:53.716Z"
     },
     {
-        "situationId": "49",
-        "answerId": "146",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 152,
+        "situationId": 51,
+        "answerId": 152,
+        "createdAt": "2023-11-02T21:20:53.716Z",
+        "updatedAt": "2023-11-02T21:20:53.716Z"
     },
     {
-        "situationId": "49",
-        "answerId": "147",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 153,
+        "situationId": 51,
+        "answerId": 153,
+        "createdAt": "2023-11-02T21:20:53.716Z",
+        "updatedAt": "2023-11-02T21:20:53.716Z"
     },
     {
-        "situationId": "50",
-        "answerId": "148",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 154,
+        "situationId": 52,
+        "answerId": 154,
+        "createdAt": "2023-11-02T21:22:22.811Z",
+        "updatedAt": "2023-11-02T21:22:22.811Z"
     },
     {
-        "situationId": "50",
-        "answerId": "149",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 155,
+        "situationId": 52,
+        "answerId": 155,
+        "createdAt": "2023-11-02T21:22:22.811Z",
+        "updatedAt": "2023-11-02T21:22:22.811Z"
     },
     {
-        "situationId": "50",
-        "answerId": "150",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 156,
+        "situationId": 52,
+        "answerId": 156,
+        "createdAt": "2023-11-02T21:22:22.811Z",
+        "updatedAt": "2023-11-02T21:22:22.811Z"
     },
     {
-        "situationId": "51",
-        "answerId": "151",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 157,
+        "situationId": 53,
+        "answerId": 157,
+        "createdAt": "2023-11-02T21:23:18.623Z",
+        "updatedAt": "2023-11-02T21:23:18.623Z"
     },
     {
-        "situationId": "51",
-        "answerId": "152",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 158,
+        "situationId": 53,
+        "answerId": 158,
+        "createdAt": "2023-11-02T21:23:18.623Z",
+        "updatedAt": "2023-11-02T21:23:18.623Z"
     },
     {
-        "situationId": "51",
-        "answerId": "153",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 159,
+        "situationId": 53,
+        "answerId": 159,
+        "createdAt": "2023-11-02T21:23:18.623Z",
+        "updatedAt": "2023-11-02T21:23:18.623Z"
     },
     {
-        "situationId": "52",
-        "answerId": "154",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 160,
+        "situationId": 54,
+        "answerId": 160,
+        "createdAt": "2023-11-02T21:24:44.701Z",
+        "updatedAt": "2023-11-02T21:24:44.701Z"
     },
     {
-        "situationId": "52",
-        "answerId": "155",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 161,
+        "situationId": 54,
+        "answerId": 161,
+        "createdAt": "2023-11-02T21:24:44.701Z",
+        "updatedAt": "2023-11-02T21:24:44.701Z"
     },
     {
-        "situationId": "52",
-        "answerId": "156",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 162,
+        "situationId": 54,
+        "answerId": 162,
+        "createdAt": "2023-11-02T21:24:44.701Z",
+        "updatedAt": "2023-11-02T21:24:44.701Z"
     },
     {
-        "situationId": "53",
-        "answerId": "157",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 163,
+        "situationId": 55,
+        "answerId": 163,
+        "createdAt": "2023-11-02T21:25:48.341Z",
+        "updatedAt": "2023-11-02T21:25:48.341Z"
     },
     {
-        "situationId": "53",
-        "answerId": "158",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 164,
+        "situationId": 55,
+        "answerId": 164,
+        "createdAt": "2023-11-02T21:25:48.341Z",
+        "updatedAt": "2023-11-02T21:25:48.341Z"
     },
     {
-        "situationId": "53",
-        "answerId": "159",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 165,
+        "situationId": 55,
+        "answerId": 165,
+        "createdAt": "2023-11-02T21:25:48.341Z",
+        "updatedAt": "2023-11-02T21:25:48.341Z"
     },
     {
-        "situationId": "54",
-        "answerId": "160",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 166,
+        "situationId": 56,
+        "answerId": 166,
+        "createdAt": "2023-11-02T21:26:22.888Z",
+        "updatedAt": "2023-11-02T21:26:22.888Z"
     },
     {
-        "situationId": "54",
-        "answerId": "161",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 167,
+        "situationId": 56,
+        "answerId": 167,
+        "createdAt": "2023-11-02T21:26:22.888Z",
+        "updatedAt": "2023-11-02T21:26:22.888Z"
     },
     {
-        "situationId": "54",
-        "answerId": "162",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 168,
+        "situationId": 56,
+        "answerId": 168,
+        "createdAt": "2023-11-02T21:26:22.888Z",
+        "updatedAt": "2023-11-02T21:26:22.888Z"
     },
     {
-        "situationId": "55",
-        "answerId": "163",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 169,
+        "situationId": 57,
+        "answerId": 169,
+        "createdAt": "2023-11-02T21:27:09.717Z",
+        "updatedAt": "2023-11-02T21:27:09.717Z"
     },
     {
-        "situationId": "55",
-        "answerId": "164",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 170,
+        "situationId": 57,
+        "answerId": 170,
+        "createdAt": "2023-11-02T21:27:09.717Z",
+        "updatedAt": "2023-11-02T21:27:09.717Z"
     },
     {
-        "situationId": "55",
-        "answerId": "165",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 171,
+        "situationId": 57,
+        "answerId": 171,
+        "createdAt": "2023-11-02T21:27:09.717Z",
+        "updatedAt": "2023-11-02T21:27:09.717Z"
     },
     {
-        "situationId": "56",
-        "answerId": "166",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 172,
+        "situationId": 58,
+        "answerId": 172,
+        "createdAt": "2023-11-02T21:27:48.215Z",
+        "updatedAt": "2023-11-02T21:27:48.215Z"
     },
     {
-        "situationId": "56",
-        "answerId": "167",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 173,
+        "situationId": 58,
+        "answerId": 173,
+        "createdAt": "2023-11-02T21:27:48.215Z",
+        "updatedAt": "2023-11-02T21:27:48.215Z"
     },
     {
-        "situationId": "56",
-        "answerId": "168",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 174,
+        "situationId": 58,
+        "answerId": 174,
+        "createdAt": "2023-11-02T21:27:48.215Z",
+        "updatedAt": "2023-11-02T21:27:48.215Z"
     },
     {
-        "situationId": "57",
-        "answerId": "169",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 175,
+        "situationId": 59,
+        "answerId": 175,
+        "createdAt": "2023-11-02T21:28:41.206Z",
+        "updatedAt": "2023-11-02T21:28:41.206Z"
     },
     {
-        "situationId": "57",
-        "answerId": "170",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 176,
+        "situationId": 59,
+        "answerId": 176,
+        "createdAt": "2023-11-02T21:28:41.206Z",
+        "updatedAt": "2023-11-02T21:28:41.206Z"
     },
     {
-        "situationId": "57",
-        "answerId": "171",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 177,
+        "situationId": 59,
+        "answerId": 177,
+        "createdAt": "2023-11-02T21:28:41.206Z",
+        "updatedAt": "2023-11-02T21:28:41.206Z"
     },
     {
-        "situationId": "58",
-        "answerId": "172",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 178,
+        "situationId": 60,
+        "answerId": 178,
+        "createdAt": "2023-11-02T21:32:52.376Z",
+        "updatedAt": "2023-11-02T21:32:52.376Z"
     },
     {
-        "situationId": "58",
-        "answerId": "173",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 179,
+        "situationId": 60,
+        "answerId": 179,
+        "createdAt": "2023-11-02T21:32:52.376Z",
+        "updatedAt": "2023-11-02T21:32:52.376Z"
     },
     {
-        "situationId": "58",
-        "answerId": "174",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 180,
+        "situationId": 60,
+        "answerId": 180,
+        "createdAt": "2023-11-02T21:32:52.376Z",
+        "updatedAt": "2023-11-02T21:32:52.376Z"
     },
     {
-        "situationId": "59",
-        "answerId": "175",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 181,
+        "situationId": 61,
+        "answerId": 181,
+        "createdAt": "2023-11-02T21:33:46.603Z",
+        "updatedAt": "2023-11-02T21:33:46.603Z"
     },
     {
-        "situationId": "59",
-        "answerId": "176",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 182,
+        "situationId": 61,
+        "answerId": 182,
+        "createdAt": "2023-11-02T21:33:46.603Z",
+        "updatedAt": "2023-11-02T21:33:46.603Z"
     },
     {
-        "situationId": "59",
-        "answerId": "177",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 183,
+        "situationId": 61,
+        "answerId": 183,
+        "createdAt": "2023-11-02T21:33:46.603Z",
+        "updatedAt": "2023-11-02T21:33:46.603Z"
     },
     {
-        "situationId": "60",
-        "answerId": "178",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 184,
+        "situationId": 62,
+        "answerId": 184,
+        "createdAt": "2023-11-02T21:34:30.760Z",
+        "updatedAt": "2023-11-02T21:34:30.760Z"
     },
     {
-        "situationId": "60",
-        "answerId": "179",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 185,
+        "situationId": 62,
+        "answerId": 185,
+        "createdAt": "2023-11-02T21:34:30.760Z",
+        "updatedAt": "2023-11-02T21:34:30.760Z"
     },
     {
-        "situationId": "60",
-        "answerId": "180",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 186,
+        "situationId": 62,
+        "answerId": 186,
+        "createdAt": "2023-11-02T21:34:30.760Z",
+        "updatedAt": "2023-11-02T21:34:30.760Z"
     },
     {
-        "situationId": "61",
-        "answerId": "181",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 187,
+        "situationId": 63,
+        "answerId": 187,
+        "createdAt": "2023-11-02T21:35:07.430Z",
+        "updatedAt": "2023-11-02T21:35:07.430Z"
     },
     {
-        "situationId": "61",
-        "answerId": "182",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 188,
+        "situationId": 63,
+        "answerId": 188,
+        "createdAt": "2023-11-02T21:35:07.430Z",
+        "updatedAt": "2023-11-02T21:35:07.430Z"
     },
     {
-        "situationId": "61",
-        "answerId": "183",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 189,
+        "situationId": 63,
+        "answerId": 189,
+        "createdAt": "2023-11-02T21:35:07.430Z",
+        "updatedAt": "2023-11-02T21:35:07.430Z"
     },
     {
-        "situationId": "62",
-        "answerId": "184",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 190,
+        "situationId": 64,
+        "answerId": 190,
+        "createdAt": "2023-11-02T21:35:53.937Z",
+        "updatedAt": "2023-11-02T21:35:53.937Z"
     },
     {
-        "situationId": "62",
-        "answerId": "185",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 191,
+        "situationId": 64,
+        "answerId": 191,
+        "createdAt": "2023-11-02T21:35:53.937Z",
+        "updatedAt": "2023-11-02T21:35:53.937Z"
     },
     {
-        "situationId": "62",
-        "answerId": "186",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 192,
+        "situationId": 64,
+        "answerId": 192,
+        "createdAt": "2023-11-02T21:35:53.937Z",
+        "updatedAt": "2023-11-02T21:35:53.937Z"
     },
     {
-        "situationId": "63",
-        "answerId": "187",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 193,
+        "situationId": 65,
+        "answerId": 193,
+        "createdAt": "2023-11-02T21:36:32.128Z",
+        "updatedAt": "2023-11-02T21:36:32.128Z"
     },
     {
-        "situationId": "63",
-        "answerId": "188",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 194,
+        "situationId": 65,
+        "answerId": 194,
+        "createdAt": "2023-11-02T21:36:32.128Z",
+        "updatedAt": "2023-11-02T21:36:32.128Z"
     },
     {
-        "situationId": "63",
-        "answerId": "189",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 195,
+        "situationId": 65,
+        "answerId": 195,
+        "createdAt": "2023-11-02T21:36:32.128Z",
+        "updatedAt": "2023-11-02T21:36:32.128Z"
     },
     {
-        "situationId": "64",
-        "answerId": "190",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 196,
+        "situationId": 66,
+        "answerId": 196,
+        "createdAt": "2023-11-02T21:37:14.532Z",
+        "updatedAt": "2023-11-02T21:37:14.532Z"
     },
     {
-        "situationId": "64",
-        "answerId": "191",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 197,
+        "situationId": 66,
+        "answerId": 197,
+        "createdAt": "2023-11-02T21:37:14.532Z",
+        "updatedAt": "2023-11-02T21:37:14.532Z"
     },
     {
-        "situationId": "64",
-        "answerId": "192",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 198,
+        "situationId": 66,
+        "answerId": 198,
+        "createdAt": "2023-11-02T21:37:14.532Z",
+        "updatedAt": "2023-11-02T21:37:14.532Z"
     },
     {
-        "situationId": "65",
-        "answerId": "193",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 199,
+        "situationId": 67,
+        "answerId": 199,
+        "createdAt": "2023-11-02T21:38:14.434Z",
+        "updatedAt": "2023-11-02T21:38:14.434Z"
     },
     {
-        "situationId": "65",
-        "answerId": "194",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 200,
+        "situationId": 67,
+        "answerId": 200,
+        "createdAt": "2023-11-02T21:38:14.434Z",
+        "updatedAt": "2023-11-02T21:38:14.434Z"
     },
     {
-        "situationId": "65",
-        "answerId": "195",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 201,
+        "situationId": 67,
+        "answerId": 201,
+        "createdAt": "2023-11-02T21:38:14.434Z",
+        "updatedAt": "2023-11-02T21:38:14.434Z"
     },
     {
-        "situationId": "66",
-        "answerId": "196",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 202,
+        "situationId": 68,
+        "answerId": 202,
+        "createdAt": "2023-11-02T21:42:53.946Z",
+        "updatedAt": "2023-11-02T21:42:53.946Z"
     },
     {
-        "situationId": "66",
-        "answerId": "197",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 203,
+        "situationId": 68,
+        "answerId": 203,
+        "createdAt": "2023-11-02T21:42:53.946Z",
+        "updatedAt": "2023-11-02T21:42:53.946Z"
     },
     {
-        "situationId": "66",
-        "answerId": "198",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 204,
+        "situationId": 68,
+        "answerId": 204,
+        "createdAt": "2023-11-02T21:42:53.946Z",
+        "updatedAt": "2023-11-02T21:42:53.946Z"
     },
     {
-        "situationId": "67",
-        "answerId": "199",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 205,
+        "situationId": 69,
+        "answerId": 205,
+        "createdAt": "2023-11-02T21:45:19.076Z",
+        "updatedAt": "2023-11-02T21:45:19.076Z"
     },
     {
-        "situationId": "67",
-        "answerId": "200",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 206,
+        "situationId": 69,
+        "answerId": 206,
+        "createdAt": "2023-11-02T21:45:19.076Z",
+        "updatedAt": "2023-11-02T21:45:19.076Z"
     },
     {
-        "situationId": "67",
-        "answerId": "201",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 207,
+        "situationId": 69,
+        "answerId": 207,
+        "createdAt": "2023-11-02T21:45:19.076Z",
+        "updatedAt": "2023-11-02T21:45:19.076Z"
     },
     {
-        "situationId": "68",
-        "answerId": "202",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 208,
+        "situationId": 70,
+        "answerId": 208,
+        "createdAt": "2023-11-02T21:46:17.165Z",
+        "updatedAt": "2023-11-02T21:46:17.165Z"
     },
     {
-        "situationId": "68",
-        "answerId": "203",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 209,
+        "situationId": 70,
+        "answerId": 209,
+        "createdAt": "2023-11-02T21:46:17.165Z",
+        "updatedAt": "2023-11-02T21:46:17.165Z"
     },
     {
-        "situationId": "68",
-        "answerId": "204",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 210,
+        "situationId": 70,
+        "answerId": 210,
+        "createdAt": "2023-11-02T21:46:17.165Z",
+        "updatedAt": "2023-11-02T21:46:17.165Z"
     },
     {
-        "situationId": "69",
-        "answerId": "205",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 211,
+        "situationId": 71,
+        "answerId": 211,
+        "createdAt": "2023-11-02T21:47:01.468Z",
+        "updatedAt": "2023-11-02T21:47:01.468Z"
     },
     {
-        "situationId": "69",
-        "answerId": "206",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 212,
+        "situationId": 71,
+        "answerId": 212,
+        "createdAt": "2023-11-02T21:47:01.468Z",
+        "updatedAt": "2023-11-02T21:47:01.468Z"
     },
     {
-        "situationId": "69",
-        "answerId": "207",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 213,
+        "situationId": 71,
+        "answerId": 213,
+        "createdAt": "2023-11-02T21:47:01.468Z",
+        "updatedAt": "2023-11-02T21:47:01.468Z"
     },
     {
-        "situationId": "70",
-        "answerId": "208",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 214,
+        "situationId": 72,
+        "answerId": 214,
+        "createdAt": "2023-11-02T21:58:56.411Z",
+        "updatedAt": "2023-11-02T21:58:56.411Z"
     },
     {
-        "situationId": "70",
-        "answerId": "209",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 215,
+        "situationId": 72,
+        "answerId": 215,
+        "createdAt": "2023-11-02T21:58:56.411Z",
+        "updatedAt": "2023-11-02T21:58:56.411Z"
     },
     {
-        "situationId": "70",
-        "answerId": "210",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 216,
+        "situationId": 72,
+        "answerId": 216,
+        "createdAt": "2023-11-02T21:58:56.411Z",
+        "updatedAt": "2023-11-02T21:58:56.411Z"
     },
     {
-        "situationId": "71",
-        "answerId": "211",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 217,
+        "situationId": 73,
+        "answerId": 217,
+        "createdAt": "2023-11-02T21:59:44.992Z",
+        "updatedAt": "2023-11-02T21:59:44.992Z"
     },
     {
-        "situationId": "71",
-        "answerId": "212",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 218,
+        "situationId": 73,
+        "answerId": 218,
+        "createdAt": "2023-11-02T21:59:44.992Z",
+        "updatedAt": "2023-11-02T21:59:44.992Z"
     },
     {
-        "situationId": "71",
-        "answerId": "213",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 219,
+        "situationId": 73,
+        "answerId": 219,
+        "createdAt": "2023-11-02T21:59:44.992Z",
+        "updatedAt": "2023-11-02T21:59:44.992Z"
     },
     {
-        "situationId": "72",
-        "answerId": "214",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 220,
+        "situationId": 74,
+        "answerId": 220,
+        "createdAt": "2023-11-02T22:00:43.178Z",
+        "updatedAt": "2023-11-02T22:00:43.178Z"
     },
     {
-        "situationId": "72",
-        "answerId": "215",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 221,
+        "situationId": 74,
+        "answerId": 221,
+        "createdAt": "2023-11-02T22:00:43.178Z",
+        "updatedAt": "2023-11-02T22:00:43.178Z"
     },
     {
-        "situationId": "72",
-        "answerId": "216",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 222,
+        "situationId": 74,
+        "answerId": 222,
+        "createdAt": "2023-11-02T22:00:43.178Z",
+        "updatedAt": "2023-11-02T22:00:43.178Z"
     },
     {
-        "situationId": "73",
-        "answerId": "217",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 223,
+        "situationId": 75,
+        "answerId": 223,
+        "createdAt": "2023-11-02T22:01:31.299Z",
+        "updatedAt": "2023-11-02T22:01:31.299Z"
     },
     {
-        "situationId": "73",
-        "answerId": "218",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 224,
+        "situationId": 75,
+        "answerId": 224,
+        "createdAt": "2023-11-02T22:01:31.299Z",
+        "updatedAt": "2023-11-02T22:01:31.299Z"
     },
     {
-        "situationId": "73",
-        "answerId": "219",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 225,
+        "situationId": 75,
+        "answerId": 225,
+        "createdAt": "2023-11-02T22:01:31.299Z",
+        "updatedAt": "2023-11-02T22:01:31.299Z"
     },
     {
-        "situationId": "74",
-        "answerId": "220",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 226,
+        "situationId": 76,
+        "answerId": 226,
+        "createdAt": "2023-11-02T22:02:56.705Z",
+        "updatedAt": "2023-11-02T22:02:56.705Z"
     },
     {
-        "situationId": "74",
-        "answerId": "221",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 227,
+        "situationId": 76,
+        "answerId": 227,
+        "createdAt": "2023-11-02T22:02:56.705Z",
+        "updatedAt": "2023-11-02T22:02:56.705Z"
     },
     {
-        "situationId": "74",
-        "answerId": "222",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 228,
+        "situationId": 76,
+        "answerId": 228,
+        "createdAt": "2023-11-02T22:02:56.705Z",
+        "updatedAt": "2023-11-02T22:02:56.705Z"
     },
     {
-        "situationId": "75",
-        "answerId": "223",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 229,
+        "situationId": 77,
+        "answerId": 229,
+        "createdAt": "2023-11-02T22:03:38.746Z",
+        "updatedAt": "2023-11-02T22:03:38.746Z"
     },
     {
-        "situationId": "75",
-        "answerId": "224",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 230,
+        "situationId": 77,
+        "answerId": 230,
+        "createdAt": "2023-11-02T22:03:38.746Z",
+        "updatedAt": "2023-11-02T22:03:38.746Z"
     },
     {
-        "situationId": "75",
-        "answerId": "225",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 231,
+        "situationId": 77,
+        "answerId": 231,
+        "createdAt": "2023-11-02T22:03:38.746Z",
+        "updatedAt": "2023-11-02T22:03:38.746Z"
     },
     {
-        "situationId": "76",
-        "answerId": "226",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 232,
+        "situationId": 78,
+        "answerId": 232,
+        "createdAt": "2023-11-02T22:04:24.960Z",
+        "updatedAt": "2023-11-02T22:04:24.960Z"
     },
     {
-        "situationId": "76",
-        "answerId": "227",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 233,
+        "situationId": 78,
+        "answerId": 233,
+        "createdAt": "2023-11-02T22:04:24.960Z",
+        "updatedAt": "2023-11-02T22:04:24.960Z"
     },
     {
-        "situationId": "76",
-        "answerId": "228",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 234,
+        "situationId": 78,
+        "answerId": 234,
+        "createdAt": "2023-11-02T22:04:24.960Z",
+        "updatedAt": "2023-11-02T22:04:24.960Z"
     },
     {
-        "situationId": "77",
-        "answerId": "229",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 235,
+        "situationId": 79,
+        "answerId": 235,
+        "createdAt": "2023-11-02T22:05:12.319Z",
+        "updatedAt": "2023-11-02T22:05:12.319Z"
     },
     {
-        "situationId": "77",
-        "answerId": "230",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 236,
+        "situationId": 79,
+        "answerId": 236,
+        "createdAt": "2023-11-02T22:05:12.319Z",
+        "updatedAt": "2023-11-02T22:05:12.319Z"
     },
     {
-        "situationId": "77",
-        "answerId": "231",
-        "createdAt": "2023-10-09T12:00:00.000Z",
-        "updatedAt": "2023-10-09T12:00:00.000Z"
+        "id": 237,
+        "situationId": 79,
+        "answerId": 237,
+        "createdAt": "2023-11-02T22:05:12.319Z",
+        "updatedAt": "2023-11-02T22:05:12.319Z"
+    },
+    {
+        "id": 238,
+        "situationId": 80,
+        "answerId": 238,
+        "createdAt": "2023-11-02T22:05:52.972Z",
+        "updatedAt": "2023-11-02T22:05:52.972Z"
+    },
+    {
+        "id": 239,
+        "situationId": 80,
+        "answerId": 239,
+        "createdAt": "2023-11-02T22:05:52.972Z",
+        "updatedAt": "2023-11-02T22:05:52.972Z"
+    },
+    {
+        "id": 240,
+        "situationId": 80,
+        "answerId": 240,
+        "createdAt": "2023-11-02T22:05:52.972Z",
+        "updatedAt": "2023-11-02T22:05:52.972Z"
+    },
+    {
+        "id": 241,
+        "situationId": 81,
+        "answerId": 241,
+        "createdAt": "2023-11-02T22:06:32.035Z",
+        "updatedAt": "2023-11-02T22:06:32.035Z"
+    },
+    {
+        "id": 242,
+        "situationId": 81,
+        "answerId": 242,
+        "createdAt": "2023-11-02T22:06:32.035Z",
+        "updatedAt": "2023-11-02T22:06:32.035Z"
+    },
+    {
+        "id": 243,
+        "situationId": 81,
+        "answerId": 243,
+        "createdAt": "2023-11-02T22:06:32.035Z",
+        "updatedAt": "2023-11-02T22:06:32.035Z"
+    },
+    {
+        "id": 244,
+        "situationId": 82,
+        "answerId": 244,
+        "createdAt": "2023-11-02T22:07:14.070Z",
+        "updatedAt": "2023-11-02T22:07:14.070Z"
+    },
+    {
+        "id": 245,
+        "situationId": 82,
+        "answerId": 245,
+        "createdAt": "2023-11-02T22:07:14.070Z",
+        "updatedAt": "2023-11-02T22:07:14.070Z"
+    },
+    {
+        "id": 246,
+        "situationId": 82,
+        "answerId": 246,
+        "createdAt": "2023-11-02T22:07:14.070Z",
+        "updatedAt": "2023-11-02T22:07:14.070Z"
+    },
+    {
+        "id": 247,
+        "situationId": 83,
+        "answerId": 247,
+        "createdAt": "2023-11-02T22:07:55.294Z",
+        "updatedAt": "2023-11-02T22:07:55.294Z"
+    },
+    {
+        "id": 248,
+        "situationId": 83,
+        "answerId": 248,
+        "createdAt": "2023-11-02T22:07:55.294Z",
+        "updatedAt": "2023-11-02T22:07:55.294Z"
+    },
+    {
+        "id": 249,
+        "situationId": 83,
+        "answerId": 249,
+        "createdAt": "2023-11-02T22:07:55.294Z",
+        "updatedAt": "2023-11-02T22:07:55.294Z"
+    },
+    {
+        "id": 250,
+        "situationId": 84,
+        "answerId": 250,
+        "createdAt": "2023-11-02T22:08:33.767Z",
+        "updatedAt": "2023-11-02T22:08:33.767Z"
+    },
+    {
+        "id": 251,
+        "situationId": 84,
+        "answerId": 251,
+        "createdAt": "2023-11-02T22:08:33.767Z",
+        "updatedAt": "2023-11-02T22:08:33.767Z"
+    },
+    {
+        "id": 252,
+        "situationId": 84,
+        "answerId": 252,
+        "createdAt": "2023-11-02T22:08:33.767Z",
+        "updatedAt": "2023-11-02T22:08:33.767Z"
+    },
+    {
+        "id": 253,
+        "situationId": 85,
+        "answerId": 253,
+        "createdAt": "2023-11-02T22:09:06.128Z",
+        "updatedAt": "2023-11-02T22:09:06.128Z"
+    },
+    {
+        "id": 254,
+        "situationId": 85,
+        "answerId": 254,
+        "createdAt": "2023-11-02T22:09:06.128Z",
+        "updatedAt": "2023-11-02T22:09:06.128Z"
+    },
+    {
+        "id": 255,
+        "situationId": 85,
+        "answerId": 255,
+        "createdAt": "2023-11-02T22:09:06.128Z",
+        "updatedAt": "2023-11-02T22:09:06.128Z"
+    },
+    {
+        "id": 256,
+        "situationId": 86,
+        "answerId": 256,
+        "createdAt": "2023-11-02T22:09:42.086Z",
+        "updatedAt": "2023-11-02T22:09:42.086Z"
+    },
+    {
+        "id": 257,
+        "situationId": 86,
+        "answerId": 257,
+        "createdAt": "2023-11-02T22:09:42.086Z",
+        "updatedAt": "2023-11-02T22:09:42.086Z"
+    },
+    {
+        "id": 258,
+        "situationId": 86,
+        "answerId": 258,
+        "createdAt": "2023-11-02T22:09:42.086Z",
+        "updatedAt": "2023-11-02T22:09:42.086Z"
     }
-
 ]

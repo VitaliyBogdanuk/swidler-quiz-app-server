@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
                 key: 'id'
             },
             onDelete: 'CASCADE'
-        }
+        },
+
     }, {
         timestamps: true
     }, {
