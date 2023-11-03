@@ -2,10 +2,10 @@ const { Answer, SituationToAnswer } = require('../models');
 
 // CREATE
 exports.createAnswer = async (req, res) => {
-    transaction = await Answer.sequelize.transaction();
+    const transaction = await Answer.sequelize.transaction();
     try {
-        const answer = await Answer.create(req.body);
-        await SituationToAnswer.create({ situationId: req.body.stuationId, answerId: answer.id })
+        const answer = await Answer.create(req.body, { transaction });
+        await SituationToAnswer.create({ situationId: req.body.stuationId, answerId: answer.id }, { transaction })
         await transaction.commit();
         res.render('pages/answers', {
             success_msg: 'Answer created successfully',
@@ -70,15 +70,23 @@ exports.readAnswer = async (req, res) => {
 
 // UPDATE
 exports.updateAnswer = async (req, res) => {
+    const transaction = await Answer.sequelize.transaction();
     try {
-        const answer = await Answer.findByPk(req.params.id);
+        const answer = await Answer.findByPk(req.params.id , { transaction });
+        const connection = await SituationToAnswer.findOne({ where: { answerId: answer.id }} , { transaction });
         if (answer) {
-            await answer.update(req.body);
-            res.json(answer);
-        } else {
+            await answer.update(req.body, { transaction });
+            await connection.update({ situationId: req.body.stuationId, answerId: answer.id }, { transaction })
+            await transaction.commit();
+            res.render('pages/answers', {
+                success_msg: 'Answer updated successfully',
+                answersList: await exports.getAnswers(),
+                error: []
+            });
+        } else {await transaction.rollback();
             res.status(404).json({ message: 'Answer not found' });
         }
-    } catch (err) {
+    } catch (err) {await transaction.rollback();
         res.status(500).json({ message: err.message });
     }
 };

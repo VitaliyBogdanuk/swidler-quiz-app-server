@@ -7,7 +7,7 @@ exports.createCategory = async (req, res) => {
         await Category.create(req.body);
         // req.flash('success_msg', 'Category successfully created!'); // TODO
         res.redirect('/tables/categories');
-    } catch (err) {
+    } catch (err) {console.log('yeah baby')
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.redirect('back'); // assuming '/form/category' is where your creation form is located
     }
@@ -80,11 +80,15 @@ exports.readCategory = async (req, res) => {
 
 // UPDATE
 exports.updateCategory = async (req, res) => {
-    try {
+    try { 
         const category = await Category.findByPk(req.params.id);
         if (category) {
             await category.update(req.body);
-            res.json(category);
+            res.render('pages/categories', {
+                success_msg: 'Category updated successfully',
+                categoriesList: await exports.getCategories(),
+                error: []
+            });
         } else {
             res.status(404).json({ message: 'Category not found' });
         }

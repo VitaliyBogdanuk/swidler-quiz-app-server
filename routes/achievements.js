@@ -5,7 +5,7 @@ const { listAchievements, createAchievement, readAchievement, updateAchievement,
 router.get('/achievements', listAchievements);
 router.post('/achievement', createAchievement);
 router.get('/achievement/:id', readAchievement);
-router.put('/achievement/:id', updateAchievement);
+router.post('/achievement/:id', updateAchievement);
 router.delete('/achievement/:id', deleteAchievement);
 
 module.exports = router;
