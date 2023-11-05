@@ -7,7 +7,7 @@ exports.createCategory = async (req, res) => {
         await Category.create(req.body);
         // req.flash('success_msg', 'Category successfully created!'); // TODO
         res.redirect('/tables/categories');
-    } catch (err) {console.log('yeah baby')
+    } catch (err) {
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.redirect('back'); // assuming '/form/category' is where your creation form is located
     }

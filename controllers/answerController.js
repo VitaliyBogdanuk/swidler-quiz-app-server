@@ -72,8 +72,8 @@ exports.readAnswer = async (req, res) => {
 exports.updateAnswer = async (req, res) => {
     const transaction = await Answer.sequelize.transaction();
     try {
-        const answer = await Answer.findByPk(req.params.id , { transaction });
-        const connection = await SituationToAnswer.findOne({ where: { answerId: answer.id }} , { transaction });
+        const answer = await Answer.findByPk(req.params.id, { transaction });
+        const connection = await SituationToAnswer.findOne({ where: { answerId: answer.id } }, { transaction });
         if (answer) {
             await answer.update(req.body, { transaction });
             await connection.update({ situationId: req.body.stuationId, answerId: answer.id }, { transaction })
@@ -83,10 +83,12 @@ exports.updateAnswer = async (req, res) => {
                 answersList: await exports.getAnswers(),
                 error: []
             });
-        } else {await transaction.rollback();
+        } else {
+            await transaction.rollback();
             res.status(404).json({ message: 'Answer not found' });
         }
-    } catch (err) {await transaction.rollback();
+    } catch (err) {
+        await transaction.rollback();
         res.status(500).json({ message: err.message });
     }
 };
@@ -131,9 +133,9 @@ exports._listAnswers = async (req, res) => {
     }
 };
 
-exports._getSituationToAnswer = async (req,res) => {
+exports._getSituationToAnswer = async (req, res) => {
     try {
-        const result =  await SituationToAnswer.findAll({
+        const result = await SituationToAnswer.findAll({
             order: [
                 ['id', 'ASC']
             ]
