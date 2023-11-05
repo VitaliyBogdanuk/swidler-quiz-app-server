@@ -80,11 +80,15 @@ exports.readCategory = async (req, res) => {
 
 // UPDATE
 exports.updateCategory = async (req, res) => {
-    try {
+    try { 
         const category = await Category.findByPk(req.params.id);
         if (category) {
             await category.update(req.body);
-            res.json(category);
+            res.render('pages/categories', {
+                success_msg: 'Category updated successfully',
+                categoriesList: await exports.getCategories(),
+                error: []
+            });
         } else {
             res.status(404).json({ message: 'Category not found' });
         }

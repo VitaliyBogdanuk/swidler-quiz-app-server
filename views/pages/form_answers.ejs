@@ -20,16 +20,16 @@
 								<h4 class="font-weight-bolder">Fill in answer data</h4>
 							</div>
 							<div class="card-body">
-								<form role="form" action="/answer" method="POST">
-									<div class="input-group input-group-outline mb-3">
+								<form role="form" action="/answer/<%=updateData.id ? updateData.id : null%>" method="POST">
+									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Answer text</label>
-										<input type="text" class="form-control" name="text">
+										<input type="text" class="form-control" name="text" value="<%=updateData.text ? updateData.text : null%>" >
 									</div>
                                     <select class="form-control  mb-3 border p-2" aria-label="Topic"
 										name="stuationId">
 										<option disabled selected>Select situation</option>
 										<% situationsList.forEach(function(situation) { %>
-											<option value="<%= situation.id %>">
+											<option value="<%= situation.id %>" >
 												<%= situation.question %>
 											</option>
 											<% }); %>

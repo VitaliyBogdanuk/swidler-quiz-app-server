@@ -132,7 +132,7 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
 
 router.get('/forms/category', ensureAuthenticated, async (req, res) => {
     try {
-        res.render('pages/form_category', { user: req.user });
+        res.render('pages/form_category', { user: req.user, updateData: req.query });
     } catch (error) {
         // handle error
         console.log(error);
@@ -186,7 +186,7 @@ router.get('/forms/user', ensureAuthenticated, async (req, res) => {
 router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
     try {
         const situationsList = await situationController.getSituations();
-        res.render('pages/form_answers', { user: req.user, situationsList: situationsList });
+        res.render('pages/form_answers', { user: req.user, situationsList: situationsList, updateData: req.query  });
     } catch (error) {
         // handle error
         console.log(error);
@@ -205,4 +205,5 @@ router.get('/forms/cheaterPhone', ensureAuthenticated, async (req, res) => {
         res.redirect('back');
     }
 });
+
 module.exports = router;

@@ -5,7 +5,7 @@ const { listCategories, createCategory, readCategory, updateCategory, deleteCate
 router.get('/categories', listCategories);
 router.post('/category', createCategory);
 router.get('/category/:id', readCategory);
-router.put('/category/:id', updateCategory);
+router.post('/category/:id', updateCategory);
 router.delete('/category/:id', deleteCategory);
 
 module.exports = router;
