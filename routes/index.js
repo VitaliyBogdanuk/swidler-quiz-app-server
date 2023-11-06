@@ -142,7 +142,7 @@ router.get('/forms/category', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
     try {
-        res.render('pages/form_achievements', { user: req.user });
+        res.render('pages/form_achievements', { user: req.user, updateData: req.query });
     } catch (error) {
         // handle error
         console.log(error);
@@ -153,7 +153,7 @@ router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
 router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
     try {
         const categoriesList = await categoryController.getCategories();
-        res.render('pages/form_topics', { user: req.user, categoriesList: categoriesList });
+        res.render('pages/form_topics', { user: req.user, categoriesList: categoriesList, updateData: req.query });
     } catch (error) {
         // handle error
         console.log(error);

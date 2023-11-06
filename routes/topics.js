@@ -5,7 +5,7 @@ const { listTopics, createTopic, readTopic, updateTopic, deleteTopic } = require
 router.get('/topics', listTopics);
 router.post('/topic', createTopic);
 router.get('/topic/:id', readTopic);
-router.put('/topic/:id', updateTopic);
+router.post('/topic/:id', updateTopic);
 router.delete('/topic/:id', deleteTopic);
 
 module.exports = router;
