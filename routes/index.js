@@ -156,8 +156,10 @@ router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
     try {
+        req.params = req.query
+        const topicData = await topicController.getTopic(req)
         const categoriesList = await categoryController.getCategories();
-        res.render('pages/form_topics', { user: req.user, categoriesList: categoriesList, updateData: req.query });
+        res.render('pages/form_topics', { user: req.user, categoriesList: categoriesList, updateData:topicData || req.query });
     } catch (error) {
         // handle error
         console.log(error);
@@ -167,9 +169,11 @@ router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/situation', ensureAuthenticated, async (req, res) => {
     try {
+        req.params = req.query
+        const situationData = await situationController.getSituation(req)
         const answersList = await answerController.getAnswers();
         const topicsList = await topicController.getTopics();
-        res.render('pages/form_situations', { user: req.user, answersList: answersList, topicsList: topicsList, updateData: req.query });
+        res.render('pages/form_situations', { user: req.user, answersList: answersList, topicsList: topicsList, updateData: situationData || req.query });
     } catch (error) {
         // handle error
         console.log(error);
