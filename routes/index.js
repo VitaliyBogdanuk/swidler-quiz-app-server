@@ -18,13 +18,13 @@ router.get('/auth/login', (req, res) => {
     res.render('auth/sign-in', { messages: false });
 });
 
- router.get('/auth/register', (req, res) => {
-     res.render('auth/sign-up', { messages: false });
- });
+router.get('/auth/register', (req, res) => {
+    res.render('auth/sign-up', { messages: false });
+});
 
- router.get('/auth/forgot', (req, res) => {
-     res.render('auth/forgot');
- });
+router.get('/auth/forgot', (req, res) => {
+    res.render('auth/forgot');
+});
 
 router.get('/dashboard', ensureAuthenticated, async (req, res) => {
     const usersList = await userController.getUsers();
@@ -175,7 +175,9 @@ router.get('/forms/situation', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/user', ensureAuthenticated, async (req, res) => {
     try {
-        res.render('pages/form_users', { user: req.user, updateData: req.query });
+        req.params = req.query
+        const userData = await userController.getUser(req)
+        res.render('pages/form_users', { user: req.user, updateData: userData || req.query });
     } catch (error) {
         // handle error
         console.log(error);
@@ -186,7 +188,7 @@ router.get('/forms/user', ensureAuthenticated, async (req, res) => {
 router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
     try {
         const situationsList = await situationController.getSituations();
-        res.render('pages/form_answers', { user: req.user, situationsList: situationsList, updateData: req.query  });
+        res.render('pages/form_answers', { user: req.user, situationsList: situationsList, updateData: req.query });
     } catch (error) {
         // handle error
         console.log(error);

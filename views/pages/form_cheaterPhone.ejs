@@ -20,7 +20,7 @@
 								<h4 class="font-weight-bolder">Enter a cheater phone</h4>
 							</div>
 							<div class="card-body">
-								<form role="form" action="/cheaterPhoneAdmin/<%=updateData.id ? updateData.id : null%>" method="POST">
+								<form role="form" action="/cheaterPhone/<%=updateData.id ? updateData.id : null%>" method="POST">
 									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Phone</label>
 										<input type="text" class="form-control" name="phone" value="<%=updateData.phone ? updateData.phone : null%>">
