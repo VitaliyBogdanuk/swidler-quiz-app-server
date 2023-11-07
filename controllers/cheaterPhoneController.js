@@ -100,8 +100,12 @@ exports.getCheaterPhone = async (req) => {
 exports.readCheaterPhone = async (req, res) => {
     try {
         const cheaterPhone = await exports.getCheaterPhone(req);
-        if (cheaterPhone)
+        if (cheaterPhone) {
             res.json(cheaterPhone);
+        }
+        else {
+            res.status(404).json({ message: 'Phone not found' });
+        }
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
