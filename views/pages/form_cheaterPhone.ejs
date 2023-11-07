@@ -20,17 +20,17 @@
 								<h4 class="font-weight-bolder">Enter a cheater phone</h4>
 							</div>
 							<div class="card-body">
-								<form role="form" action="/cheaterPhoneAdmin" method="POST">
-									<div class="input-group input-group-outline mb-3">
+								<form role="form" action="/cheaterPhoneAdmin/<%=updateData.id ? updateData.id : null%>" method="POST">
+									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Phone</label>
-										<input type="text" class="form-control" name="phone">
+										<input type="text" class="form-control" name="phone" value="<%=updateData.phone ? '+'+updateData.phone.slice(1,) : null%>">
 									</div>
-									<div class="input-group input-group-outline mb-3">
+									<div class="<%=updateData.id ? 'd-none' : null%> input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label"></label>
-										<textarea rows="7" type="text" class="form-control" name="description"
+										<textarea rows="7" type="text" class="form-control " name="description"
 											placeholder="Description"></textarea>
 									</div>
-									<input type="hidden" value="1" name="userId">
+									<input type="hidden" value="<%=user.id%>" name="userId">
 									
 									<div class="text-center">
 										<button
@@ -50,5 +50,6 @@
 
 <%- include('../templates/scripts'); -%>
 <script>
+	if(!updateData) {let updateData};
 	window.history.pushState({}, '', '/tables/cheaterPhones');
 </script>

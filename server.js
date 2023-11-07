@@ -84,7 +84,6 @@ app.use('/api', apiRoutes);
 app.use('/quiz', quizRoutes);
 app.use('/', indexRoutes);
 app.use('/', userRoutes);
-
 app.all('*', (req, res) => {
     req.flash('error', '404! Page not found');
     res.redirect('/users');

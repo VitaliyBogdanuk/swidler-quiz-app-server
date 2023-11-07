@@ -6,7 +6,7 @@ router.get('/cheaterPhones', listCheaterPhones);
 router.post('/cheaterPhone', createCheaterPhoneUser);
 router.post('/cheaterPhoneAdmin', createCheaterPhoneAdmin);
 router.get('/cheaterPhone/:phone', readCheaterPhone);
-router.put('/cheaterPhone/:id', updateCheaterPhone);
+router.post('/cheaterPhoneAdmin/:id', updateCheaterPhone);
 router.delete('/cheaterPhone/:id', deleteCheaterPhone);
 
 module.exports = router;
