@@ -48,11 +48,14 @@ exports.createUser = async (req, res) => {
 // Read a user
 exports.getUser = async (req) => {
     try {
-        return await User.findOne({
+        return await User.findByPk(req.params.id,{
             include: [{
-                model: User,
-                as: 'User',
-                attributes: ['id','name','email','role','score']
+                model: Topic,
+                as: 'finishedTopics',
+                attributes: ['id'],  // This line ensures that only the 'id' field of the Topic model is returned.
+                through: {
+                    attributes: [], // This line ensures that no attributes of the join table (UserToTopic) are returned.
+                }
             }],
             where: { id: req.body.id }
 

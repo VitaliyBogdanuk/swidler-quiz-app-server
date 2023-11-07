@@ -23,7 +23,7 @@
 								<form role="form" action="/cheaterPhoneAdmin/<%=updateData.id ? updateData.id : null%>" method="POST">
 									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Phone</label>
-										<input type="text" class="form-control" name="phone" value="<%=updateData.phone ? '+'+updateData.phone.slice(1,) : null%>">
+										<input type="text" class="form-control" name="phone" value="<%=updateData.phone ? updateData.phone : null%>">
 									</div>
 									<div class="<%=updateData.id ? 'd-none' : null%> input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label"></label>
@@ -50,6 +50,5 @@
 
 <%- include('../templates/scripts'); -%>
 <script>
-	if(!updateData) {let updateData};
 	window.history.pushState({}, '', '/tables/cheaterPhones');
 </script>
