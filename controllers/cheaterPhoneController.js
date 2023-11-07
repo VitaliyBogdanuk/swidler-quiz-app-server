@@ -153,3 +153,11 @@ exports.deleteCheaterPhone = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
+exports.getCheaterPhoneAdmin = async (req) => {
+    try {
+        return await CheaterPhone.findByPk(req.params.id);
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};

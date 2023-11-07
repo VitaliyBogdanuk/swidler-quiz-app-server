@@ -49,6 +49,7 @@ exports.createUser = async (req, res) => {
 exports.getUser = async (req) => {
     try {
         return await User.findByPk(req.params.id,{
+            attributes: ['id', 'name', 'email', /* other user fields you need */],
             include: [{
                 model: Topic,
                 as: 'finishedTopics',

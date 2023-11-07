@@ -39,7 +39,7 @@ exports.listAchievements = async (req, res) => {
 };
 
 // READ (single achievement)
-exports.getAchievement = async () => {
+exports.getAchievement = async (req) => {
     try {
         return await Achievement.findByPk(req.params.id);
     } catch (err) {
