@@ -24,8 +24,7 @@ exports.createCheaterPhoneAdmin = async (req, res) => {
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.render('pages/form_cheaterPhone', {
             success_msg: null,
-            cheaterPhonesList: await exports.getCheaterPhones(),
-            updateData: {},
+            updateData: req.body,
             error: err
         });
     }
