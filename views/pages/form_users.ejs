@@ -20,12 +20,12 @@
 								<h4 class="font-weight-bolder">Fill in user data</h4>
 							</div>
 							<div class="card-body">
-								<form role="form" action="/user" method="POST">
+								<form role="form" action="/user/<%=updateData.id ? updateData.id : null%>" method="POST">
 									<div class="input-group input-group-outline mb-3">
-										<input type="text" placeholder="User name" class="form-control" name="name">
+										<input type="text" placeholder="User name" class="form-control" name="name" value="<%=updateData.name ? updateData.name : null%>">
 									</div>
                                     <div class="input-group input-group-outline mb-3">
-										<input type="text" placeholder="Email" class="form-control" name="email">
+										<input type="text" placeholder="Email" class="form-control" name="email" value="<%=updateData.email ? updateData.email : null%>">
 									</div>
                                     <select class="form-control mb-3 border p-2" placeholder="Role" aria-label="Role" name="role">
 										<option disabled selected >Select role</option>

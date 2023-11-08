@@ -23,6 +23,8 @@ exports.createCheaterPhoneAdmin = async (req, res) => {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.render('pages/form_cheaterPhone', {
+            success_msg: null,
+            updateData: req.body,
             error: err
         });
     }
@@ -31,12 +33,12 @@ exports.createCheaterPhoneUser = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
     try {
         req.params.phone = req.body.phone;
-        const existingPhone = await exports.getCheaterPhone(req);
+        const existingPhone = await exports.getCheaterPhone(req, { transaction });
         if (!existingPhone) {
-            const cheaterPhone = await CheaterPhone.create(req.body);
-            await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id });
+            const cheaterPhone = await CheaterPhone.create(req.body, { transaction });
+            await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id }, { transaction });
         } else {
-            await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
+            await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id }, { transaction });
         }
         await transaction.commit();
         res.status(200).json({ message: "Cheater added succesfully" });
@@ -103,8 +105,9 @@ exports.readCheaterPhone = async (req, res) => {
     try {
         const cheaterPhone = await exports.getCheaterPhone(req);
         if (cheaterPhone) {
-            res.status(200).json(cheaterPhone);
-        } else {
+            res.json(cheaterPhone);
+        }
+        else {
             res.status(404).json({ message: 'Phone not found' });
         }
     } catch (err) {
@@ -118,7 +121,11 @@ exports.updateCheaterPhone = async (req, res) => {
         const cheaterPhone = await CheaterPhone.findByPk(req.params.id);
         if (cheaterPhone) {
             await cheaterPhone.update(req.body);
-            res.status(200).json(cheaterPhone);
+            res.render('pages/cheaterPhones', {
+                success_msg: 'Phone updated successfully',
+                cheaterPhonesList: await exports.getCheaterPhones(),
+                error: []
+            });
         } else {
             res.status(404).json({ message: 'Phone not found' });
         }
@@ -148,5 +155,13 @@ exports.deleteCheaterPhone = async (req, res) => {
     } catch (err) {
         // req.flash('error', 'Deleting failed: ' + err.message); // TODO
         res.status(500).json({ message: err.message });
+    }
+};
+
+exports.getCheaterPhoneAdmin = async (req) => {
+    try {
+        return await CheaterPhone.findByPk(req.params.id);
+    } catch (err) {
+        throw new Error(err.message);
     }
 };

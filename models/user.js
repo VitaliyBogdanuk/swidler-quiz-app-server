@@ -65,19 +65,24 @@ module.exports = (sequelize, DataTypes) => {
         return await bcrypt.compare(password, this.password);
     };
 
-    User.associate = function (models) {
+   /* User.associate = function (models) {
         User.belongsToMany(models.Topic, {
             through: models.UserToTopic, // the junction table
             foreignKey: 'userId',
             otherKey: 'topicId',
             as: 'finishedTopics' // alias used in querying
         });
-    };
+    };*/
     User.associate = function (models) {
         // associations can be defined here
         User.hasMany(models.CheaterPhone, {
             foreignKey: 'userId',
             as: 'user'
+        });
+        User.belongsToMany(models.Topic, {
+            through: 'UserToTopics', // the junction table
+            foreignKey: 'userId',
+            as: 'finishedTopics'
         });
     };
 

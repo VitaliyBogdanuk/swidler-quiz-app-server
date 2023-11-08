@@ -20,14 +20,14 @@
 								<h4 class="font-weight-bolder">Fill in topic data</h4>
 							</div>
 							<div class="card-body">
-								<form role="form" action="/topic" method="POST">
-									<div class="input-group input-group-outline mb-3">
+								<form role="form" action="/topic/<%=updateData.id ? updateData.id : null%>" method="POST">
+									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Topic title</label>
-										<input type="text" class="form-control" name="title">
+										<input type="text" class="form-control" name="title" value="<%=updateData.title ? updateData.title : null%>">
 									</div>
                                     <div class="input-group input-group-outline mb-3">
 										<label class="form-label" ></label>
-										<textarea rows="7" type="text" class="form-control" name="description" placeholder="Description"></textarea>
+										<textarea rows="7" type="text" class="form-control" name="description" placeholder="Description" ><%=updateData.description ? updateData.description : null%></textarea>
 									</div>
 									<select class="form-control  mb-3 border p-2" aria-label="Category" name="categoryId">
 										<option disabled selected >Select category</option>

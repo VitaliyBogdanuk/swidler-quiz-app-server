@@ -133,7 +133,11 @@ exports.updateSituation = async (req, res) => {
         const situation = await Situation.findByPk(req.params.id);
         if (situation) {
             await situation.update(req.body);
-            res.json(situation);
+            res.render('pages/situations', {
+                success_msg: 'Situation updated successfully',
+                situationsList: await exports.getSituations(),
+                error: []
+            });
         } else {
             res.status(404).json({ message: 'Situation not found' });
         }

@@ -49,12 +49,12 @@
                                                 </p>
                                             </td>
                                             <td class="align-middle text-center">
-                                                <a href="/category/<%= category.id %>"
+                                               <!-- <a href=""
                                                     class="text-secondary font-weight-bold text-xs"
                                                     data-toggle="tooltip" data-original-title="View category">
                                                     <i class="fa fa-search p-1"></i>
-                                                </a>
-                                                <a href="/forms/category/?id=<%= category.id %>&title=<%= category.title %>"
+                                                </a>-->
+                                                <a href="/forms/category/?id=<%= category.id %>"
                                                     class="text-secondary font-weight-bold text-xs"
                                                     data-toggle="tooltip" data-original-title="Edit category">
                                                     <i class="fa fa-pencil p-1"></i>
@@ -96,6 +96,7 @@
             console.error('An error occurred', error);
         });
     }
+    window.history.pushState({}, '', '/tables/categories');
 </script>
 
 <%- include('../templates/scripts'); -%>

@@ -4,7 +4,11 @@ const { Topic, Situation, Answer } = require('../models');
 exports.createTopic = async (req, res) => {
     try {
         const topic = await Topic.create(req.body);
-        res.redirect('/tables/topics');
+        res.render('pages/topics', {
+            success_msg: 'Topic created successfully',
+            topicsList: await exports.getTopics(),
+            error: []
+        });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -81,7 +85,11 @@ exports.updateTopic = async (req, res) => {
         const topic = await Topic.findByPk(req.params.id);
         if (topic) {
             await topic.update(req.body);
-            res.json(topic);
+            res.render('pages/topics', {
+                success_msg: 'Topic updated successfully',
+                topicsList: await exports.getTopics(),
+                error: []
+            });
         } else {
             res.status(404).json({ message: 'Topic not found' });
         }
