@@ -132,8 +132,8 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
 
 router.get('/forms/category', ensureAuthenticated, async (req, res) => {
     try {
-        req.params = req.query
-        const categoryData = await categoryController.getCategory(req)
+        req.params = req.query;
+        const categoryData = await categoryController.getCategory(req);
         res.render('pages/form_category', { user: req.user, updateData: categoryData || req.query });
     } catch (error) {
         // handle error
@@ -144,8 +144,8 @@ router.get('/forms/category', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
     try {
-        req.params = req.query
-        const achievementData = await achievementController.getAchievement(req)
+        req.params = req.query;
+        const achievementData = await achievementController.getAchievement(req);
         res.render('pages/form_achievements', { user: req.user, updateData: achievementData || req.query });
     } catch (error) {
         // handle error
@@ -156,8 +156,8 @@ router.get('/forms/achievement', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
     try {
-        req.params = req.query
-        const topicData = await topicController.getTopic(req)
+        req.params = req.query;
+        const topicData = await topicController.getTopic(req);
         const categoriesList = await categoryController.getCategories();
         res.render('pages/form_topics', { user: req.user, categoriesList: categoriesList, updateData:topicData || req.query });
     } catch (error) {
@@ -169,8 +169,8 @@ router.get('/forms/topic', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/situation', ensureAuthenticated, async (req, res) => {
     try {
-        req.params = req.query
-        const situationData = await situationController.getSituation(req)
+        req.params = req.query;
+        const situationData = await situationController.getSituation(req);
         const answersList = await answerController.getAnswers();
         const topicsList = await topicController.getTopics();
         res.render('pages/form_situations', { user: req.user, answersList: answersList, topicsList: topicsList, updateData: situationData || req.query });
@@ -183,8 +183,8 @@ router.get('/forms/situation', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/user', ensureAuthenticated, async (req, res) => {
     try {
-        req.params = req.query
-        const userData = await userController.getUser(req)
+        req.params = req.query;
+        const userData = await userController.getUser(req);
         res.render('pages/form_users', { user: req.user, updateData: userData || req.query });
     } catch (error) {
         // handle error
@@ -195,8 +195,8 @@ router.get('/forms/user', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
     try {
-        req.params = req.query
-        const answerData = await answerController.getAnswer(req)
+        req.params = req.query;
+        const answerData = await answerController.getAnswer(req);
         const situationsList = await situationController.getSituations();
         res.render('pages/form_answers', { user: req.user, situationsList: situationsList, updateData: answerData || req.query });
     } catch (error) {
@@ -208,8 +208,8 @@ router.get('/forms/answer', ensureAuthenticated, async (req, res) => {
 });
 router.get('/forms/cheaterPhone', ensureAuthenticated, async (req, res) => {
     try {
-        req.params = req.query
-        const cheaterPhoneData = await cheaterPhoneController.getCheaterPhoneAdmin(req)
+        req.params = req.query;
+        const cheaterPhoneData = await cheaterPhoneController.getCheaterPhoneAdmin(req);
         res.render('pages/form_cheaterPhone', { user: req.user, updateData: cheaterPhoneData || req.query });
     } catch (error) {
         // handle error
