@@ -22,7 +22,10 @@ exports.createCheaterPhoneAdmin = async (req, res) => {
     } catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
-        res.status(500).json({ message: err.message });
+        res.render('pages/form_cheaterPhone', {
+            cheaterPhonesList: await exports.getCheaterPhones(),
+            error: err
+        });
     }
 };
 exports.createCheaterPhoneUser = async (req, res) => {
