@@ -223,7 +223,7 @@ router.get('/forms/cheaterPhone', ensureAuthenticated, async (req, res) => {
     try {
         req.params = req.query;
         const cheaterPhoneData = await cheaterPhoneController.getCheaterPhoneAdmin(req);
-        res.render('pages/form_cheaterPhone', { user: req.user, updateData: cheaterPhoneData || req.query });
+        res.render('pages/form_cheaterPhone', { user: req.user, updateData: cheaterPhoneData || req.query});
     } catch (error) {
         // handle error
         console.log(error);
