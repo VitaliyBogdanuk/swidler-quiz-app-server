@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     PhoneDescription.associate = function (models) {
         PhoneDescription.belongsTo(models.CheaterPhone, {
             foreignKey: 'phoneId',
-            as: 'descriptions'
+            as: 'cheaterPhone'
         })
 
     }
