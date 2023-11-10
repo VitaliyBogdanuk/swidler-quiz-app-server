@@ -1,0 +1,48 @@
+const { PhoneDescription, CheaterPhone} = require('../models');
+
+exports.getPhoneDescriptions = async () => {
+    try {
+        return await PhoneDescription.findAll({
+            include: [{
+                model: CheaterPhone,
+                as: 'cheaterPhone',
+                attributes: ['id','phone']
+            }],
+            order: [
+                ['id', 'ASC']
+            ]
+        });
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
+
+exports.listPhoneDescriptions = async (req, res) => {
+    try {
+        const PhoneDescriptions = await exports.getPhoneDescriptions();
+        if (PhoneDescriptions) {
+            res.status(200).json(PhoneDescriptions);
+        } else {
+            res.status(404).json({ message: 'Descriptions not found' });
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+exports.deletePhoneDescription = async (req, res) => {
+    try {
+        const phoneDescription = await PhoneDescription.findByPk(req.params.id)
+        if (phoneDescription) {
+            await phoneDescription.destroy();
+            // req.flash('success_msg', 'Category successfully deleted!'); // TODO
+            res.status(200).json({ message: 'Phone deleted' });
+        } else {
+            req.flash('error', 'Phone deleted');
+            res.status(404).json({ message: 'Category not found' });
+        }
+    } catch (err) {
+        // req.flash('error', 'Deleting failed: ' + err.message); // TODO
+        res.status(500).json({ message: err.message });
+    }
+};
