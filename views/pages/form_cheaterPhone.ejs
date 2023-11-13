@@ -22,8 +22,8 @@
 							<div class="card-body">
 								<form role="form" action="/cheaterPhone/<%=updateData.id ? updateData.id : null%>" method="POST">
 									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
-										<label class="form-label">Phone</label>
-										<input type="text" class="form-control" name="phone" value="<%=updateData.phone ? updateData.phone : null%>">
+										<label class="form-label">Phone (ex. 380999999999) </label>
+										<input type="text" id="phone" class="form-control" name="phone" value="<%=updateData.phone ? updateData.phone : null%>">
 									</div>
 									<div class="<%=updateData.id ? 'd-none' : null%> input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label"></label>
@@ -49,6 +49,14 @@
 </main>
 
 <%- include('../templates/scripts'); -%>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js" ></script>
+
 <script>
 	window.history.pushState({}, '', '/tables/cheaterPhones');
+	//INPUT MASK
+	$(document).ready(function(){
+  	$('#phone').mask('380979999999');
+});
 </script>
