@@ -93,7 +93,10 @@ exports.getCheaterPhone = async (req) => {
                 as: 'descriptions',
                 attributes: ['description']
             }],
-            where: { phone: req.params.phone }
+            where: {
+                phone: req.params.phone,
+                published: true
+            }
 
         });
     } catch (err) {
