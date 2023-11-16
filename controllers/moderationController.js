@@ -1,4 +1,4 @@
-const { CheaterPhone, PhoneDescription } = require('../models');
+const { CheaterPhone, PhoneDescription, Proof } = require('../models');
 
 // READ (all categories)
 exports.getPhonesToModerate = async () => {
@@ -19,3 +19,26 @@ exports.getPhonesToModerate = async () => {
     }
 };
 
+exports.getPhoneWithInfo = async (req) => {
+    try {
+        return await CheaterPhone.findOne({
+            include: [{
+                model: PhoneDescription,
+                as: 'descriptions',
+                attributes: ['description'],
+                include: [{
+                    model: Proof,
+                    as: 'proofs',
+                    attributes: ['proof'],
+                }]
+            }],
+            where: {
+                phone: req.params.phone,
+                published: true
+            }
+
+        });
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
