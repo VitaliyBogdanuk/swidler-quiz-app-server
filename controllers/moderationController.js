@@ -1,6 +1,6 @@
 const { CheaterPhone, PhoneDescription } = require('../models');
 
-// READ (all categories)
+// READ (all phones to moderate)
 exports.getPhonesToModerate = async () => {
     try {
         return await CheaterPhone.findAll({
