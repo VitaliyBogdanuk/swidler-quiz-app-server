@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         description: DataTypes.STRING,
         phoneId: DataTypes.INTEGER,
+        approved: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
     }, {
         defaultScope: {
             attributes: { exclude: ['createdAt', 'updatedAt'] },
