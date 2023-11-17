@@ -11,6 +11,7 @@
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                         <div class="d-flex justify-content-lg-between bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                             <h6 class="text-white text-capitalize ps-3">Moderation</h6>
+                          <!-- <a href="/forms/category" class="text-white px-3"><i class="fa fa-plus p-1"></i>Add category</a>--> 
                         </div>
                     </div>
                     <div class="card-body px-0 pb-2">
@@ -19,8 +20,8 @@
                                 <thead>
                                     <tr>
                                         <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Id</th>
+                                            class="text-center text-secondary text-secondary text-xxs font-weight-bolder opacity-7">
+                                            </th>
                                         <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Phone</th>
@@ -37,7 +38,6 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="mb-0 text-sm">
-                                                            <%= phone.id %>
                                                         </h6>
                                                     </div>
                                                 </div>
@@ -48,7 +48,7 @@
                                                 </p>
                                             </td>
                                             <td class="align-middle text-center">
-                                               <a href=""
+                                               <a href="/tables/moderationInfo/<%=phone.id%>"
                                                     class="text-secondary font-weight-bold text-xs"
                                                     data-toggle="tooltip" data-original-title="View category">
                                                     <i class="fa fa-search p-1"></i>

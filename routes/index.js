@@ -139,10 +139,10 @@ router.get('/tables/moderation', ensureAuthenticated, async (req, res) => {
     }
 });
 
-router.get('/tables/moderationInfo/:phone', ensureAuthenticated, async (req, res) => {
+router.get('/tables/moderationInfo/:id', ensureAuthenticated, async (req, res) => {
     try {
         const moderationInfo = await moderationController.getPhoneWithInfo(req);
-        res.render('pages/moderationInfo', { user: req.user, phoneInfo: moderationInfo });
+        res.render('pages/moderationInfo', { user: req.user, phoneInfo: moderationInfo, phoneID: req.params.id});
     } catch (error) {
         // handle error
         console.log(error);

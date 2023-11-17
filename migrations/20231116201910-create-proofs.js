@@ -24,7 +24,7 @@ module.exports = {
         defaultValue: Sequelize.NOW
       },
       descriptionId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       }
     });
   },

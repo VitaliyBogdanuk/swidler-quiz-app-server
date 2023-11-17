@@ -1,25 +1,33 @@
-const { CheaterPhone, User, PhoneDescription } = require('../models');
-
+const { CheaterPhone, User, PhoneDescription, Proof } = require('../models');
 
 // CREATE
 exports.createCheaterPhoneAdmin = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
     try {
         req.params.phone = req.body.phone;
-        const existingPhone = await exports.getCheaterPhone(req, { transaction });
-        if (!existingPhone) {
-            const cheaterPhone = await CheaterPhone.create(req.body, { transaction });
-            await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id }, { transaction });
-        } else {
-            await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id }, { transaction });
+        let cheaterPhone = await exports.getCheaterPhoneForCreating(req, { transaction });
+        if (!cheaterPhone) {
+            cheaterPhone = await CheaterPhone.create(req.body, { transaction });
         }
+        await PhoneDescription
+            .create({ description: req.body.description, phoneId: cheaterPhone.id}, { transaction })
+            .then(async (result) => {
+                if (req.files) {
+                    let data = [];
+                    req.files.uploadedFile.forEach((file) => {
+                        data.push({ proof: file.filename, descriptionId: result.id })
+                    })
+                    await Proof.bulkCreate(data, { transaction });
+                }
+            })
         await transaction.commit();
         res.render('pages/cheaterPhones', {
             success_msg: 'Phone created successfully',
             cheaterPhonesList: await exports.getCheaterPhones(),
             error: []
         });
-    } catch (err) {
+    }
+    catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.render('pages/form_cheaterPhone', {
@@ -33,15 +41,27 @@ exports.createCheaterPhoneUser = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
     try {
         req.params.phone = req.body.phone;
-        const existingPhone = await exports.getCheaterPhone(req, { transaction });
-        if (!existingPhone) {
-            const cheaterPhone = await CheaterPhone.create(req.body, { transaction });
-            await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id }, { transaction });
-        } else {
-            await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id }, { transaction });
+        let cheaterPhone = await exports.getCheaterPhoneForCreating(req, { transaction });
+        if (!cheaterPhone) {
+            cheaterPhone = await CheaterPhone.create(req.body, { transaction });
         }
+        await PhoneDescription
+            .create({ description: req.body.description, phoneId: cheaterPhone.id}, { transaction })
+            .then(async (result) => {
+                if (req.files) {
+                    let data = [];
+                    req.files.uploadedFile.forEach((file) => {
+                        data.push({ proof: file.filename, descriptionId: result.id })
+                    })
+                    await Proof.bulkCreate(data, { transaction });
+                }
+            })
         await transaction.commit();
-        res.status(200).json({ message: "Cheater added succesfully" });
+        res.render('pages/cheaterPhones', {
+            success_msg: 'Phone created successfully',
+            cheaterPhonesList: await exports.getCheaterPhones(),
+            error: []
+        });
     } catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
@@ -164,6 +184,24 @@ exports.deleteCheaterPhone = async (req, res) => {
 exports.getCheaterPhoneAdmin = async (req) => {
     try {
         return await CheaterPhone.findByPk(req.params.id);
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
+
+exports.getCheaterPhoneForCreating = async (req) => {
+    try {
+        return await CheaterPhone.findOne({
+            include: [{
+                model: PhoneDescription,
+                as: 'descriptions',
+                attributes: ['description']
+            }],
+            where: {
+                phone: req.params.phone,
+            }
+
+        });
     } catch (err) {
         throw new Error(err.message);
     }
