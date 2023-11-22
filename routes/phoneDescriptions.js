@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { updateApprovedDescription, deleteDescription } = require('../controllers/moderationController');
+const { updateApprovedDescriptions, deleteDescription, publishCheaterPhone } = require('../controllers/moderationController');
 
-router.get('/phoneDescription/:id', updateApprovedDescription);
+
 router.delete('/phoneDescription/:id', deleteDescription);
+router.post('/phoneDescription/:id', publishCheaterPhone);
 
 module.exports = router;

@@ -6,15 +6,15 @@ exports.getPhonesToModerate = async () => {
         return await CheaterPhone.findAll({
             include: [{
                 model: PhoneDescription,
-                as: 'descriptions'
+                as: 'descriptions',
+                where: {
+                    approved: false
+                }
             }
             ],
             order: [
                 ['id', 'ASC']
-            ],
-            where: {
-                published: false
-            }
+            ]
         });
     } catch (err) {
         throw new Error(err.message);
@@ -27,7 +27,7 @@ exports.getPhoneWithInfo = async (req) => {
             include: [{
                 model: PhoneDescription,
                 as: 'descriptions',
-                attributes: ['id','description','approved'],
+                attributes: ['id', 'description', 'approved'],
                 include: [{
                     model: Proof,
                     as: 'proofs',
@@ -45,20 +45,9 @@ exports.getPhoneWithInfo = async (req) => {
 
 //SWITCH APPROVED FIELD
 
-exports.updateApprovedDescription = async (req, res) => {
-    try {
-        const description = await PhoneDescription.findByPk(req.params.id);
-        const result = description.approved ? false : true;
-        await description.update({approved: result
-        });
-        res.status(200).json({ message: 'Updated successfully', user: user });
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-};
-
 exports.deleteDescription = async (req, res) => {
     try {
+        console.log(11)
         const cheaterPhone = await PhoneDescription.findByPk(req.params.id, {
             include: [{
                 model: Proof,
@@ -78,4 +67,37 @@ exports.deleteDescription = async (req, res) => {
         // req.flash('error', 'Deleting failed: ' + err.message); // TODO
         res.status(500).json({ message: err.message });
     }
+};
+
+exports.publishCheaterPhone = async (req, res) => {
+    transaction = await CheaterPhone.sequelize.transaction();
+    try {
+        if (req.body.checkApprove) {
+            await PhoneDescription.update({ approved: true }, {
+                where: {
+                    id: req.body.checkApprove
+                }
+            }, { transaction });
+            const numberOfchecks = Array.isArray(req.body.checkApprove) ? req.body.checkApprove.length : 1;
+            if (numberOfchecks == req.body.number) {
+                const phone = await CheaterPhone.findByPk(req.params.id, { transaction });
+                await phone.update({
+                    published: true
+                }, { transaction });
+            }
+            await transaction.commit();
+            res.render('pages/moderation', {
+                success_msg: 'Phone published successfully',
+                phonesToModerateList: await exports.getPhonesToModerate(),
+                error: []
+            });
+        }
+        else {
+            res.redirect('/tables/moderation');
+        }
+    } catch (err) {
+        await transaction.rollback();
+        res.status(500).json({ message: err.message });
+    }
+
 };

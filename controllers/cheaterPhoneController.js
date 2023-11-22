@@ -57,15 +57,11 @@ exports.createCheaterPhoneUser = async (req, res) => {
                 }
             })
         await transaction.commit();
-        res.render('pages/cheaterPhones', {
-            success_msg: 'Phone created successfully',
-            cheaterPhonesList: await exports.getCheaterPhones(),
-            error: []
-        });
+        res.status(200).json({ message: 'Cheater phone added' });
     } catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
-        res.json(err);
+        res.status(500).json(err);
     }
 };
 // READ (all categories)
@@ -206,3 +202,4 @@ exports.getCheaterPhoneForCreating = async (req) => {
         throw new Error(err.message);
     }
 };
+
