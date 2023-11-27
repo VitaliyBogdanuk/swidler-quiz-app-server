@@ -47,7 +47,7 @@ exports.getPhoneWithInfo = async (req) => {
 
 exports.deleteDescription = async (req, res) => {
     try {
-        console.log(11)
+        
         const cheaterPhone = await PhoneDescription.findByPk(req.params.id, {
             include: [{
                 model: Proof,
@@ -57,14 +57,12 @@ exports.deleteDescription = async (req, res) => {
         });
         if (cheaterPhone) {
             await cheaterPhone.destroy();
-            // req.flash('success_msg', 'Category successfully deleted!'); // TODO
             res.status(200).json({ message: 'Phone deleted' });
         } else {
             req.flash('error', 'Phone deleted');
             res.status(404).json({ message: 'Category not found' });
         }
     } catch (err) {
-        // req.flash('error', 'Deleting failed: ' + err.message); // TODO
         res.status(500).json({ message: err.message });
     }
 };
@@ -72,13 +70,13 @@ exports.deleteDescription = async (req, res) => {
 exports.publishCheaterPhone = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
     try {
-        if (req.body.checkApprove) {
+        if (req.body.descriptionsId) {
             await PhoneDescription.update({ approved: true }, {
                 where: {
-                    id: req.body.checkApprove
+                    id: req.body.descriptionsId
                 }
             }, { transaction });
-            const numberOfchecks = Array.isArray(req.body.checkApprove) ? req.body.checkApprove.length : 1;
+            const numberOfchecks = Array.isArray(req.body.descriptionsId) ? req.body.descriptionsId.length : 1;
             if (numberOfchecks == req.body.number) {
                 const phone = await CheaterPhone.findByPk(req.params.id, { transaction });
                 await phone.update({

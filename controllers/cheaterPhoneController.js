@@ -165,14 +165,12 @@ exports.deleteCheaterPhone = async (req, res) => {
         });
         if (cheaterPhone) {
             await cheaterPhone.destroy();
-            // req.flash('success_msg', 'Category successfully deleted!'); // TODO
             res.status(200).json({ message: 'Phone deleted' });
         } else {
             req.flash('error', 'Phone deleted');
             res.status(404).json({ message: 'Category not found' });
         }
     } catch (err) {
-        // req.flash('error', 'Deleting failed: ' + err.message); // TODO
         res.status(500).json({ message: err.message });
     }
 };

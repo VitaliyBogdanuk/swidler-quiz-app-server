@@ -69,7 +69,7 @@
                                                                     <input
                                                                         class="form-check-input  description-to-approve"
                                                                         type="checkbox" id="<%=description.id%>"
-                                                                        name="checkApprove" value="<%=description.id%>"
+                                                                        name="descriptionsId" value="<%=description.id%>"
                                                                         status="<%=description.approved ? 'disabled' : 'enabled'%>">
                                                                     <label class="form-check-label"
                                                                         for="<%=description.id%>">
@@ -150,7 +150,7 @@
             let modal = document.getElementById('myModal');
 
             // Get the image and insert it inside the modal - use its "alt" text as a caption
-            let img = document.getElementById('myImg');
+            let img = document.getElementById('modal-image');
             let modalImg = document.getElementById("img01");
             let captionText = document.getElementById("caption");
             function zoom(img) {
