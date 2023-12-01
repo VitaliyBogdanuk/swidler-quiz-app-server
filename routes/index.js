@@ -9,7 +9,7 @@ const situationController = require('../controllers/situationController');
 const topicController = require('../controllers/topicController');
 const cheaterPhoneController = require('../controllers/cheaterPhoneController');
 const feedbackController = require('../controllers/feedbackController');
-const moderationController = require('../controllers/moderationController');
+const moderationController = require('../controllers/moderationController.js');
 
 router.get('/', ensureAuthenticated, (req, res) => {
     res.render('index', { session: req.session });
@@ -131,6 +131,18 @@ router.get('/tables/moderation', ensureAuthenticated, async (req, res) => {
     try {
         const phonesToModerateList = await moderationController.getPhonesToModerate();
         res.render('pages/moderation', { user: req.user, phonesToModerateList: phonesToModerateList });
+    } catch (error) {
+        // handle error
+        console.log(error);
+        req.flash('error', error);
+        res.redirect('back');
+    }
+});
+
+router.get('/tables/moderationInfo/:id', ensureAuthenticated, async (req, res) => {
+    try {
+        const moderationInfo = await moderationController.getPhoneWithInfo(req);
+        res.render('pages/moderationInfo', { user: req.user, phoneInfo: moderationInfo, phoneID: req.params.id});
     } catch (error) {
         // handle error
         console.log(error);

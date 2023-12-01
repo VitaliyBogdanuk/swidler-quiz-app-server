@@ -20,7 +20,7 @@
 								<h4 class="font-weight-bolder">Enter a cheater phone</h4>
 							</div>
 							<div class="card-body">
-								<form role="form" action="/cheaterPhone/<%=updateData.id ? updateData.id : null%>" method="POST">
+								<form role="form" action="/cheaterPhone/<%=updateData.id ? updateData.id : null%>" method="POST" enctype="multipart/form-data">
 									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Phone (ex. 380999999999) </label>
 										<input type="text" id="phone" class="form-control" name="phone" value="<%=updateData.phone ? updateData.phone : null%>">
@@ -30,9 +30,13 @@
 										<textarea rows="7" type="text" class="form-control " name="description"
 											placeholder="Description"></textarea>
 									</div>
-									<input type="hidden" value="1" name="userId">
-									
+									<div class="input-group mb-3 picture">
+										<input type="file" class="form-control" id="inputGroupFile01" name="uploadedFile" required>
+									</div>
+									<a type="button" id="addmore"
+											class="btn btn-lg bg-gradient-primary btn-lg w-25 mt-4 mb-0 add-button-width">ADD MORE</a>
 									<div class="text-center">
+									<input type="hidden" value="1" name="userId">
 										<button
 											class="btn btn-lg bg-gradient-primary btn-lg w-25 mt-4 mb-0">SAVE</button>
 									</div>
@@ -57,6 +61,12 @@
 	window.history.pushState({}, '', '/tables/cheaterPhones');
 	//INPUT MASK
 	$(document).ready(function(){
-  	$('#phone').mask('380979999999');
+  	$('#phone').mask('38099999999');
+	$('#addmore').on('click',()=>{
+		$('.picture').first().prepend(`<div class="input-group mb-3">
+										<input type="file" class="form-control" id="inputGroupFile01" name="uploadedFile">
+									</div>
+							`)
+	})	
 });
 </script>

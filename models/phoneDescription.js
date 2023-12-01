@@ -22,6 +22,13 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'phoneId',
             as: 'cheaterPhone'
         })
+        PhoneDescription.hasMany(models.Proof, {
+            foreignKey: 'descriptionId',
+            as: 'proofs',
+            onDelete: 'cascade',
+            hooks: true
+        });
+
 
     }
     return PhoneDescription;

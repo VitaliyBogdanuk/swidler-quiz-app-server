@@ -7,23 +7,33 @@ const { listCategories, readCategory } = require('../controllers/categoryControl
 const { listAchievements, readAchievement } = require('../controllers/achievementController');
 const { listTopics, readTopic } = require('../controllers/topicController');
 const { listSituations, readSituation } = require('../controllers/situationController');
-const { listUsers, 
-        readUser, 
-        updateUserTopics, 
-        updateUserScore, 
-        updateUserCorrectAnswer, 
+const { listUsers,
+        readUser,
+        updateUserTopics,
+        updateUserScore,
+        updateUserCorrectAnswer,
         updateUserWrongAnswer
-    } = require('../controllers/userController');
+} = require('../controllers/userController');
 const { createFeedback } = require('../controllers/feedbackController');
 
-const { listCheaterPhones, 
-        createCheaterPhoneUser, 
+const { listCheaterPhones,
+        createCheaterPhoneUser,
         readCheaterPhone } = require('../controllers/cheaterPhoneController');
-
+const multer  = require('multer')
+const path = require('path')
+const storage = multer.diskStorage({
+        destination: function (req, file, cb) {
+                cb(null, 'public/img')
+        },
+        filename: function (req, file, cb) {
+                cb(null, Date.now() + path.extname(file.originalname))
+        }
+})
+const upload = multer({ storage: storage })
 router.post('/feedback', createFeedback);
 
 router.get('/cheaterPhones', listCheaterPhones);
-router.post('/cheaterPhone', createCheaterPhoneUser);
+router.post('/cheaterPhone', upload.fields([{ name: 'uploadedFile' }]), createCheaterPhoneUser);
 router.get('/cheaterPhone/:phone', readCheaterPhone);
 
 router.post('/register', apiController.register);
