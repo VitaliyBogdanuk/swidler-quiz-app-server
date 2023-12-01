@@ -39,7 +39,7 @@ exports.listAchievements = async (req, res) => {
 };
 
 // READ (single achievement)
-exports.getAchievement = async () => {
+exports.getAchievement = async (req) => {
     try {
         return await Achievement.findByPk(req.params.id);
     } catch (err) {
@@ -66,7 +66,11 @@ exports.updateAchievement = async (req, res) => {
         const achievement = await Achievement.findByPk(req.params.id);
         if (achievement) {
             await achievement.update(req.body);
-            res.json(achievement);
+            res.render('pages/achievements', {
+                success_msg: 'Answer updated successfully',
+                achievementsList: await exports.getAchievements(),
+                error: []
+            });
         } else {
             res.status(404).json({ message: 'Achievement not found' });
         }

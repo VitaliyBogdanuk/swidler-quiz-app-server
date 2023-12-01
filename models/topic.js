@@ -35,7 +35,12 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'topicId',
             as: 'situations'
         });
+        Topic.belongsToMany(models.User, {
+            through: 'UserToTopics', // the junction table
+            foreignKey: 'topicId',
+            as: 'users'
+        });
     };
-
+    
     return Topic;
 };

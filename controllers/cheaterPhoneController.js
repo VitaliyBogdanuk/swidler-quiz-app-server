@@ -1,28 +1,38 @@
-const { CheaterPhone, User, PhoneDescription } = require('../models');
-
+const { CheaterPhone, User, PhoneDescription, Proof } = require('../models');
 
 // CREATE
 exports.createCheaterPhoneAdmin = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
     try {
         req.params.phone = req.body.phone;
-        const existingPhone = await exports.getCheaterPhone(req, { transaction });
-        if (!existingPhone) {
-            const cheaterPhone = await CheaterPhone.create(req.body, { transaction });
-            await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id }, { transaction });
-        } else {
-            await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id }, { transaction });
+        let cheaterPhone = await exports.getCheaterPhoneForCreating(req, { transaction });
+        if (!cheaterPhone) {
+            cheaterPhone = await CheaterPhone.create(req.body, { transaction });
         }
+        await PhoneDescription
+            .create({ description: req.body.description, phoneId: cheaterPhone.id}, { transaction })
+            .then(async (result) => {
+                if (req.files) {
+                    let data = [];
+                    req.files.uploadedFile.forEach((file) => {
+                        data.push({ proof: file.filename, descriptionId: result.id })
+                    })
+                    await Proof.bulkCreate(data, { transaction });
+                }
+            })
         await transaction.commit();
         res.render('pages/cheaterPhones', {
             success_msg: 'Phone created successfully',
             cheaterPhonesList: await exports.getCheaterPhones(),
             error: []
         });
-    } catch (err) {
+    }
+    catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
         res.render('pages/form_cheaterPhone', {
+            success_msg: null,
+            updateData: req.body,
             error: err
         });
     }
@@ -31,19 +41,27 @@ exports.createCheaterPhoneUser = async (req, res) => {
     transaction = await CheaterPhone.sequelize.transaction();
     try {
         req.params.phone = req.body.phone;
-        const existingPhone = await exports.getCheaterPhone(req);
-        if (!existingPhone) {
-            const cheaterPhone = await CheaterPhone.create(req.body);
-            await PhoneDescription.create({ description: req.body.description, phoneId: cheaterPhone.id });
-        } else {
-            await PhoneDescription.create({ description: req.body.description, phoneId: existingPhone.id });
+        let cheaterPhone = await exports.getCheaterPhoneForCreating(req, { transaction });
+        if (!cheaterPhone) {
+            cheaterPhone = await CheaterPhone.create(req.body, { transaction });
         }
+        await PhoneDescription
+            .create({ description: req.body.description, phoneId: cheaterPhone.id}, { transaction })
+            .then(async (result) => {
+                if (req.files) {
+                    let data = [];
+                    req.files.uploadedFile.forEach((file) => {
+                        data.push({ proof: file.filename, descriptionId: result.id })
+                    })
+                    await Proof.bulkCreate(data, { transaction });
+                }
+            })
         await transaction.commit();
-        res.status(200).json({ message: "Cheater added succesfully" });
+        res.status(200).json({ message: 'Cheater phone added' });
     } catch (err) {
         await transaction.rollback();
         // req.flash('error', 'Creation failed: ' + err.message); // TODO
-        res.json(err);
+        res.status(500).json(err);
     }
 };
 // READ (all categories)
@@ -91,7 +109,10 @@ exports.getCheaterPhone = async (req) => {
                 as: 'descriptions',
                 attributes: ['description']
             }],
-            where: { phone: req.params.phone }
+            where: {
+                phone: req.params.phone,
+                published: true
+            }
 
         });
     } catch (err) {
@@ -103,8 +124,9 @@ exports.readCheaterPhone = async (req, res) => {
     try {
         const cheaterPhone = await exports.getCheaterPhone(req);
         if (cheaterPhone) {
-            res.status(200).json(cheaterPhone);
-        } else {
+            res.json(cheaterPhone);
+        }
+        else {
             res.status(404).json({ message: 'Phone not found' });
         }
     } catch (err) {
@@ -118,7 +140,11 @@ exports.updateCheaterPhone = async (req, res) => {
         const cheaterPhone = await CheaterPhone.findByPk(req.params.id);
         if (cheaterPhone) {
             await cheaterPhone.update(req.body);
-            res.status(200).json(cheaterPhone);
+            res.render('pages/cheaterPhones', {
+                success_msg: 'Phone updated successfully',
+                cheaterPhonesList: await exports.getCheaterPhones(),
+                error: []
+            });
         } else {
             res.status(404).json({ message: 'Phone not found' });
         }
@@ -139,14 +165,39 @@ exports.deleteCheaterPhone = async (req, res) => {
         });
         if (cheaterPhone) {
             await cheaterPhone.destroy();
-            // req.flash('success_msg', 'Category successfully deleted!'); // TODO
             res.status(200).json({ message: 'Phone deleted' });
         } else {
             req.flash('error', 'Phone deleted');
             res.status(404).json({ message: 'Category not found' });
         }
     } catch (err) {
-        // req.flash('error', 'Deleting failed: ' + err.message); // TODO
         res.status(500).json({ message: err.message });
     }
 };
+
+exports.getCheaterPhoneAdmin = async (req) => {
+    try {
+        return await CheaterPhone.findByPk(req.params.id);
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
+
+exports.getCheaterPhoneForCreating = async (req) => {
+    try {
+        return await CheaterPhone.findOne({
+            include: [{
+                model: PhoneDescription,
+                as: 'descriptions',
+                attributes: ['description']
+            }],
+            where: {
+                phone: req.params.phone,
+            }
+
+        });
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
+

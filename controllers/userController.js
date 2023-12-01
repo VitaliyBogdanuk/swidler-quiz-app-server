@@ -48,8 +48,8 @@ exports.createUser = async (req, res) => {
 // Read a user
 exports.getUser = async (req) => {
     try {
-        return await User.findByPk(req.params.id, {
-            attributes: ['id', 'name', 'email', /* other user fields you need */],
+        return await User.findByPk(req.params.id,{
+            attributes: ['id', 'name', 'email','score' /* other user fields you need */],
             include: [{
                 model: Topic,
                 as: 'finishedTopics',
@@ -57,7 +57,9 @@ exports.getUser = async (req) => {
                 through: {
                     attributes: [], // This line ensures that no attributes of the join table (UserToTopic) are returned.
                 }
-            }]
+            }],
+            where: { id: req.body.id }
+
         });
     } catch (err) {
         throw new Error(err.message);
@@ -85,7 +87,11 @@ exports.updateUser = async (req, res) => {
             res.status(404).json({ message: 'User not found' });
         }
         await user.update(req.body);
-        res.json(user);
+        res.render('pages/users', {
+            success_msg: 'User updated successfully',
+            usersList: await exports.getUsers(),
+            error: []
+        });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

@@ -5,7 +5,7 @@ const { listSituations, createSituation, readSituation, updateSituation, deleteS
 router.get('/situations', listSituations);
 router.post('/situation', createSituation);
 router.get('/situation/:id', readSituation);
-router.put('/situation/:id', updateSituation);
+router.post('/situation/:id', updateSituation);
 router.delete('/situation/:id', deleteSituation);
 router.get('/_situations', _listSituations);
 module.exports = router;

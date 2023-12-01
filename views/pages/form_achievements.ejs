@@ -20,18 +20,18 @@
 								<h4 class="font-weight-bolder">Fill in achievement data</h4>
 							</div>
 							<div class="card-body">
-								<form role="form" action="/achievement" method="POST">
-									<div class="input-group input-group-outline mb-3">
+								<form role="form" action="/achievement/<%=updateData.id ? updateData.id : null%>" method="POST">
+									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Achievement title</label>
-										<input type="text" class="form-control" name="title">
+										<input type="text" class="form-control" name="title" value="<%=updateData.title ? updateData.title : null%>">
 									</div>
-									<div class="input-group input-group-outline mb-3">
+									<div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Achievement image</label>
-										<input type="text" class="form-control" name="image">
+										<input type="text" class="form-control" name="image" value="<%=updateData.image ? updateData.image : null%>">
 									</div>
-                                    <div class="input-group input-group-outline mb-3">
+                                    <div class="input-group input-group-outline mb-3 <%=updateData.id ? 'is-filled' : ''%>">
 										<label class="form-label">Score requider</label>
-										<input type="text" class="form-control" name="scoreRequired">
+										<input type="text" class="form-control" name="scoreRequired" value="<%=updateData.scoreRequired ? updateData.scoreRequired : null%>">
 									</div>
 									<div class="text-center">
 										<button

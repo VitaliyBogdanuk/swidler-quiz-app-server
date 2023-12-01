@@ -1,0 +1,175 @@
+<%- include('../templates/head'); -%>
+    <%- include('../templates/sidebar', {view: 'Moderation' }); -%>
+        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+            <!-- Navbar -->
+            <%- include('../templates/navbar', {breadcrumbs: 'Moderation' }); -%>
+                <!-- End Navbar -->
+                <div class="container-fluid py-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card my-4">
+                                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                    <div
+                                        class="d-flex justify-content-lg-between bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                                        <h6 class="text-white text-capitalize ps-3">Moderation</h6>
+                                        <a href="/tables/moderation" class="text-white px-3"><i
+                                                class="fa p-1"></i>Back</a>
+                                    </div>
+                                </div>
+                                <div class="card-body px-0 pb-2">
+                                    <div class="table-responsive p-0">
+                                        <span class="badge bg-secondary m-3">
+                                            <%= phoneInfo.phone %>
+                                        </span>
+                                        <form role="form" action="/phoneDescription/<%=phoneInfo.id%>" method="POST">
+                                            <table class="table align-items-center mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th
+                                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                            Description</th>
+                                                        <th
+                                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                            Proofs</th>
+                                                        <th
+                                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                            Approved</th>
+
+                                                        <th
+                                                            class="text-center text-secondary text-secondary text-xxs font-weight-bolder opacity-7">
+                                                            Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% phoneInfo.descriptions.forEach(function(description) { %>
+                                                        <tr class="<%= !description.approved ? 'to-approve-fill' : null%>">
+                                                            <td class="w-50 text-wrap">
+                                                                <p class="text-xs font-weight-bold mb-0">
+                                                                    <%= description.description %>
+                                                                </p>
+                                                            </td>
+                                                            <td class="w-25">
+                                                                <table>
+                                                                    <% description.proofs.forEach(function(proof) { %>
+                                                                        <tr>
+                                                                            <div class="d-flex px-2 py-1">
+                                                                                <div
+                                                                                    class="d-flex flex-column justify-content-center">
+                                                                                    <img onclick="zoom(this)"
+                                                                                        src="/img/<%= proof.proof %>" />
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </tr>
+                                                                        <% }); %>
+                                                                </table>
+                                                            </td>
+                                                            <td class="approve-width">
+                                                                <div class="form-check">
+                                                                    <input
+                                                                        class="form-check-input  description-to-approve"
+                                                                        type="checkbox" id="<%=description.id%>"
+                                                                        name="descriptionsId" value="<%=description.id%>"
+                                                                        status="<%=description.approved ? 'disabled' : 'enabled'%>">
+                                                                    <label class="form-check-label"
+                                                                        for="<%=description.id%>">
+                                                                        Approve
+                                                                    </label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="align-middle text-center">
+                                                                <a href="javascript:;"
+                                                                    class="text-secondary font-weight-bold text-xs delete-topic"
+                                                                    data-toggle="tooltip"
+                                                                    data-original-title="Delete topic"
+                                                                    onclick='deleteDescription( "<%= description.id %>" )'>
+                                                                    <i class="fa fa-trash p-1"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <% }); %>
+                                                </tbody>
+                                            </table>
+                                            <div class="form-check">
+                                                <input class="form-check-input confirmed" type="checkbox" id="check">
+                                                <label class="form-check-label" for="check">
+                                                    Save changes
+                                                </label>
+                                            </div>
+                                            <input type="hidden" name="number" id="numberOfEnabled"
+                                                value="">
+                                            <div class="text-center">
+                                                <button type="submit"
+                                                    class="btn btn-lg bg-gradient-primary btn-lg w-25 mt-4 mb-0"
+                                                    onclick="Javascript:checkThis(event)">PUBLISH</button>
+                                            </div>
+                                        </form>
+                                        <div id="myModal" class="modal">
+                                            <img class="modal-content" id="img01">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%- include('../templates/footer'); -%>
+                </div>
+                <%- include('../templates/messages'); -%>
+        </main>
+
+        <script>
+            function checkThis(event) {
+                if (!document.getElementById('check').checked) {
+                    event.preventDefault();
+                }
+            }
+            let i = 0;
+            const checks = document.querySelectorAll('.description-to-approve');
+            checks.forEach((element) => {
+                if (element.getAttribute('status') == 'disabled') {
+                    element.disabled = 'disabled';
+                }
+                else i++;
+            })
+            document.getElementById('numberOfEnabled').setAttribute('value',i);
+            function deleteDescription(descriptionId) {
+                fetch('/phoneDescription/' + descriptionId, {
+                    method: 'DELETE',
+                }).then(function (response) {
+                    if (response.ok) {
+                        displayToast('success', 'Situation and its answers deleted');
+                        location.reload();
+                    } else {
+                        console.error('An error occurred');
+                    }
+                }).catch(function (error) {
+                    console.error('An error occurred', error);
+                });
+            }
+            // Get the modal
+            let modal = document.getElementById('myModal');
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            let img = document.getElementById('modal-image');
+            let modalImg = document.getElementById("img01");
+            let captionText = document.getElementById("caption");
+            function zoom(img) {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                captionText.innerHTML = img.alt;
+            }
+
+
+            // When the user clicks on <span> (x), close the modal
+            modal.onclick = function () {
+                img01.className += " out";
+                setTimeout(function () {
+                    modal.style.display = "none";
+                    img01.className = "modal-content";
+                }, 400);
+
+            }
+        </script>
+
+        <%- include('../templates/scripts'); -%>
