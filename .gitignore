@@ -30,5 +30,3 @@ logs/
 *.pid.lock
 
 config.json
-
-/public/img
